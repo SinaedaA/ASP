@@ -1,0 +1,385 @@
+#Sample_Name	Sample_ID	Organism	Genotype	Compartment	Timepoint	Abbrev	Summary
+OomITS-BC1-1_L001	1	H. vulgare	BI1	soil	14 dpi	Hv	Hv_BI1_14dpi_soil
+OomITS-BC9-10_L001	10	A. thaliana	Col-0	Rhizoplane	14 dpi	At	At_Col-0_14dpi_Rhizoplane
+OomITS-BC107-100_L001	100	A. thaliana	Col-0	Rhizosphere	14 dpi	At	At_Col-0_14dpi_Rhizosphere
+OomITS-BC108-101_L001	101	A. thaliana	BI1	Rhizosphere	14 dpi	At	At_BI1_14dpi_Rhizosphere
+OomITS-BC109-102_L001	102	A. thaliana	BI1	soil	28 dpi	At	At_BI1_28dpi_soil
+OomITS-BC110-103_L001	103	A. thaliana	Col-0	soil	14 dpi	At	At_Col-0_14dpi_soil
+OomITS-BC170-104_L001	104	A. thaliana	BI1	Rhizoplane	28 dpi	At	At_BI1_28dpi_Rhizoplane
+OomITS-BC111-105_L001	105	A. thaliana	Col-0	Rhizosphere	14 dpi	At	At_Col-0_14dpi_Rhizosphere
+OomITS-BC112-106_L001	106	A. thaliana	Col-0	Rhizosphere	14 dpi	At	At_Col-0_14dpi_Rhizosphere
+OomITS-BC113-107_L001	107	A. thaliana	BI1	Rhizosphere	28 dpi	At	At_BI1_28dpi_Rhizosphere
+OomITS-BC114-108_L001	108	A. thaliana	BI1	soil	14 dpi	At	At_BI1_14dpi_soil
+OomITS-BC171-109_L001	109	A. thaliana	Col-0	Rhizoplane	28 dpi	At	At_Col-0_28dpi_Rhizoplane
+OomITS-BC10-11_L001	11	A. thaliana	BI1	Rhizoplane	14 dpi	At	At_BI1_14dpi_Rhizoplane
+OomITS-BC115-110_L001	110	A. thaliana	BI1	Rhizosphere	28 dpi	At	At_BI1_28dpi_Rhizosphere
+OomITS-BC116-111_L001	111	H. vulgare	BI1	Rhizosphere	14 dpi	Hv	Hv_BI1_14dpi_Rhizosphere
+OomITS-BC117-112_L001	112	H. vulgare	GP	Rhizosphere	14 dpi	Hv	Hv_GP_14dpi_Rhizosphere
+OomITS-BC172-113_L001	113	A. thaliana	Col-0	Rhizoplane	28 dpi	At	At_Col-0_28dpi_Rhizoplane
+OomITS-BC173-114_L001	114	A. thaliana	BI1	Rhizoplane	28 dpi	At	At_BI1_28dpi_Rhizoplane
+OomITS-BC174-115_L001	115	A. thaliana	Col-0	Rhizoplane	28 dpi	At	At_Col-0_28dpi_Rhizoplane
+OomITS-BC118-116_L001	116	A. thaliana	BI1	soil	28 dpi	At	At_BI1_28dpi_soil
+OomITS-BC119-117_L001	117	A. thaliana	BI1	soil	28 dpi	At	At_BI1_28dpi_soil
+OomITS-BC120-118_L001	118	A. thaliana	BI1	Rhizosphere	28 dpi	At	At_BI1_28dpi_Rhizosphere
+OomITS-BC121-119_L001	119	A. thaliana	BI1	soil	28 dpi	At	At_BI1_28dpi_soil
+OomITS-BC11-12_L001	12	H. vulgare	GP	roots	14 dpi	Hv	Hv_GP_14dpi_roots
+OomITS-BC122-120_L001	120	A. thaliana	BI1	Rhizosphere	28 dpi	At	At_BI1_28dpi_Rhizosphere
+OomITS-BC175-121_L001	121	A. thaliana	Col-0	Rhizoplane	28 dpi	At	At_Col-0_28dpi_Rhizoplane
+OomITS-BC176-122_L001	122	A. thaliana	BI1	Rhizoplane	28 dpi	At	At_BI1_28dpi_Rhizoplane
+OomITS-BC177-123_L001	123	A. thaliana	BI1	Rhizoplane	28 dpi	At	At_BI1_28dpi_Rhizoplane
+OomITS-BC123-124_L001	124	A. thaliana	Col-0	Rhizosphere	28 dpi	At	At_Col-0_28dpi_Rhizosphere
+OomITS-BC124-125_L001	125	A. thaliana	BI1	Rhizosphere	28 dpi	At	At_BI1_28dpi_Rhizosphere
+OomITS-BC125-126_L001	126	A. thaliana	Col-0	soil	28 dpi	At	At_Col-0_28dpi_soil
+OomITS-BC126-127_L001	127	A. thaliana	Col-0	soil	28 dpi	At	At_Col-0_28dpi_soil
+OomITS-BC127-128_L001	128	A. thaliana	Col-0	soil	28 dpi	At	At_Col-0_28dpi_soil
+OomITS-BC128-129_L001	129	A. thaliana	Col-0	soil	28 dpi	At	At_Col-0_28dpi_soil
+OomITS-BC76-13_L001	13	A. thaliana	BI1	Rhizoplane	14 dpi	At	At_BI1_14dpi_Rhizoplane
+OomITS-BC129-130_L001	130	A. thaliana	Col-0	Rhizosphere	28 dpi	At	At_Col-0_28dpi_Rhizosphere
+OomITS-BC130-131_L001	131	A. thaliana	Col-0	roots	28 dpi	At	At_Col-0_28dpi_roots
+OomITS-BC131-132_L001	132	A. thaliana	Col-0	roots	14 dpi	At	At_Col-0_14dpi_roots
+OomITS-BC132-133_L001	133	A. thaliana	Col-0	roots	14 dpi	At	At_Col-0_14dpi_roots
+OomITS-BC133-134_L001	134	A. thaliana	BI1	roots	28 dpi	At	At_BI1_28dpi_roots
+OomITS-BC134-135_L001	135	A. thaliana	BI1	roots	28 dpi	At	At_BI1_28dpi_roots
+OomITS-BC135-136_L001	136	A. thaliana	BI1	roots	14 dpi	At	At_BI1_14dpi_roots
+OomITS-BC136-137_L001	137	A. thaliana	BI1	roots	14 dpi	At	At_BI1_14dpi_roots
+OomITS-BC137-138_L001	138	A. thaliana	BI1	Rhizosphere	28 dpi	At	At_BI1_28dpi_Rhizosphere
+OomITS-BC138-139_L001	139	A. thaliana	Col-0	roots	28 dpi	At	At_Col-0_28dpi_roots
+OomITS-BC12-14_L001	14	A. thaliana	BI1	roots	14 dpi	At	At_BI1_14dpi_roots
+OomITS-BC139-140_L001	140	A. thaliana	Col-0	roots	14 dpi	At	At_Col-0_14dpi_roots
+OomITS-BC178-141_L001	141	A. thaliana	Col-0	Rhizoplane	28 dpi	At	At_Col-0_28dpi_Rhizoplane
+OomITS-BC140-142_L001	142	A. thaliana	BI1	roots	28 dpi	At	At_BI1_28dpi_roots
+OomITS-BC141-143_L001	143	A. thaliana	BI1	roots	14 dpi	At	At_BI1_14dpi_roots
+OomITS-BC142-144_L001	144	A. thaliana	BI1	roots	28 dpi	At	At_BI1_28dpi_roots
+OomITS-BC143-145_L001	145	A. thaliana	Col-0	soil	28 dpi	At	At_Col-0_28dpi_soil
+OomITS-BC144-146_L001	146	A. thaliana	Col-0	Rhizosphere	28 dpi	At	At_Col-0_28dpi_Rhizosphere
+OomITS-BC145-147_L001	147	A. thaliana	Col-0	Rhizosphere	28 dpi	At	At_Col-0_28dpi_Rhizosphere
+OomITS-BC146-148_L001	148	A. thaliana	Col-0	soil	28 dpi	At	At_Col-0_28dpi_soil
+OomITS-BC147-149_L001	149	A. thaliana	BI1	soil	28 dpi	At	At_BI1_28dpi_soil
+OomITS-BC13-15_L001	15	H. vulgare	GP	roots	14 dpi	Hv	Hv_GP_14dpi_roots
+OomITS-BC179-150_L001	150	A. thaliana	Col-0	Rhizoplane	28 dpi	At	At_Col-0_28dpi_Rhizoplane
+OomITS-BC180-151_L001	151	A. thaliana	Col-0	Rhizoplane	28 dpi	At	At_Col-0_28dpi_Rhizoplane
+OomITS-BC148-152_L001	152	A. thaliana	Col-0	Rhizosphere	28 dpi	At	At_Col-0_28dpi_Rhizosphere
+OomITS-BC149-153_L001	153	A. thaliana	BI1	soil	28 dpi	At	At_BI1_28dpi_soil
+OomITS-BC181-154_L001	154	A. thaliana	BI1	Rhizoplane	28 dpi	At	At_BI1_28dpi_Rhizoplane
+OomITS-BC182-155_L001	155	A. thaliana	Col-0	Rhizoplane	28 dpi	At	At_Col-0_28dpi_Rhizoplane
+OomITS-BC150-156_L001	156	A. thaliana	BI1	soil	28 dpi	At	At_BI1_28dpi_soil
+OomITS-BC151-157_L001	157	A. thaliana	Col-0	soil	28 dpi	At	At_Col-0_28dpi_soil
+OomITS-BC152-158_L001	158	A. thaliana	BI1	Rhizosphere	28 dpi	At	At_BI1_28dpi_Rhizosphere
+OomITS-BC153-159_L001	159	A. thaliana	Col-0	soil	28 dpi	At	At_Col-0_28dpi_soil
+OomITS-BC77-16_L001	16	A. thaliana	Col-0	Rhizoplane	14 dpi	At	At_Col-0_14dpi_Rhizoplane
+OomITS-BC154-160_L001	160	A. thaliana	BI1	Rhizosphere	28 dpi	At	At_BI1_28dpi_Rhizosphere
+OomITS-BC155-161_L001	161	A. thaliana	BI1	soil	28 dpi	At	At_BI1_28dpi_soil
+OomITS-BC156-162_L001	162	A. thaliana	Col-0	Rhizosphere	28 dpi	At	At_Col-0_28dpi_Rhizosphere
+OomITS-BC183-163_L001	163	A. thaliana	Col-0	Rhizoplane	28 dpi	At	At_Col-0_28dpi_Rhizoplane
+OomITS-BC157-164_L001	164	A. thaliana	BI1	roots	28 dpi	At	At_BI1_28dpi_roots
+OomITS-BC158-165_L001	165	A. thaliana	BI1	roots	28 dpi	At	At_BI1_28dpi_roots
+OomITS-BC159-166_L001	166	A. thaliana	Col-0	roots	28 dpi	At	At_Col-0_28dpi_roots
+OomITS-BC160-167_L001	167	A. thaliana	Col-0	roots	28 dpi	At	At_Col-0_28dpi_roots
+OomITS-BC161-168_L001	168	A. thaliana	Col-0	roots	28 dpi	At	At_Col-0_28dpi_roots
+OomITS-BC162-169_L001	169	A. thaliana	BI1	Rhizosphere	28 dpi	At	At_BI1_28dpi_Rhizosphere
+OomITS-BC14-17_L001	17	A. thaliana	Col-0	roots	14 dpi	At	At_Col-0_14dpi_roots
+OomITS-BC163-170_L001	170	A. thaliana	Col-0	Rhizosphere	28 dpi	At	At_Col-0_28dpi_Rhizosphere
+OomITS-BC184-171_L001	171	A. thaliana	BI1	Rhizoplane	28 dpi	At	At_BI1_28dpi_Rhizoplane
+OomITS-BC164-172_L001	172	A. thaliana	BI1	roots	28 dpi	At	At_BI1_28dpi_roots
+OomITS-BC165-173_L001	173	A. thaliana	BI1	roots	28 dpi	At	At_BI1_28dpi_roots
+OomITS-BC166-174_L001	174	A. thaliana	Col-0	roots	28 dpi	At	At_Col-0_28dpi_roots
+OomITS-BC167-175_L001	175	A. thaliana	Col-0	roots	28 dpi	At	At_Col-0_28dpi_roots
+OomITS-BC168-176_L001	176	A. thaliana	Col-0	roots	28 dpi	At	At_Col-0_28dpi_roots
+OomITS-BC185-177_L001	177	A. thaliana	BI1	Rhizoplane	28 dpi	At	At_BI1_28dpi_Rhizoplane
+OomITS-BC193-178_L001	178	H. vulgare	GP	roots	28 dpi	Hv	Hv_GP_28dpi_roots
+OomITS-BC194-179_L001	179	H. vulgare	GP	roots	28 dpi	Hv	Hv_GP_28dpi_roots
+OomITS-BC15-18_L001	18	H. vulgare	GP	roots	14 dpi	Hv	Hv_GP_14dpi_roots
+OomITS-BC195-180_L001	180	H. vulgare	GP	roots	28 dpi	Hv	Hv_GP_28dpi_roots
+OomITS-BC196-181_L001	181	H. vulgare	BI1	roots	28 dpi	Hv	Hv_BI1_28dpi_roots
+OomITS-BC197-182_L001	182	H. vulgare	BI1	roots	28 dpi	Hv	Hv_BI1_28dpi_roots
+OomITS-BC198-183_L001	183	H. vulgare	GP	roots	28 dpi	Hv	Hv_GP_28dpi_roots
+OomITS-BC199-184_L001	184	H. vulgare	GP	roots	28 dpi	Hv	Hv_GP_28dpi_roots
+OomITS-BC200-185_L001	185	H. vulgare	BI1	roots	28 dpi	Hv	Hv_BI1_28dpi_roots
+OomITS-BC201-186_L001	186	H. vulgare	BI1	soil	28 dpi	Hv	Hv_BI1_28dpi_soil
+OomITS-BC202-187_L001	187	H. vulgare	GP	soil	28 dpi	Hv	Hv_GP_28dpi_soil
+OomITS-BC203-188_L001	188	H. vulgare	BI1	Rhizosphere	28 dpi	Hv	Hv_BI1_28dpi_Rhizosphere
+OomITS-BC204-189_L001	189	H. vulgare	GP	Rhizosphere	28 dpi	Hv	Hv_GP_28dpi_Rhizosphere
+OomITS-BC16-19_L001	19	A. thaliana	Col-0	roots	14 dpi	At	At_Col-0_14dpi_roots
+OomITS-BC205-190_L001	190	H. vulgare	BI1	Rhizosphere	28 dpi	Hv	Hv_BI1_28dpi_Rhizosphere
+OomITS-BC206-191_L001	191	H. vulgare	GP	Rhizosphere	28 dpi	Hv	Hv_GP_28dpi_Rhizosphere
+OomITS-BC207-192_L001	192	H. vulgare	GP	Rhizosphere	28 dpi	Hv	Hv_GP_28dpi_Rhizosphere
+OomITS-BC208-193_L001	193	H. vulgare	BI1	Rhizosphere	28 dpi	Hv	Hv_BI1_28dpi_Rhizosphere
+OomITS-BC209-194_L001	194	H. vulgare	GP	soil	28 dpi	Hv	Hv_GP_28dpi_soil
+OomITS-BC210-195_L001	195	H. vulgare	GP	roots	28 dpi	Hv	Hv_GP_28dpi_roots
+OomITS-BC211-196_L001	196	H. vulgare	BI1	roots	28 dpi	Hv	Hv_BI1_28dpi_roots
+OomITS-BC212-197_L001	197	H. vulgare	GP	roots	28 dpi	Hv	Hv_GP_28dpi_roots
+OomITS-BC213-198_L001	198	H. vulgare	GP	roots	28 dpi	Hv	Hv_GP_28dpi_roots
+OomITS-BC214-199_L001	199	H. vulgare	BI1	roots	28 dpi	Hv	Hv_BI1_28dpi_roots
+OomITS-BC2-2_L001	2	H. vulgare	GP	soil	14 dpi	Hv	Hv_GP_14dpi_soil
+OomITS-BC78-20_L001	20	A. thaliana	BI1	Rhizoplane	14 dpi	At	At_BI1_14dpi_Rhizoplane
+OomITS-BC215-200_L001	200	H. vulgare	GP	roots	28 dpi	Hv	Hv_GP_28dpi_roots
+OomITS-BC216-201_L001	201	H. vulgare	BI1	roots	28 dpi	Hv	Hv_BI1_28dpi_roots
+OomITS-BC217-202_L001	202	H. vulgare	GP	roots	28 dpi	Hv	Hv_GP_28dpi_roots
+OomITS-BC218-203_L001	203	H. vulgare	BI1	roots	28 dpi	Hv	Hv_BI1_28dpi_roots
+OomITS-BC219-204_L001	204	H. vulgare	GP	Rhizosphere	28 dpi	Hv	Hv_GP_28dpi_Rhizosphere
+OomITS-BC220-205_L001	205	H. vulgare	BI1	roots	28 dpi	Hv	Hv_BI1_28dpi_roots
+OomITS-BC221-206_L001	206	H. vulgare	BI1	Rhizosphere	28 dpi	Hv	Hv_BI1_28dpi_Rhizosphere
+OomITS-BC222-207_L001	207	H. vulgare	GP	soil	28 dpi	Hv	Hv_GP_28dpi_soil
+OomITS-BC223-208_L001	208	H. vulgare	BI1	Rhizosphere	28 dpi	Hv	Hv_BI1_28dpi_Rhizosphere
+OomITS-BC224-209_L001	209	H. vulgare	BI1	roots	28 dpi	Hv	Hv_BI1_28dpi_roots
+OomITS-BC17-21_L001	21	A. thaliana	BI1	Rhizosphere	14 dpi	At	At_BI1_14dpi_Rhizosphere
+OomITS-BC225-210_L001	210	H. vulgare	BI1	roots	28 dpi	Hv	Hv_BI1_28dpi_roots
+OomITS-BC226-211_L001	211	H. vulgare	GP	roots	28 dpi	Hv	Hv_GP_28dpi_roots
+OomITS-BC227-212_L001	212	H. vulgare	GP	Rhizosphere	28 dpi	Hv	Hv_GP_28dpi_Rhizosphere
+OomITS-BC228-213_L001	213	H. vulgare	GP	Rhizosphere	28 dpi	Hv	Hv_GP_28dpi_Rhizosphere
+OomITS-BC229-214_L001	214	H. vulgare	BI1	Rhizosphere	28 dpi	Hv	Hv_BI1_28dpi_Rhizosphere
+OomITS-BC230-215_L001	215	H. vulgare	BI1	soil	28 dpi	Hv	Hv_BI1_28dpi_soil
+OomITS-BC231-216_L001	216	H. vulgare	GP	Rhizosphere	28 dpi	Hv	Hv_GP_28dpi_Rhizosphere
+OomITS-BC232-217_L001	217	H. vulgare	BI1	roots	28 dpi	Hv	Hv_BI1_28dpi_roots
+OomITS-BC233-218_L001	218	H. vulgare	BI1	roots	28 dpi	Hv	Hv_BI1_28dpi_roots
+OomITS-BC234-219_L001	219	H. vulgare	GP	roots	28 dpi	Hv	Hv_GP_28dpi_roots
+OomITS-BC18-22_L001	22	A. thaliana	BI1	Rhizosphere	14 dpi	At	At_BI1_14dpi_Rhizosphere
+OomITS-BC235-220_L001	220	H. vulgare	GP	Rhizosphere	28 dpi	Hv	Hv_GP_28dpi_Rhizosphere
+OomITS-BC236-221_L001	221	H. vulgare	BI1	soil	28 dpi	Hv	Hv_BI1_28dpi_soil
+OomITS-BC237-222_L001	222	H. vulgare	BI1	Rhizosphere	28 dpi	Hv	Hv_BI1_28dpi_Rhizosphere
+OomITS-BC238-223_L001	223	H. vulgare	BI1	soil	28 dpi	Hv	Hv_BI1_28dpi_soil
+OomITS-BC239-224_L001	224	H. vulgare	GP	soil	28 dpi	Hv	Hv_GP_28dpi_soil
+OomITS-BC240-225_L001	225	H. vulgare	GP	Rhizosphere	28 dpi	Hv	Hv_GP_28dpi_Rhizosphere
+OomITS-BC241-226_L001	226	H. vulgare	GP	soil	28 dpi	Hv	Hv_GP_28dpi_soil
+OomITS-BC242-227_L001	227	H. vulgare	BI1	soil	28 dpi	Hv	Hv_BI1_28dpi_soil
+OomITS-BC243-228_L001	228	H. vulgare	BI1	soil	28 dpi	Hv	Hv_BI1_28dpi_soil
+OomITS-BC244-229_L001	229	H. vulgare	BI1	soil	28 dpi	Hv	Hv_BI1_28dpi_soil
+OomITS-BC19-23_L001	23	H. vulgare	BI1	roots	14 dpi	Hv	Hv_BI1_14dpi_roots
+OomITS-BC245-230_L001	230	H. vulgare	GP	soil	28 dpi	Hv	Hv_GP_28dpi_soil
+OomITS-BC246-231_L001	231	H. vulgare	BI1	Rhizosphere	28 dpi	Hv	Hv_BI1_28dpi_Rhizosphere
+OomITS-BC247-232_L001	232	H. vulgare	BI1	Rhizosphere	28 dpi	Hv	Hv_BI1_28dpi_Rhizosphere
+OomITS-BC248-233_L001	233	H. vulgare	BI1	soil	28 dpi	Hv	Hv_BI1_28dpi_soil
+OomITS-BC249-234_L001	234	H. vulgare	BI1	Rhizosphere	28 dpi	Hv	Hv_BI1_28dpi_Rhizosphere
+OomITS-BC250-235_L001	235	H. vulgare	BI1	soil	28 dpi	Hv	Hv_BI1_28dpi_soil
+OomITS-BC251-236_L001	236	H. vulgare	GP	soil	28 dpi	Hv	Hv_GP_28dpi_soil
+OomITS-BC252-237_L001	237	H. vulgare	BI1	soil	28 dpi	Hv	Hv_BI1_28dpi_soil
+OomITS-BC253-238_L001	238	H. vulgare	GP	soil	28 dpi	Hv	Hv_GP_28dpi_soil
+OomITS-BC254-239_L001	239	H. vulgare	BI1	soil	28 dpi	Hv	Hv_BI1_28dpi_soil
+OomITS-BC20-24_L001	24	H. vulgare	GP	roots	14 dpi	Hv	Hv_GP_14dpi_roots
+OomITS-BC255-240_L001	240	H. vulgare	GP	Rhizosphere	28 dpi	Hv	Hv_GP_28dpi_Rhizosphere
+OomITS-BC256-241_L001	241	H. vulgare	GP	Rhizosphere	28 dpi	Hv	Hv_GP_28dpi_Rhizosphere
+OomITS-BC257-242_L001	242	H. vulgare	BI1	Rhizosphere	28 dpi	Hv	Hv_BI1_28dpi_Rhizosphere
+OomITS-BC258-243_L001	243	H. vulgare	BI1	Rhizosphere	28 dpi	Hv	Hv_BI1_28dpi_Rhizosphere
+OomITS-BC259-244_L001	244	H. vulgare	GP	soil	28 dpi	Hv	Hv_GP_28dpi_soil
+OomITS-BC260-245_L001	245	H. vulgare	BI1	soil	28 dpi	Hv	Hv_BI1_28dpi_soil
+OomITS-BC261-246_L001	246	H. vulgare	GP	soil	28 dpi	Hv	Hv_GP_28dpi_soil
+OomITS-BC262-247_L001	247	H. vulgare	GP	soil	28 dpi	Hv	Hv_GP_28dpi_soil
+OomITS-BC263-248_L001	248	H. vulgare	GP	Rhizosphere	28 dpi	Hv	Hv_GP_28dpi_Rhizosphere
+OomITS-BC264-249_L001	249	H. vulgare	GP	Rhizosphere	28 dpi	Hv	Hv_GP_28dpi_Rhizosphere
+OomITS-BC21-25_L001	25	A. thaliana	Col-0	soil	14 dpi	At	At_Col-0_14dpi_soil
+OomITS-BC22-26_L001	26	A. thaliana	BI1	Rhizosphere	14 dpi	At	At_BI1_14dpi_Rhizosphere
+OomITS-BC79-27_L001	27	A. thaliana	BI1	Rhizoplane	14 dpi	At	At_BI1_14dpi_Rhizoplane
+OomITS-BC23-28_L001	28	A. thaliana	Col-0	Rhizosphere	14 dpi	At	At_Col-0_14dpi_Rhizosphere
+OomITS-BC24-29_L001	29	H. vulgare	GP	soil	14 dpi	Hv	Hv_GP_14dpi_soil
+OomITS-BC3-3_L001	3	H. vulgare	BI1	Rhizosphere	14 dpi	Hv	Hv_BI1_14dpi_Rhizosphere
+OomITS-BC25-30_L001	30	H. vulgare	GP	soil	14 dpi	Hv	Hv_GP_14dpi_soil
+OomITS-BC26-31_L001	31	H. vulgare	BI1	soil	14 dpi	Hv	Hv_BI1_14dpi_soil
+OomITS-BC27-32_L001	32	A. thaliana	Col-0	roots	14 dpi	At	At_Col-0_14dpi_roots
+OomITS-BC28-33_L001	33	H. vulgare	BI1	roots	14 dpi	Hv	Hv_BI1_14dpi_roots
+OomITS-BC80-34_L001	34	A. thaliana	Col-0	Rhizoplane	14 dpi	At	At_Col-0_14dpi_Rhizoplane
+OomITS-BC81-35_L001	35	A. thaliana	BI1	Rhizoplane	14 dpi	At	At_BI1_14dpi_Rhizoplane
+OomITS-BC29-36_L001	36	A. thaliana	Col-0	soil	14 dpi	At	At_Col-0_14dpi_soil
+OomITS-BC30-37_L001	37	H. vulgare	GP	roots	14 dpi	Hv	Hv_GP_14dpi_roots
+OomITS-BC31-38_L001	38	H. vulgare	GP	roots	14 dpi	Hv	Hv_GP_14dpi_roots
+OomITS-BC82-39_L001	39	A. thaliana	BI1	Rhizoplane	14 dpi	At	At_BI1_14dpi_Rhizoplane
+OomITS-BC4-4_L001	4	H. vulgare	GP	Rhizosphere	14 dpi	Hv	Hv_GP_14dpi_Rhizosphere
+OomITS-BC32-40_L001	40	H. vulgare	BI1	roots	14 dpi	Hv	Hv_BI1_14dpi_roots
+OomITS-BC33-41_L001	41	A. thaliana	Col-0	soil	14 dpi	At	At_Col-0_14dpi_soil
+OomITS-BC34-42_L001	42	H. vulgare	GP	roots	14 dpi	Hv	Hv_GP_14dpi_roots
+OomITS-BC35-43_L001	43	A. thaliana	BI1	roots	14 dpi	At	At_BI1_14dpi_roots
+OomITS-BC36-44_L001	44	H. vulgare	GP	roots	14 dpi	Hv	Hv_GP_14dpi_roots
+OomITS-BC37-45_L001	45	A. thaliana	BI1	Rhizosphere	14 dpi	At	At_BI1_14dpi_Rhizosphere
+OomITS-BC38-46_L001	46	A. thaliana	BI1	soil	14 dpi	At	At_BI1_14dpi_soil
+OomITS-BC39-47_L001	47	H. vulgare	BI1	roots	14 dpi	Hv	Hv_BI1_14dpi_roots
+OomITS-BC40-48_L001	48	A. thaliana	Col-0	soil	14 dpi	At	At_Col-0_14dpi_soil
+OomITS-BC41-49_L001	49	A. thaliana	BI1	roots	14 dpi	At	At_BI1_14dpi_roots
+OomITS-BC5-5_L001	5	H. vulgare	GP	Rhizosphere	14 dpi	Hv	Hv_GP_14dpi_Rhizosphere
+OomITS-BC42-50_L001	50	A. thaliana	Col-0	Rhizosphere	14 dpi	At	At_Col-0_14dpi_Rhizosphere
+OomITS-BC43-51_L001	51	A. thaliana	Col-0	roots	14 dpi	At	At_Col-0_14dpi_roots
+OomITS-BC44-52_L001	52	A. thaliana	BI1	roots	14 dpi	At	At_BI1_14dpi_roots
+OomITS-BC83-53_L001	53	A. thaliana	Col-0	Rhizoplane	14 dpi	At	At_Col-0_14dpi_Rhizoplane
+OomITS-BC84-54_L001	54	A. thaliana	Col-0	Rhizoplane	14 dpi	At	At_Col-0_14dpi_Rhizoplane
+OomITS-BC45-55_L001	55	A. thaliana	BI1	soil	14 dpi	At	At_BI1_14dpi_soil
+OomITS-BC46-56_L001	56	A. thaliana	BI1	soil	14 dpi	At	At_BI1_14dpi_soil
+OomITS-BC47-57_L001	57	H. vulgare	BI1	roots	14 dpi	Hv	Hv_BI1_14dpi_roots
+OomITS-BC48-58_L001	58	H. vulgare	BI1	roots	14 dpi	Hv	Hv_BI1_14dpi_roots
+OomITS-BC49-59_L001	59	H. vulgare	GP	roots	14 dpi	Hv	Hv_GP_14dpi_roots
+OomITS-BC6-6_L001	6	H. vulgare	BI1	roots	14 dpi	Hv	Hv_BI1_14dpi_roots
+OomITS-BC50-60_L001	60	A. thaliana	Col-0	Rhizosphere	14 dpi	At	At_Col-0_14dpi_Rhizosphere
+OomITS-BC51-61_L001	61	H. vulgare	BI1	Rhizosphere	14 dpi	Hv	Hv_BI1_14dpi_Rhizosphere
+OomITS-BC52-62_L001	62	H. vulgare	BI1	Rhizosphere	14 dpi	Hv	Hv_BI1_14dpi_Rhizosphere
+OomITS-BC53-63_L001	63	H. vulgare	BI1	Rhizosphere	14 dpi	Hv	Hv_BI1_14dpi_Rhizosphere
+OomITS-BC54-64_L001	64	A. thaliana	BI1	soil	14 dpi	At	At_BI1_14dpi_soil
+OomITS-BC55-65_L001	65	A. thaliana	Col-0	soil	14 dpi	At	At_Col-0_14dpi_soil
+OomITS-BC56-66_L001	66	A. thaliana	Col-0	soil	14 dpi	At	At_Col-0_14dpi_soil
+OomITS-BC57-67_L001	67	H. vulgare	BI1	roots	14 dpi	Hv	Hv_BI1_14dpi_roots
+OomITS-BC58-68_L001	68	H. vulgare	BI1	roots	14 dpi	Hv	Hv_BI1_14dpi_roots
+OomITS-BC59-69_L001	69	A. thaliana	Col-0	soil	14 dpi	At	At_Col-0_14dpi_soil
+OomITS-BC7-7_L001	7	H. vulgare	GP	roots	14 dpi	Hv	Hv_GP_14dpi_roots
+OomITS-BC60-70_L001	70	H. vulgare	BI1	roots	14 dpi	Hv	Hv_BI1_14dpi_roots
+OomITS-BC85-71_L001	71	A. thaliana	BI1	Rhizoplane	14 dpi	At	At_BI1_14dpi_Rhizoplane
+OomITS-BC86-72_L001	72	A. thaliana	Col-0	Rhizoplane	14 dpi	At	At_Col-0_14dpi_Rhizoplane
+OomITS-BC61-73_L001	73	H. vulgare	GP	roots	14 dpi	Hv	Hv_GP_14dpi_roots
+OomITS-BC62-74_L001	74	H. vulgare	BI1	roots	14 dpi	Hv	Hv_BI1_14dpi_roots
+OomITS-BC87-75_L001	75	A. thaliana	Col-0	Rhizoplane	14 dpi	At	At_Col-0_14dpi_Rhizoplane
+OomITS-BC88-76_L001	76	A. thaliana	BI1	Rhizoplane	14 dpi	At	At_BI1_14dpi_Rhizoplane
+OomITS-BC63-77_L001	77	A. thaliana	Col-0	Rhizosphere	14 dpi	At	At_Col-0_14dpi_Rhizosphere
+OomITS-BC64-78_L001	78	H. vulgare	GP	Rhizosphere	14 dpi	Hv	Hv_GP_14dpi_Rhizosphere
+OomITS-BC65-79_L001	79	H. vulgare	BI1	Rhizosphere	14 dpi	Hv	Hv_BI1_14dpi_Rhizosphere
+OomITS-BC8-8_L001	8	A. thaliana	Col-0	roots	14 dpi	At	At_Col-0_14dpi_roots
+OomITS-BC66-80_L001	80	H. vulgare	BI1	soil	14 dpi	Hv	Hv_BI1_14dpi_soil
+OomITS-BC67-81_L001	81	H. vulgare	GP	roots	14 dpi	Hv	Hv_GP_14dpi_roots
+OomITS-BC68-82_L001	82	H. vulgare	GP	Rhizosphere	14 dpi	Hv	Hv_GP_14dpi_Rhizosphere
+OomITS-BC69-83_L001	83	H. vulgare	GP	Rhizosphere	14 dpi	Hv	Hv_GP_14dpi_Rhizosphere
+OomITS-BC70-84_L001	84	H. vulgare	GP	Rhizosphere	14 dpi	Hv	Hv_GP_14dpi_Rhizosphere
+OomITS-BC71-85_L001	85	H. vulgare	GP	Rhizosphere	14 dpi	Hv	Hv_GP_14dpi_Rhizosphere
+OomITS-BC72-86_L001	86	H. vulgare	GP	Rhizosphere	14 dpi	Hv	Hv_GP_14dpi_Rhizosphere
+OomITS-BC73-87_L001	87	H. vulgare	GP	Rhizosphere	14 dpi	Hv	Hv_GP_14dpi_Rhizosphere
+OomITS-BC74-88_L001	88	H. vulgare	GP	Rhizosphere	14 dpi	Hv	Hv_GP_14dpi_Rhizosphere
+OomITS-BC97-89_L001	89	H. vulgare	BI1	roots	14 dpi	Hv	Hv_BI1_14dpi_roots
+OomITS-BC75-9_L001	9	A. thaliana	Col-0	Rhizoplane	14 dpi	At	At_Col-0_14dpi_Rhizoplane
+OomITS-BC98-90_L001	90	H. vulgare	BI1	Rhizosphere	14 dpi	Hv	Hv_BI1_14dpi_Rhizosphere
+OomITS-BC99-91_L001	91	H. vulgare	BI1	Rhizosphere	14 dpi	Hv	Hv_BI1_14dpi_Rhizosphere
+OomITS-BC100-92_L001	92	H. vulgare	BI1	Rhizosphere	14 dpi	Hv	Hv_BI1_14dpi_Rhizosphere
+OomITS-BC101-93_L001	93	H. vulgare	BI1	Rhizosphere	14 dpi	Hv	Hv_BI1_14dpi_Rhizosphere
+OomITS-BC102-94_L001	94	H. vulgare	BI1	Rhizosphere	14 dpi	Hv	Hv_BI1_14dpi_Rhizosphere
+OomITS-BC103-95_L001	95	H. vulgare	BI1	Rhizosphere	14 dpi	Hv	Hv_BI1_14dpi_Rhizosphere
+OomITS-BC104-96_L001	96	H. vulgare	BI1	Rhizosphere	14 dpi	Hv	Hv_BI1_14dpi_Rhizosphere
+OomITS-BC105-97_L001	97	A. thaliana	BI1	soil	14 dpi	At	At_BI1_14dpi_soil
+OomITS-BC106-98_L001	98	A. thaliana	BI1	soil	14 dpi	At	At_BI1_14dpi_soil
+OomITS-BC169-99_L001	99	A. thaliana	Col-0	Rhizoplane	14 dpi	At	At_Col-0_14dpi_Rhizoplane
+OomITS-BC266-Alb_L001	Alb	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC187-Alb_L001	Alb	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC90-Alb_L001	Alb	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC265-Cas_L001	Cas	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC268-Cas_L001	Cas	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC269-Cas_L001	Cas	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC186-Cas_L001	Cas	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC189-Cas_L001	Cas	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC190-Cas_L001	Cas	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC89-Cas_L001	Cas	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC92-Cas_L001	Cas	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC93-Cas_L001	Cas	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC267-neg_L001	neg	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC188-neg_L001	neg	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC91-neg_L001	neg	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC364-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC365-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC366-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC367-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC368-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC369-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC370-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC371-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC372-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC373-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC374-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC375-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC376-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC377-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC378-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC379-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC380-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC381-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC382-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC383-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC384-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC304-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC270-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC271-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC272-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC273-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC274-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC275-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC276-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC277-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC278-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC279-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC280-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC281-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC282-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC283-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC284-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC285-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC286-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC287-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC288-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC289-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC290-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC291-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC292-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC293-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC294-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC295-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC296-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC297-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC298-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC299-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC300-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC301-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC302-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC303-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC344-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC305-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC306-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC191-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC192-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC314-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC315-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC316-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC317-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC318-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC319-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC320-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC321-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC322-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC323-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC324-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC325-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC326-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC327-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC328-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC329-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC330-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC94-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC95-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC96-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC339-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC340-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC341-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC342-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC343-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC357-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC345-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC346-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC347-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC348-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC349-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC350-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC351-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC352-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC353-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC354-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC355-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC356-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC361-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC358-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC359-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC360-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC337-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC362-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC363-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC336-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC332-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC338-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC312-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC313-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC309-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC333-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC334-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC331-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC308-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC310-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC311-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC335-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA
+OomITS-BC307-x_L001	x	NA	NA	NA	NA	NA	NA_NA_NA_NA

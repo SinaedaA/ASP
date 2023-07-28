@@ -146,6 +146,11 @@ REV=`cat $PRIMERS | cut -d" " -f2`
 FWD_RC=`python $SCRIPT_DIR/rev_complement.py $FWD`
 REV_RC=`python $SCRIPT_DIR/rev_complement.py $REV`
 
+echo "Forward primer: $FWD"
+echo "RC of Forward: $FWD_RC"
+echo "Reverse primer: $REV"
+echo "RC of Reverse: $REV_RC"
+
 if [ ! -d $OUTDIR ]; then
   mkdir -p $OUTDIR;
 fi

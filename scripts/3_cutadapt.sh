@@ -168,6 +168,7 @@ for line in `cat $MANIFEST`; do
     cutadapt -g "Fwd_primer=^$FWD;max_error_rate=0.1...Rev_RC=$REV_RC;max_error_rate=0;rightmost" \
             -G "Rev_primer=^$REV;max_error_rate=0.1...Fwd_RC=$FWD_RC;max_error_rate=0;rightmost" \
             --minimum-length $LENGTH \
+			--match-read-wildcards \
             --too-short-output $OUTDIR/tooshort/${SAMPLE}_R1_tooshort.fastq.gz \
             --too-short-paired-output $OUTDIR/tooshort/${SAMPLE}_R2_tooshort.fastq.gz \
             --untrimmed-output $OUTDIR/untrimmed/${SAMPLE}_R1_untrimmed.fastq.gz \

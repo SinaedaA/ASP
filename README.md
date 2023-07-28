@@ -58,14 +58,15 @@ TIMESTAMP=$(date '+%Y%m%d-%H%M%S')
 ```
 
 This will create the following directories: 
-0_raw_reads
-1_fastqc
-2_manifest
-3_analysis/3.1_cutadapt
-3_analysis/3.2_trimming
-3_analysis/3.3_taxonomy
+- 0_raw_reads: containing symbolic links for all the read files to their location.
+- 1_fastqc
+- 2_manifest
+- 3_analysis, with subdirectories : 3.1_cutadapt, 3.2_trimming, and 3.3_taxonomy
 
-And also link the files from the input directory to 0_raw_reads/.
+Check the symbolic links have been created inside 0_raw_reads, by running:
+```bash
+ls -lrth 0_raw_reads/
+```
 
 ## 1. Run FastQC and MultiQC on your raw reads
 The next step is to check the quality of the sequencing reads, by running `fastqc` and `multiqc`. This is done by the `1_fastqc.sh` script.
@@ -77,6 +78,7 @@ TIMESTAMP=$(date '+%Y%m%d-%H%M%S')
 ../../scripts/1_fastqc.sh --help
 ../../scripts/1_fastqc.sh ../sample-metadata.tsv 0_raw_reads/ --outpath 1_fastqc/ 2>&1 | tee logfiles/1_fastqc_${TIMESTAMP}.log
 ```
+
 
 Then, manually inspect the FastQC output and/or the multiQC output in your browser.
 

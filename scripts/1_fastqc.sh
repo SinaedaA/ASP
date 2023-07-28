@@ -142,6 +142,10 @@ SAMPLE_METADATA=$_arg_metadata
 echo 'Output directory of merged libraries is ' $OUTDIR
 echo 'Working on samples included in the file ' $SAMPLE_METADATA
 
+### Check if fastqc and multiqc are installed
+command -v fastqc >/dev/null 2>&1 || { echo -e >&2 "I require fastqc but it's not installed in your environment. \nTry installing it with conda: 'conda install -c bioconda fastqc' (or activate an environment where it is installed).  Aborting."; exit 1; }
+command -v multiqc >/dev/null 2>&1 || { echo -e >&2 "I require multiqc but it's not installed in your environment. \nTry installing it with conda: 'conda install -c bioconda multiqc' (or activate an environment where it is installed).  Aborting."; exit 1; }
+
 if [ ! -d ./$OUTDIR ]; then
   mkdir -p ./$OUTDIR;
 fi

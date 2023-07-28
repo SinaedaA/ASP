@@ -50,8 +50,10 @@ for line in `cat $METADATA`; do
     SAMPLE=`echo $line | cut -f1`
     R1=`echo ${SAMPLE}_R1_0001.fastq.gz`
     R2=`echo ${SAMPLE}_R2_0001.fastq.gz`
-    cutadapt -g "Fwd_primer=^$FWD;max_error_rate=0.1...Rev_RC=$REV_RC;max_error_rate=0;rightmost" \
-            -G "Rev_primer=^$REV;max_error_rate=0.1...Fwd_RC=$FWD_RC;max_error_rate=0;rightmost" \
+    # cutadapt -g "Fwd_primer=^$FWD;max_error_rate=0.1...Rev_RC=$REV_RC;max_error_rate=0;rightmost" \
+    #         -G "Rev_primer=^$REV;max_error_rate=0.1...Fwd_RC=$FWD_RC;max_error_rate=0;rightmost" \
+    cutadapt -g "Fwd_primer=^$FWD;max_error_rate=0.1...Rev_RC=$REV_RC;max_error_rate=0" \
+            -G "Rev_primer=^$REV;max_error_rate=0.1...Fwd_RC=$FWD_RC;max_error_rate=0" \
             --minimum-length $LENGTH \ 
             --match-read-wildcards \
             --too-short-output $OUTDIR/tooshort/${SAMPLE}_R1_tooshort.fastq.gz \

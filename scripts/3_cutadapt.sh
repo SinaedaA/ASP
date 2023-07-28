@@ -153,6 +153,7 @@ mkdir -p $OUTDIR/untrimmed/
 mkdir -p $OUTDIR/tooshort/
 
 ## Check program is installed, and if not propose way to install it
+command -v cutadapt >/dev/null 2>&1 || { echo -e >&2 "I require cutadapt but it's not installed in your environment. \nTry installing it with conda: 'conda install -c bioconda cutadapt'.  Aborting."; exit 1; }
 
 ## Run cutadapt in a for loop
 for line in `cat $MANIFEST`; do

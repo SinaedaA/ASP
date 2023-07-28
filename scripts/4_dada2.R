@@ -38,23 +38,23 @@ parser <- arg_parser("DADA2 denoising for Amplicon Sequencing data")
 parser <- add_argument(parser, "input_directory", help = "Absolute path to directory where the reads are located (output of 3_cutadapt.sh).")
 parser <- add_argument(parser, "output_directory", help = "Absolute path to directory where the output should be written.")
 # parser <- add_argument(parser, "metadata", help = "Metadata for the group of interest (Bacteria, Fungi or Oomycetes)")
-parser <- add_argument(parser, "--join", default = "dada2", help = "Which join method to use, either dada2 or flash2. If 'flash2', reads will be merged using this software, and denoising will be done with dada2 in single-end mode. [default %(default)s]")
-parser <- add_argument(parser, "--bin", default = '', help = "Path to your local install of flash2 (if conda install just activate the environment beforehand) [default %(default)s].")
-parser <- add_argument(parser, "--flashout", default = "flash2_output", help = "Name of directory to put flash2 output files [default %(default)s].")
-parser <- add_argument(parser, "--overlap", default = 12, help = "Length of overlap (in bp) for read merging [default %(default)s]")
+parser <- add_argument(parser, "--join", default = "dada2", help = "Which join method to use, either dada2 or flash2. If 'flash2', reads will be merged using this software, and denoising will be done with dada2 in single-end mode.")
+parser <- add_argument(parser, "--bin", default = '', help = "Path to your local install of flash2 (if conda install just activate the environment beforehand).")
+parser <- add_argument(parser, "--flashout", default = "flash2_output", help = "Name of directory to put flash2 output files .")
+parser <- add_argument(parser, "--overlap", default = 12, help = "Length of overlap (in bp) for read merging.")
 parser <- add_argument(parser, "--primerfile", help = "Path to the primer file, in order to check if they were actually removed using cutadapt.")
 parser <- add_argument(parser, "--trimLeft",
     default = 0,
-    help = "The number of nucleotides to remove from the start of each read. If both truncLen and trimLeft are provided, filtered reads will have length truncLen-trimLeft. [default %(default)s (no trimming)]"
+    help = "The number of nucleotides to remove from the start of each read. If both truncLen and trimLeft are provided, filtered reads will have length truncLen-trimLeft. [default: no trimming]"
 )
 parser <- add_argument(parser, "--trimRight",
     default = 0, 
-    help = "The number of nucleotides to remove from the end of each read. If both truncLen and trimRight are provided, truncation will be performed after trimRight is enforced. [default %(default)s (no trimming)]"
+    help = "The number of nucleotides to remove from the end of each read. If both truncLen and trimRight are provided, truncation will be performed after trimRight is enforced. [default: no trimming]"
 )
-parser <- add_argument(parser, "--truncLen", default = 0, help = "Truncate reads after truncLen bases. Reads shorter than this are discarded. [default %(default)s (no truncation)]")
+parser <- add_argument(parser, "--truncLen", default = 0, help = "Truncate reads after truncLen bases. Reads shorter than this are discarded. [default: no truncation]")
 parser <- add_argument(parser, "--truncQ", help = "Truncate reads at the first instance of a quality score less than or equal to truncQ.")
-parser <- add_argument(parser, "--minLen", default = 50, help = "Minimum length of reads for them to be considered. This is considered AFTER trimming and truncating [default %(default)s].")
-parser <- add_argument(parser, "--maxEE", default = Inf, help = "After truncation, reads with higher than maxEE 'expected errors' will be discarded. Expected errors are calculated from the nominal definition of the quality score: EE = sum(10^(-Q/10)). [default %(default)s (no EE filtering)]")
+parser <- add_argument(parser, "--minLen", default = 50, help = "Minimum length of reads for them to be considered. This is considered AFTER trimming and truncating.")
+parser <- add_argument(parser, "--maxEE", default = Inf, help = "After truncation, reads with higher than maxEE 'expected errors' will be discarded. Expected errors are calculated from the nominal definition of the quality score: EE = sum(10^(-Q/10)). [default: no EE filtering]")
 argv <- parse_args(parser)
 
 ##### Sourcing functions and defining inpath #####

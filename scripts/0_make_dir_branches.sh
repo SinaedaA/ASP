@@ -100,7 +100,7 @@ assign_positional_args 1 "${_positionals[@]}"
 
 # vvv  PLACE YOUR CODE HERE  vvv
 ### Make directories
-mkdir -p logfiles
+# mkdir -p logfiles
 mkdir -p  0_raw_reads
 mkdir -p  1_fastqc
 mkdir -p  2_manifest

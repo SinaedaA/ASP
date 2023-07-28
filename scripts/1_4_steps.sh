@@ -1,6 +1,7 @@
 #!/bin/bash
 
 mkdir run1; cd run1
+mkdir logfiles
 
 READ_DIR=$1
 TIMESTAMP=$(date '+%Y%m%d-%H%M%S')

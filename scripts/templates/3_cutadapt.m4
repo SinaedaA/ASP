@@ -5,6 +5,7 @@ echo "This is just a script template, not the script (yet) - pass it to 'argbash
 exit 11  #)Created by argbash-init v2.10.0
 # ARG_POSITIONAL_SINGLE([primer_file], [File containing the primers used for the amplification, forward and reverse separated by a space])
 # ARG_POSITIONAL_SINGLE([run_directory], [Directory in which the fastq files from sequencing can be found])
+# ARG_POSITIONAL_SINGLE([metadata], [Path to metadata file])
 # ARG_OPTIONAL_SINGLE([length], [l], [Minimum length of reads (default: 50)], [50])
 # ARG_OPTIONAL_SINGLE([outdir], [o], [Directory for the output of cutadapt], [3_analysis/3.1_cutadapt])
 # ARG_DEFAULTS_POS
@@ -19,6 +20,7 @@ PRIMERS=$_arg_primer_file
 RUNDIR=$_arg_run_directory
 LENGTH=$_arg_length
 OUTDIR=$_arg_outdir
+METADATA=$_arg_metadata
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 ### Get primers
@@ -34,14 +36,20 @@ fi
 mkdir -p $OUTDIR/untrimmed/
 mkdir -p $OUTDIR/tooshort/
 
+echo "Forward primer: $FWD"
+echo "RC of Forward: $FWD_RC"
+echo "Reverse primer: $REV"
+echo "RC of Reverse: $REV_RC"
+
 ## Check program is installed, and if not propose way to install it
 command -v cutadapt >/dev/null 2>&1 || { echo -e >&2 "I require cutadapt but it's not installed in your environment. \nTry installing it with conda: 'conda install -c bioconda cutadapt'.  Aborting."; exit 1; }
 
 ## Run cutadapt in a for loop
-for line in `cat $MANIFEST`; do 
+echo "Starting cutadapt on each sample"
+for line in `cat $METADATA`; do 
     $SAMPLE=`echo $line | cut -f1`
-    $R1=`echo $line | cut -f2`
-    $R2=`echo $line | cut -f3`
+    $R1=`echo ${SAMPLE}_R1_0001.fastq.gz`
+    $R2=`echo ${SAMPLE}_R2_0001.fastq.gz`
     cutadapt -g "Fwd_primer=^$FWD;max_error_rate=0.1...Rev_RC=$REV_RC;max_error_rate=0;rightmost" \
             -G "Rev_primer=^$REV;max_error_rate=0.1...Fwd_RC=$FWD_RC;max_error_rate=0;rightmost" \
             --minimum-length $LENGTH \ 

@@ -102,13 +102,17 @@ And accepts 2 optional arguments:
 
 It will also created subdirectories inside the outdir, called 'untrimmed' and 'tooshort'. In 'tooshort', you will find the reads which, after trimming, were shorter than the specified minimum length, and in 'untrimmed' you will find read pairs in which the FWD or the REV reads were not found. *Note*: the reverse-complement of the reads are not a 'mandatory' find, meaning that, if cutadapt doesn't find REV-RC inside the forward reads, but does find FWD at the beginning, the read is considered trimmed anyway. 
 
-**need to change the rev_complement.py script to deal with degenerate primers**
 ```bash
 TIMESTAMP=$(date '+%Y%m%d-%H%M%S')
 ## Usage:
 ../../scripts/3_cutadapt.sh --help
 ../../scripts/3_cutadapt.sh ../primer_file.txt 0_raw_reads/ 2>&1 | tee logfiles/3_cutadapt_${TIMESTAMP}.log
+
+## Check how many reads were discarded in each file
+grep "Pairs discarded as untrimmed:" bacteria/run1/logfiles/3_cutadapt_20230728-175207.log
 ```
+
+
 
 ## 4. Denoise and join
 ### 4.1. Denoising

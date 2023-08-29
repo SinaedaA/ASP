@@ -89,7 +89,7 @@ REV_orients <- allOrients(primers$REV)
 cli_alert_info("Removing reads containing Ns for this purpose...")
 filenames_filtN_F <- file.path(inpath, "filtN", basename(filenames_F))
 filenames_filtN_R <- file.path(inpath, "filtN", basename(filenames_R))
-#filterAndTrim(filenames_F, filenames_filtN_F, filenames_R, filenames_filtN_R, maxN = 0, multithread = TRUE)
+filterAndTrim(filenames_F, filenames_filtN_F, filenames_R, filenames_filtN_R, maxN = 0, multithread = TRUE)
 
 ##### Count how many times our primers appear in our sequences (should be 0) #####
 cli_alert_info("Making primer matching table...")

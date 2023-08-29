@@ -84,11 +84,15 @@ filenames_R <- sort(list.files(inpath, pattern = "_R2_001.fastq.gz", full.names 
 cli_h1("Checking if primers are present in reads.")
 FOR_orients <- allOrients(primers$FOR)
 REV_orients <- allOrients(primers$REV)
+print(FOR_orients)
+print(REV_orients)
 
 ##### Pre-filter reads: put the output (w/o Ns) into "filtN" sub-directory #####
 cli_alert_info("Removing reads containing Ns for this purpose...")
 filenames_filtN_F <- file.path(inpath, "filtN", basename(filenames_F))
 filenames_filtN_R <- file.path(inpath, "filtN", basename(filenames_R))
+print(filenames_filtN_F)
+print(filenames_filtN_R)
 filterAndTrim(filenames_F, filenames_filtN_F, filenames_R, filenames_filtN_R, maxN = 0, multithread = TRUE)
 
 ##### Count how many times our primers appear in our sequences (should be 0) #####

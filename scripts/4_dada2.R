@@ -9,7 +9,7 @@ writable_path <- check_libPaths(verbose = FALSE)
 suppressPackageStartupMessages(if (!require(pacman)) {
     install.packages("pacman", lib = writable_path)
 })
-needed_packs <- c("BiocManager", "tidyverse", "plyr", "ggplot2", "ShortRead", "Biostrings", "cli", "here", "argparser", "tibble")
+needed_packs <- c("BiocManager", "tidyverse", "plyr", "ggplot2", "ShortRead", "Biostrings", "cli", "argparser", "tibble", "this.path") # , "here"
 github_packs <- c("benjjneb/dada2")
 to_install <- needed_packs[!needed_packs %in% pacman::p_library()]
 message("Installing and/or loading required packages...")
@@ -20,17 +20,19 @@ pacman::p_load(needed_packs, character.only = TRUE)
 pacman::p_load_gh(github_packs)
 
 ##### Getting script directory to know where we want to source our other functions #####
-get_script_dir <- function() {
-    path <- commandArgs() %>%
-        tibble::enframe(name = NULL) %>%
-        tidyr::separate(
-            col = value, into = c("key", "value"), sep = "=", fill = "right"
-        ) %>%
-        dplyr::filter(key == "--file") %>%
-            dplyr::pull(value)
-    gsub("4_dada2.R", "", path)
-}
-script_dir <- get_script_dir()
+# get_script_dir <- function() {
+#     path <- commandArgs() %>%
+#         tibble::enframe(name = NULL) %>%
+#         tidyr::separate(
+#             col = value, into = c("key", "value"), sep = "=", fill = "right"
+#         ) %>%
+#         dplyr::filter(key == "--file") %>%
+#             dplyr::pull(value)
+#     gsub("4_dada2.R", "", path)
+# }
+# script_dir <- get_script_dir()
+script_dir <- this.dir()
+working_dir <- getinitwd()
 
 ##### Parse arguments with arg_parser #####
 cli_h1("Parsing input")
@@ -58,15 +60,14 @@ parser <- add_argument(parser, "--maxEE", default = Inf, help = "After truncatio
 argv <- parse_args(parser)
 
 ##### Sourcing functions and defining inpath #####
-source(paste0(script_dir, "dada2_functions.R"))
+source(paste0(script_dir, "/dada2_functions.R"))
 primers <- setNames(read.table(argv$primerfile, sep = " ", header = F), nm = c("FOR", "REV"))
 cli_alert_info("FORWARD primer : {primers$FOR}, REVERSE primer : {primers$REV}")
-print(primers)
-inpath <- here(argv$input_directory)
+inpath <- paste0(working_dir, "/", argv$input_directory)
 
 ##### Setting path variable, with the output directory #####
 ## create the directory if it doesn't exist yet
-outpath <- here(argv$output_directory)
+outpath <- paste0(working_dir, "/", argv$output_directory)
 if (!dir.exists(outpath)) {
     dir.create(outpath, recursive = TRUE)
     cli_alert_info("Output directory {outpath} doesn't exist, creating it.")

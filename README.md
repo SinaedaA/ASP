@@ -106,12 +106,11 @@ It will also created subdirectories inside the outdir, called 'untrimmed' and 't
 TIMESTAMP=$(date '+%Y%m%d-%H%M%S')
 ## Usage:
 ../../scripts/3_cutadapt.sh --help
-../../scripts/3_cutadapt.sh ../primer_file.txt 0_raw_reads/ 2>&1 | tee logfiles/3_cutadapt_${TIMESTAMP}.log
+../../scripts/3_cutadapt.sh ../primer_file.txt 0_raw_reads/ ../sample-metadata.tsv 2>&1 | tee logfiles/3_cutadapt_${TIMESTAMP}.log
 
 ## Check how many reads were discarded in each file
 grep "Pairs discarded as untrimmed:" bacteria/run1/logfiles/3_cutadapt_20230728-175207.log
 ```
-
 
 
 ## 4. Denoise and join

@@ -60,6 +60,8 @@ argv <- parse_args(parser)
 ##### Sourcing functions and defining inpath #####
 source(paste0(script_dir, "dada2_functions.R"))
 primers <- setNames(read.table(argv$primerfile, sep = " ", header = F), nm = c("FOR", "REV"))
+cli_alert_info("FORWARD primer : {primers$FOR}, REVERSE primer : {primers$REV}")
+print(primers)
 inpath <- here(argv$input_directory)
 
 ##### Setting path variable, with the output directory #####

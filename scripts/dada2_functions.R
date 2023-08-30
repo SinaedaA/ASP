@@ -44,6 +44,8 @@ dada2_wrap <- function(inpath, filenames = list(), maxEE, truncQ, truncLen, trim
     else if (length(filenames) == 2) {
         cli_alert_info("Performing dada2 denoising on 'paired-end' reads (not yet merged).")
         ## Define output filenames (after real filtering)
+        ## this part assumes that all the files will remain after filtering, but some can end up empty, if quality checks were not or badly performed
+        ## for example, one of my files from bacteria/run1 has 153 reads, and none pass the filter.
         filtered_F <- file.path(inpath, "filtered", basename(filenames[[1]]))
         filtered_R <- file.path(inpath, "filtered", basename(filenames[[2]]))
         filtered <- filterAndTrim(filenames[[1]], filtered_F, filenames[[2]], filtered_R,
@@ -51,6 +53,8 @@ dada2_wrap <- function(inpath, filenames = list(), maxEE, truncQ, truncLen, trim
             trimLeft = trimLeft, trimRight = trimRight, minLen = minLen,
             rm.phix = TRUE, compress = TRUE, multithread = TRUE
         )
+        print(filtered)
+        
         ## Learning error rates
         errors_F <- learnErrors(filtered_F, multithread = TRUE)
         errors_R <- learnErrors(filtered_R, multithread = TRUE)
@@ -59,6 +63,9 @@ dada2_wrap <- function(inpath, filenames = list(), maxEE, truncQ, truncLen, trim
         plotErrors(errors_R, nominalQ = TRUE)
         dev.off()
         ## Sample inference
+        ## so, in this part, dada is looking for some files that don't exist (BactV5V7-BC45-144_S45_L001)
+        ## add part to remove filenames from filtered_F and filtered_R when files don't exist.
+        ## THIS should be done BEFORE learnErrors !
         dada_F <- dada(filtered_F, err = errors_F, multithread = TRUE)
         dada_R <- dada(filtered_R, err = errors_R, multithread = TRUE)
         ## Return

@@ -109,7 +109,7 @@ TIMESTAMP=$(date '+%Y%m%d-%H%M%S')
 ../../scripts/3_cutadapt.sh ../primer_file.txt 0_raw_reads/ ../sample-metadata.tsv 2>&1 | tee logfiles/3_cutadapt_${TIMESTAMP}.log
 
 ## Check how many reads were discarded in each file
-grep "Pairs discarded as untrimmed:" bacteria/run1/logfiles/3_cutadapt_20230728-175207.log
+grep "Pairs discarded as untrimmed:" logfiles/3_cutadapt_${TIMESTAMP}.log
 ```
 
 

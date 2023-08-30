@@ -124,7 +124,7 @@ if (argv$join == 'flash2') {
     flash_count <- 0
     for (i in seq_along(filenames_F)) {
         base_fn <- str_split(basename(filenames_F[i]), pattern = "_", n = 2)[[1]][1]
-        if (!file.exists(paste0(outpath, "/", flash2_outdir, "/", base_fn, ".extendedFrags.fastq.gz")))) {
+        if (!file.exists(paste0(outpath, "/", flash2_outdir, "/", base_fn, ".extendedFrags.fastq.gz"))) {
             system2(flash2, args = c(
                 "--phred-offset", 33,
                 "--min-overlap", argv$overlap,
@@ -173,7 +173,7 @@ if (argv$join == 'flash2') {
 } else if (argv$join == "dada2") {
     ##### Perform dada2 denoising first, then dada2 merging #####
     cli_h1("Performing dada2 denoising on paired-end reads...")
-    if (!file.exists(here("dada2_denoising.RDS"))){
+    if (!file.exists(paste0(outpath,"dada2_denoising.RDS"))){
         dada2_results <- dada2_wrap(inpath, filenames = list(filenames_F, filenames_R), argv$maxEE, argv$truncQ, argv$truncLen, argv$trimLeft, argv$trimRight, argv$minLen)
         saveRDS(dada2_results, file = paste0(outpath, "/dada2_denoising.RDS"))
     } else {

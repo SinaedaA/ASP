@@ -92,8 +92,6 @@ print(REV_orients)
 cli_alert_info("Removing reads containing Ns for this purpose...")
 filenames_filtN_F <- file.path(inpath, "filtN", basename(filenames_F))
 filenames_filtN_R <- file.path(inpath, "filtN", basename(filenames_R))
-print(filenames_filtN_F)
-print(filenames_filtN_R)
 filterAndTrim(filenames_F, filenames_filtN_F, filenames_R, filenames_filtN_R, maxN = 0, multithread = TRUE)
 
 ##### Count how many times our primers appear in our sequences (should be 0) #####
@@ -106,7 +104,7 @@ primers_after_cutadapt <- rbind(
 )
 print(primers_after_cutadapt)
 cli_alert_info("Writing this tables to {outpath}/primer_presence_after_cutadapt.csv")
-write.table(primers_after_cutadapt, file = paste0(outpath, "primer_presence_after_cutadapt.csv"), quote = FALSE, sep = "\t")
+write.table(primers_after_cutadapt, file = paste0(outpath, "/primer_presence_after_cutadapt.csv"), quote = FALSE, sep = "\t")
 
 ##### Perform flash2 merge before if join == flash2 #####
 if (argv$join == 'flash2') {
@@ -177,11 +175,11 @@ if (argv$join == 'flash2') {
     cli_h1("Performing dada2 denoising on paired-end reads...")
     if (!file.exists(here("dada2_denoising.RDS"))){
         dada2_results <- dada2_wrap(inpath, filenames = list(filenames_F, filenames_R), argv$maxEE, argv$truncQ, argv$truncLen, argv$trimLeft, argv$trimRight, argv$minLen)
-        saveRDS(dada2_results, file = here("dada2_denoising.RDS"))
+        saveRDS(dada2_results, file = paste0(outpath, "/dada2_denoising.RDS"))
     } else {
         cli_alert_warning("dada2_denoising.RDS already exists in your directory, using this data.")
         cli_alert_warning("If you want to re-do the analysis and store results in another directory, change the output directory argument.")
-        dada2_results <- readRDS(here("dada2_denoising.RDS"))
+        dada2_results <- readRDS(paste0(outpath, "/dada2_denoising.RDS"))
     }
     list2env(setNames(dada2_results, nm = c("filtered", "filtered_F", "filtered_R", "dada_F", "dada_R")), envir = .GlobalEnv)
     

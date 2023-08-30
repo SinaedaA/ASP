@@ -61,8 +61,8 @@ for line in `sed 1d $METADATA`; do
             --too-short-paired-output $OUTDIR/tooshort/${SAMPLE}_R2_tooshort.fastq.gz \
             --untrimmed-output $OUTDIR/untrimmed/${SAMPLE}_R1_untrimmed.fastq.gz \
             --untrimmed-paired-output $OUTDIR/untrimmed/${SAMPLE}_R2_untrimmed.fastq.gz \
-            -o $OUTDIR/${SAMPLE}_L001_R1_001.fastq.gz \
-            -p $OUTDIR/${SAMPLE}_L001_R2_001.fastq.gz \
+            -o $OUTDIR/${SAMPLE}_R1_001.fastq.gz \
+            -p $OUTDIR/${SAMPLE}_R2_001.fastq.gz \
             $R1 \ 
             $R2
 done

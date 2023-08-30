@@ -166,8 +166,8 @@ command -v cutadapt >/dev/null 2>&1 || { echo -e >&2 "I require cutadapt but it'
 
 IFS=$'\n'
 ## Run cutadapt in a for loop
-echo "Starting cutadapt on each sample"
-for line in `cat $METADATA`; do
+echo "Starting cutadapt on each sample (skipping first line, as the header)"
+for line in `sed 1d $METADATA`; do
     SAMPLE=`echo $line | cut -f1`
     R1=`echo $RUNDIR/${SAMPLE}_R1_001.fastq.gz`
     R2=`echo $RUNDIR/${SAMPLE}_R2_001.fastq.gz`

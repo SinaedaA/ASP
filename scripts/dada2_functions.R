@@ -50,15 +50,16 @@ dada2_wrap <- function(inpath, filenames = list(), maxEE, truncQ, truncLen, trim
         ## for example, one of my files from bacteria/run1 has 153 reads, and none pass the filter.
         filtered_F <- file.path(inpath, "filtered", basename(filenames[[1]]))
         filtered_R <- file.path(inpath, "filtered", basename(filenames[[2]]))
-        filtered <- filterAndTrim(filenames[[1]], filtered_F, filenames[[2]], filtered_R,
+        filtered <- as.data.frame(filterAndTrim(filenames[[1]], filtered_F, filenames[[2]], filtered_R,
             maxN = 0, maxEE = maxEE, truncQ = truncQ, truncLen = truncLen,
             trimLeft = trimLeft, trimRight = trimRight, minLen = minLen,
             rm.phix = TRUE, compress = TRUE, multithread = TRUE
-        )
-        print("filtered table")
-        print(filtered)
-        filt_df <- as.data.frame(filtered)
-        print(filt_df[filt_df$reads.out > 1000,])
+        ))
+        ## Filter out files that have less than 500 reads after N filtering:
+        filt_df <- filtered[filtered$reads.out > 500,]
+        print("filtered table where reads.out have > 500 reads")
+        print(filt_df)
+        print(row.names(filt_df))
         ## Learning error rates
         errors_F <- learnErrors(filtered_F, multithread = TRUE)
         errors_R <- learnErrors(filtered_R, multithread = TRUE)

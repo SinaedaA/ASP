@@ -61,7 +61,8 @@ dada2_wrap <- function(inpath, filenames = list(), maxEE, truncQ, truncLen, trim
         print(filt_df)
         r1s <- row.names(filt_df)
         r2s <- sub("R1", "R2", row.names(filt_df))
-        print(filtered_F, r1s)
+        print(filtered_F)
+        print(r1s)
         ## Learning error rates
         errors_F <- learnErrors(filtered_F, multithread = TRUE)
         errors_R <- learnErrors(filtered_R, multithread = TRUE)

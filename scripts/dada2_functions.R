@@ -59,7 +59,7 @@ dada2_wrap <- function(inpath, filenames = list(), maxEE, truncQ, truncLen, trim
         filt_df <- filtered[filtered$reads.out > 500,]
         print("filtered table where reads.out have > 500 reads")
         print(filt_df)
-        print(row.names(filt_df))
+        print(split("_",row.names(filt_df))[1:3])
         ## Learning error rates
         errors_F <- learnErrors(filtered_F, multithread = TRUE)
         errors_R <- learnErrors(filtered_R, multithread = TRUE)

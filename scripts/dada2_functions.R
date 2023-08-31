@@ -31,6 +31,8 @@ dada2_wrap <- function(inpath, filenames = list(), maxEE, truncQ, truncLen, trim
             trimLeft = trimLeft, trimRight = trimRight, minLen = minLen,
             rm.phix = TRUE, compress = TRUE, multithread = TRUE
         )
+        print("filtered table")
+        print(filtered)
         ## Learning error rates
         errors <- learnErrors(filtered_files, multithread = TRUE)
         pdf(file = paste0(outpath, "/errors_estimated.pdf"))
@@ -53,8 +55,9 @@ dada2_wrap <- function(inpath, filenames = list(), maxEE, truncQ, truncLen, trim
             trimLeft = trimLeft, trimRight = trimRight, minLen = minLen,
             rm.phix = TRUE, compress = TRUE, multithread = TRUE
         )
+        print("filtered table")
         print(filtered)
-        
+        print(filtered[filtered$reads.out > 1000])
         ## Learning error rates
         errors_F <- learnErrors(filtered_F, multithread = TRUE)
         errors_R <- learnErrors(filtered_R, multithread = TRUE)

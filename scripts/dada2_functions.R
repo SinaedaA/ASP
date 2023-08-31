@@ -57,7 +57,7 @@ dada2_wrap <- function(inpath, filenames = list(), maxEE, truncQ, truncLen, trim
         )
         print("filtered table")
         print(filtered)
-        print(filtered[filtered$reads.out > 1000])
+        print(filtered[filtered$reads.out > 1000,])
         ## Learning error rates
         errors_F <- learnErrors(filtered_F, multithread = TRUE)
         errors_R <- learnErrors(filtered_R, multithread = TRUE)

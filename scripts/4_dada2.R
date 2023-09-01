@@ -181,7 +181,7 @@ if (argv$join == 'flash2') {
         cli_alert_warning("If you want to re-do the analysis and store results in another directory, change the output directory argument.")
         dada2_results <- readRDS(paste0(outpath, "/dada2_denoising.RDS"))
     }
-    list2env(setNames(dada2_results, nm = c("filtered", "filtered_F", "filtered_R", "dada_F", "dada_R")), envir = .GlobalEnv)
+    list2env(setNames(dada2_results, nm = c("filt_df", "filtered", "filtered_F", "filtered_R", "dada_F", "dada_R")), envir = .GlobalEnv)
     
     ## Merge paired reads
     cli_h1("Merging pairs of reads with dada2 (mergePairs function)...")
@@ -200,7 +200,7 @@ if (argv$join == 'flash2') {
     ### Track reads through pipeline
     getN <- function(x) sum(getUniques(x))
     track <- as.data.frame(cbind(
-        filtered, sapply(dada_F, getN), sapply(dada_R, getN), sapply(merged, getN),
+        filt_df, sapply(dada_F, getN), sapply(dada_R, getN), sapply(merged, getN),
         rowSums(seqtab_nochim)
     )) %>% setNames(., nm = c("before_filter", "after_filter", "denoised_F", "denoised_R", "merged", "non-chimeric"))
     print("Read tracking")

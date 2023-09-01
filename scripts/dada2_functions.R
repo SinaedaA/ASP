@@ -85,3 +85,16 @@ dada2_wrap <- function(inpath, filenames = list(), maxEE, truncQ, truncLen, trim
 }
 
 getN <- function(x) sum(getUniques(x))
+
+draw_stat_plot <- function(denoising_stats){
+    denoise_percentages <- denoise_stats %>%
+        dplyr::mutate(across(everything()), (. / before_filter) * 100) %>%
+        rownames_to_column("Sample") %>%
+        tidyr::pivot_longer(cols = -Sample, names_to = "Time") %>%
+        dplyr::mutate(Time = factor(Time, levels = c("before_filter", "after_filter", "denoised_F", "denoised_R", "merged", "non.chimeric")))
+    
+    denoising_plot <- ggplot(data = denoise_percentages, aes(x = Time, y = value, group = Sample)) +
+        geom_line() +
+        geom_point()
+    return(denoising_plot)
+}

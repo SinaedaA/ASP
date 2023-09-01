@@ -205,5 +205,8 @@ if (argv$join == 'flash2') {
     )) %>% setNames(., nm = c("before_filter", "after_filter", "denoised_F", "denoised_R", "merged", "non-chimeric"))
     print("Read tracking")
     print(track)
-    write.table(track, file = paste0(outpath, "/dada2_denoising_stats.csv", quote = FALSE, row.names = TRUE, col.names = TRUE))
+    write.table(track, file = paste0(outpath, "/dada2_denoising_stats.csv"), quote = FALSE, row.names = TRUE, col.names = TRUE)
+
+    stat_plot <- draw_stat_plot(denoising_stats = track)
+    ggsave(stat_plot, file = paste0(outpath, "/dada2_denoising_stats.pdf"))
 }

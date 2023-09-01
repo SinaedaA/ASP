@@ -77,7 +77,7 @@ dada2_wrap <- function(inpath, filenames = list(), maxEE, truncQ, truncLen, trim
         dada_F <- dada(filtered_F, err = errors_F, multithread = TRUE)
         dada_R <- dada(filtered_R, err = errors_R, multithread = TRUE)
         ## Return
-        return(list(filtered, filtered_F, filtered_R, dada_F, dada_R))
+        return(list(filt_df, filtered_F, filtered_R, dada_F, dada_R))
     }
     else { 
         cli_abort("Unsupported number of input files (> 2)")

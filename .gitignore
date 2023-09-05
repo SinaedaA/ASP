@@ -13,3 +13,7 @@ Thumbs.db
 bacteria/run*
 fungi/run*
 oomycetes/run*
+
+## Local data analysis ##
+#########################
+to_analyse/

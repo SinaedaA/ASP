@@ -112,6 +112,17 @@ TIMESTAMP=$(date '+%Y%m%d-%H%M%S')
 grep "Pairs discarded as untrimmed:" logfiles/3_cutadapt_${TIMESTAMP}.log
 ```
 
+Re-run fastqc on the output:
+
+```bash
+TIMESTAMP=$(date '+%Y%m%d-%H%M%S')
+## Usage
+../../scripts/1_fastqc.sh --help
+../../scripts/1_fastqc.sh ../sample-metadata.tsv 3_analysis/3.1_cutadapt/ --outpath 3_analysis/3.1_cutadapt/fastqc 2>&1 | tee logfiles/cutadapt_fastqc_${TIMESTAMP}.log
+```
+
+And examine the quality of the reads after removing the primers.
+
 
 ## 4. Denoise and join
 ### 4.1. Denoising
@@ -144,4 +155,14 @@ Rscript ../../scripts/4_dada2.R 3_analysis/3.1_cutadapt/ 3_analysis/3.2_trimming
 ## Using flash2 for joining
 Rscript ../../scripts/4_dada2.R 3_analysis/3.1_cutadapt/ 3_analysis/3.2_trimming/dada2_flash2/ --join flash2 --primerfile ../primer_file.txt --truncQ 2 2>&1 | tee logfiles/4_flash2_dada2_${TIMESTAMP}.log
 ```
+
+Some information on the default parameters in 4_dada2.R (more detailed explanation of each parameter is given when asking for `--help`):
+- truncQ = 2 (will truncate when base is encountered with score < 2)
+- minLen = 50 (will discard reads shorter than 50 bases)
+- maxEE = 0 (allows max 0 error rate)
+- trimLeft = 0, trimRight = 0 (no trimming on either side)
+- truncLen = 0 (no truncation)
+- maxN = 0 (allows 0 Ns, this is *necessary* for dada2 and thus is not an option for the user)
+
+With the default `truncQ=2` we might discard many many reads because of one bad quality base. Therefore, it's usually better to check the quality of the reads after the `cutadapt` step, to be able to specify `trimLeft` and `trimRight`, and/or `truncLen`, based on your actual data.
 

@@ -63,8 +63,8 @@ for line in `sed 1d $METADATA`; do
             --untrimmed-paired-output $OUTDIR/untrimmed/${SAMPLE}_R2_untrimmed.fastq.gz \
             -o $OUTDIR/${SAMPLE}_R1_001.fastq.gz \
             --paired-output $OUTDIR/${SAMPLE}_R2_001.fastq.gz \
-            --info-file logfiles/cutadapt_infofile.tsv
-            --report minimal
+            --info-file logfiles/cutadapt_infofile.tsv \
+            --report minimal \
             $R1 \ 
             $R2
 done

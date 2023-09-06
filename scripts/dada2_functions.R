@@ -27,13 +27,17 @@ dada2_wrap <- function(inpath, filenames = list(), maxEE, truncQ, truncLen, trim
         ## Define output filenames
         filtered_files <- file.path(inpath, "filtered", basename(filenames[[1]]))
         ## Filter the reads. Default parameters make it so that filtering is only done to remove all reads containing Ns and minLen=50 bases
-        filtered <- filterAndTrim(filenames[[1]], filtered_files,
+        filtered <- as.data.frame(filterAndTrim(filenames[[1]], filtered_files,
             maxN = 0, maxEE = maxEE, truncQ = truncQ, truncLen = truncLen,
             trimLeft = trimLeft, trimRight = trimRight, minLen = minLen,
             rm.phix = TRUE, compress = TRUE, multithread = TRUE
-        )
-        print("filtered table")
-        print(filtered)
+        ))
+        ## Filter out files that have less than 500 reads after N filtering:
+        filt_df <- filtered[filtered$reads.out > 500,]
+        print("filtered table where reads.out have > 500 reads")
+        print(filt_df)
+        r1s <- row.names(filt_df)
+        filtered_files <- file.path(inpath, "filtered", r1s)
         ## Learning error rates
         errors <- learnErrors(filtered_files, multithread = TRUE)
         pdf(file = paste0(outpath, "/errors_estimated.pdf"))
@@ -42,7 +46,7 @@ dada2_wrap <- function(inpath, filenames = list(), maxEE, truncQ, truncLen, trim
         ## Sample inference
         dada <- dada(filtered_files, err = errors, multithread = TRUE)
         ## Return
-        return(list(filtered, filtered_files, dada))
+        return(list(filt_df, filtered, filtered_files, dada))
     }
     else if (length(filenames) == 2) {
         cli_alert_info("Performing dada2 denoising on 'paired-end' reads (not yet merged).")
@@ -83,7 +87,7 @@ dada2_wrap <- function(inpath, filenames = list(), maxEE, truncQ, truncLen, trim
 getN <- function(x) sum(getUniques(x))
 
 draw_stat_plot <- function(denoising_stats){
-    denoise_percentages <- denoise_stats %>%
+    denoise_percentages <- denoising_stats %>%
         dplyr::mutate(across(everything()), (. / before_filter) * 100) %>%
         rownames_to_column("Sample") %>%
         tidyr::pivot_longer(cols = -Sample, names_to = "Time") %>%
@@ -93,4 +97,13 @@ draw_stat_plot <- function(denoising_stats){
         geom_line() +
         geom_point()
     return(denoising_plot)
+}
+
+make_stat_table <- function(denoising_stats){
+    denoise_percentages <- denoising_stats %>%
+        dplyr::mutate(perc_passed_filter = (after_filter/before_filter)*100) %>% 
+        dplyr::mutate(perc_merged = (merged/before_filter)*100) %>% 
+        dplyr::mutate(perc_non_chimeric = (non.chimeric/before_filter)*100)
+
+    print(denoise_percentages)
 }

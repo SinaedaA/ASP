@@ -151,7 +151,7 @@ if (argv$join == 'flash2') {
         cli_alert_info("If you want to re-do the analysis and store results in another directory, change the --flashout option.")
         dada2_results <- readRDS(paste0(outpath, "/", flash2_outdir, "/flash2_dada2_denoising.RDS"))
     }
-    list2env(setNames(dada2_results, nm = c("filtered", "filtered_files", "dada")), envir=.GlobalEnv)
+    list2env(setNames(dada2_results, nm = c("filt_df", "filtered", "filtered_files", "dada")), envir=.GlobalEnv)
     cli_alert_success("Success, dada2 was performed on all flash2 samples")
     cli_alert_info("RDS file saved in {flash2_outdir}/flash2_dada2_denoising.RDS")
     
@@ -166,9 +166,11 @@ if (argv$join == 'flash2') {
     ### Track reads through pipeline
     cli_alert_info("Tracking the reads through the pipeline... See 'flash2_dada2_denoising_stats.csv'")
     track <- as.data.frame(cbind(
-        filtered, sapply(dada, getN),
+        filt_df, sapply(dada, getN),
         rowSums(seqtab_nochim)
     )) %>% setNames(., nm = c("before_filter", "after_filter", "denoised", "non-chimeric"))
+    
+    make_stat_table(track)
     write.table(track, file = paste0(outpath, "/", flash2_outdir, "/flash2_dada2_denoising_stats.csv"), quote = FALSE, row.names = TRUE, col.names = TRUE)
 } else if (argv$join == "dada2") {
     ##### Perform dada2 denoising first, then dada2 merging #####
@@ -208,5 +210,6 @@ if (argv$join == 'flash2') {
     write.table(track, file = paste0(outpath, "/dada2_denoising_stats.csv"), quote = FALSE, row.names = TRUE, col.names = TRUE)
 
     stat_plot <- draw_stat_plot(denoising_stats = track)
+    make_stat_table(track)
     ggsave(stat_plot, file = paste0(outpath, "/dada2_denoising_stats.pdf"))
 }

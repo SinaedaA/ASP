@@ -34,6 +34,7 @@ dada2_wrap <- function(inpath, filenames = list(), maxEE, truncQ, truncLen, trim
         ))
         ## Filter out files that have less than 500 reads after N filtering:
         filt_df <- filtered[filtered$reads.out > 500,]
+        colnames(filt_df)[length(colnames(filt_df))] <- "non_chimeric"
         print("filtered table where reads.out have > 500 reads")
         print(filt_df)
         r1s <- row.names(filt_df)
@@ -60,6 +61,7 @@ dada2_wrap <- function(inpath, filenames = list(), maxEE, truncQ, truncLen, trim
         ))
         ## Filter out files that have less than 500 reads after N filtering:
         filt_df <- filtered[filtered$reads.out > 500,]
+        colnames(filt_df)[length(colnames(filt_df))] <- "non_chimeric"
         print("filtered table where reads.out have > 500 reads")
         print(filt_df)
         r1s <- row.names(filt_df)
@@ -91,7 +93,7 @@ draw_stat_plot <- function(denoising_stats){
         dplyr::mutate(across(everything()), (. / before_filter) * 100) %>%
         rownames_to_column("Sample") %>%
         tidyr::pivot_longer(cols = -Sample, names_to = "Time") %>%
-        dplyr::mutate(Time = factor(Time, levels = c("before_filter", "after_filter", "denoised_F", "denoised_R", "merged", "non.chimeric")))
+        dplyr::mutate(Time = factor(Time, levels = c("before_filter", "after_filter", "denoised_F", "denoised_R", "merged", "non_chimeric")))
     
     denoising_plot <- ggplot(data = denoise_percentages, aes(x = Time, y = value, group = Sample)) +
         geom_line() +
@@ -100,10 +102,11 @@ draw_stat_plot <- function(denoising_stats){
 }
 
 make_stat_table <- function(denoising_stats){
+    
     denoise_percentages <- denoising_stats %>%
         dplyr::mutate(perc_passed_filter = (after_filter/before_filter)*100) %>% 
         dplyr::mutate(perc_merged = (merged/before_filter)*100) %>% 
-        dplyr::mutate(perc_non_chimeric = (non.chimeric/before_filter)*100)
+        dplyr::mutate(perc_non_chimeric = (non_chimeric/before_filter)*100)
 
     print(denoise_percentages)
 }

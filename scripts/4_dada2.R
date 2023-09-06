@@ -210,6 +210,7 @@ if (argv$join == 'flash2') {
     write.table(track, file = paste0(outpath, "/dada2_denoising_stats.csv"), quote = FALSE, row.names = TRUE, col.names = TRUE)
 
     stat_plot <- draw_stat_plot(denoising_stats = track)
-    make_stat_table(track)
+    stat_table <- make_stat_table(track)
     ggsave(stat_plot, file = paste0(outpath, "/dada2_denoising_stats.pdf"))
+    write.table(stat_table, file = paste0(outpath, "/dada2_denoising_percentages.csv"), quote = FALSE, row.names = TRUE, col.names = TRUE)
 }

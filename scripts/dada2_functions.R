@@ -107,6 +107,7 @@ make_stat_table <- function(denoising_stats){
         dplyr::mutate(perc_passed_filter = (after_filter/before_filter)*100) %>% 
         dplyr::mutate(perc_merged = (merged/before_filter)*100) %>% 
         dplyr::mutate(perc_non_chimeric = (non_chimeric/before_filter)*100)
-
+    print("Denoise percentages...")
     print(denoise_percentages)
+    return(denoise_percentages)
 }

@@ -10,6 +10,11 @@ Steps in the analysis:
 3. Cut adapters from the reads, and remove primers (`cutadapat`)
 4. Denoising the reads (`dada2`)
 5. Taxonomic assignment and count table generation
+6. Data analysis:
+   6.1. Filter low-ASV samples and very low-frequency taxa
+   6.2. Alpha-diversity (Shannon and/or Simpson)
+   6.3. Beta-diversity
+   6.4. 
 
 **NOTE**: The 2 runs are not merged at the beginning of the workflow. _Why?_ Because during denoising, the software (`dada2`) creates a model which represents the sequencing error-rate, and this model (like the error-rate) can change from one run to another. Hence, merging the 2 separate runs can influence the error-model, and as we don't know how problematic this can be, we just run the pipeline on the two runs separately, then add the ASV counts at the end.
 
@@ -61,7 +66,7 @@ This will create the following directories:
 - 0_raw_reads: containing symbolic links for all the read files to their location.
 - 1_fastqc
 - 2_manifest
-- 3_analysis, with subdirectories : 3.1_cutadapt, 3.2_trimming, and 3.3_taxonomy
+- 3_analysis, with subdirectories : 3.1_cutadapt, 3.2_trimming, and 3.3_taxonomy, and 3.4_data_analysis
 
 Check the symbolic links have been created inside 0_raw_reads, by running:
 ```bash
@@ -167,3 +172,12 @@ Some information on the default parameters in 4_dada2.R (more detailed explanati
 
 With the default `truncQ=2` we might discard many many reads because of one bad quality base. Therefore, it's usually better to check the quality of the reads after the `cutadapt` step, to be able to specify `trimLeft` and `trimRight`, and/or `truncLen`, based on your actual data.
 
+## 5. Taxonomic assignment
+
+## 6. Data analysis
+Now that we have taxonomy count tables for each run, we can add them up for corresponding samples.
+*Reminder*: we kept the runs separate until now, because dada2 estimates run-specific error rates, thus adding everything together in the beginning of the pipeline can bias the results.
+
+
+
+Once we have the sample-metadata and the joint count table in the `data_analysis/` directory, we can proceed:

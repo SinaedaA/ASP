@@ -17,6 +17,7 @@ mkdir -p  2_manifest
 mkdir -p  3_analysis/3.1_cutadapt
 mkdir -p  3_analysis/3.2_trimming
 mkdir -p  3_analysis/3.3_taxonomy
+mkdir -p  3_analysis/3.4_data_analysis
 
 ### Get arguments
 RUNDIR=$_arg_run_dir

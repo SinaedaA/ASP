@@ -100,13 +100,13 @@ assign_positional_args 1 "${_positionals[@]}"
 
 # vvv  PLACE YOUR CODE HERE  vvv
 ### Make directories
-# mkdir -p logfiles
 mkdir -p  0_raw_reads
 mkdir -p  1_fastqc
 mkdir -p  2_manifest
 mkdir -p  3_analysis/3.1_cutadapt
 mkdir -p  3_analysis/3.2_trimming
 mkdir -p  3_analysis/3.3_taxonomy
+mkdir -p  3_analysis/3.4_data_analysis
 
 ### Get arguments
 RUNDIR=$_arg_run_dir

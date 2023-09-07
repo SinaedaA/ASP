@@ -36,9 +36,9 @@ parser <- add_argument(parser, "counttable", help = "Count table with absolute a
 parser <- add_argument(parser, "metadata", help = "Metadata for the group of interest (Bacteria, Fungi or Oomycetes)")
 parser <- add_argument(parser, "--target", help = "Organism of interest: bacteria, fungi or oomycetes")
 parser <- add_argument(parser, "--organism", help = "Which plant to focus on: Hv (for Hordeum vulgare) or At (for Arabidopsis thaliana)")
-parser <- add_argument(parser, "--outdir", default = "./data_analysis/", help = "Path to output directory [default %(default)s].")
-parser <- add_argument(parser, "--normalization", default = "TSS", help = "Method to use for normalization (total sum scaling [TSS] or rarefaction [RAR]) [default %(default)s]")
-parser <- add_argument(parser, "--differential-abundance", default = "None", help = "Which method to use for differential abundance of taxa (supported: deseq2, None, ANCOM-BC to come) [default %(default)s]")
+parser <- add_argument(parser, "--outdir", default = "./data_analysis/", help = "Path to output directory.")
+parser <- add_argument(parser, "--normalization", default = "TSS", help = "Method to use for normalization (total sum scaling [TSS] or rarefaction [RAR])")
+parser <- add_argument(parser, "--differential-abundance", default = "None", help = "Which method to use for differential abundance of taxa (supported: deseq2, None, ANCOM-BC to come)")
 argv <- parse_args(parser)
 
 ##### Communicate arguments #####
@@ -68,83 +68,84 @@ colnames(freqtable) <- gsub("\\.", "-", colnames(freqtable))
 freqtable$taxonomy <- gsub(".__", "", freqtable$taxonomy)
 
 ##### Load metadata table #####
-columns <- c("Sample_Name", "Sample_ID", "Organism", "Genotype", "Compartment", "Timepoint", "Abbrev", "Summary")
+columns <- c("Sample_Name", "Short_Sample", "Sample_ID", "Organism", "Genotype", "Compartment", "Timepoint", "Abbrev", "Summary")
 metadata <- setNames(read.table(argv$metadata, header = TRUE, sep = "\t", comment.char = ""), nm = columns)
 ##### Check if colnames of count table (samples) correspond exactly to Sample_Name column in metadata #####
+# will need to change it so it doesn't use identical maybe, if bug in the future because some samples were removed from the data in dada2
 if (!identical(sort(colnames(freqtable)[-1]), sort(metadata$Sample_Name))) {
     cli_alert_danger("The colnames of the count table (sample names) do not correspond to the Sample_Name column in metadata")
     stop()
 }
-# ##### Separate taxonomy column in count table into subdivisions #####
-# freqtable <- freqtable %>%
-#     separate(col = taxonomy, into = c("kingdom", "phylum", "class", "order", "family", "genus", "species"), sep = ";") %>%
-#     replace(is.na(.), "unassigned") %>%
-#     mutate_all(list(~str_remove_all(., "D_"))) 
+##### Separate taxonomy column in count table into subdivisions #####
+freqtable <- freqtable %>%
+    separate(col = taxonomy, into = c("kingdom", "phylum", "class", "order", "family", "genus", "species"), sep = ";") %>%
+    replace(is.na(.), "unassigned") %>%
+    mutate_all(list(~str_remove_all(., "D_"))) 
 
-# ##### Subset tables based on chosen organism #####
-# cli_alert_info("You've decided to focus your analysis on {argv$organism}, subsetting metadata and count table")
-# metadata <- subset(metadata, metadata$Abbrev == argv$organism)
-# metadata$Genotype[!metadata$Genotype == "BI1"] <- "WT"
-# freqtable <- freqtable %>%
-#     dplyr::select(1:7, metadata$Sample_Name)
+##### Subset tables based on chosen organism #####
+cli_alert_info("You've decided to focus your analysis on {argv$organism}, subsetting metadata and count table")
+metadata <- subset(metadata, metadata$Abbrev == argv$organism)
+metadata$Genotype[!metadata$Genotype == "BI1"] <- "WT"
+freqtable <- freqtable %>%
+    dplyr::select(1:7, metadata$Sample_Name)
 
+#### MAKE INPUT DATA IN LIST FORMAT (for each taxon) ####
+##### Subset and collapse for each taxon level #####
+taxon_data_list <- MakeTaxonDataList(freqtable, taxons)
+cli_alert_success("Making a count table for each taxon level (order, family, genus, species)")
 
-# #### MAKE INPUT DATA IN LIST FORMAT (for each taxon) ####
-# ##### Subset and collapse for each taxon level #####
-# taxon_data_list <- MakeTaxonDataList(freqtable, taxons)
-# cli_alert_success("Making a count table for each taxon level (order, family, genus, species)")
+##### Filter data #####
+cli_h1("Filtering data (removing unassigned and unidentified taxa) and transforming into relative abundances")
+filtered_list <- FilterAbs(taxon_data_list, metadata, taxons, Nreads = 2000)
+cli_alert_success("Successfully filtered out unidentified and unassigned taxa")
 
-# ##### Filter data #####
-# cli_h1("Filtering data (removing unassigned and unidentified taxa) and transforming into relative abundances")
-# filtered_list <- FilterAbs(taxon_data_list, metadata, taxons, Nreads = 2000)
-# cli_alert_success("Successfully filtered out unidentified and unassigned taxa")
+##### Transform data #####
+transformed_list <- Transform(filtered_list, taxons, Filter = "TotalAbundance")
+cli_alert_success("Successfully transformed absolute to relative abundances (and removing taxa that represent < 0.01% of abundances)")
 
-# ##### Transform data #####
-# transformed_list <- Transform(filtered_list, taxons, Filter = "TotalAbundance")
-# cli_alert_success("Successfully transformed absolute to relative abundances (and removing taxa that represent < 0.01% of abundances)")
-
-# ##### Save to .csv as well as .RData #####
-# cli_alert_info("Writing filtered and transformed tables")
-# l_ply(taxons, .fun = function(x) write.table(filtered_list[[x]], file = paste0(outdir, "/filtered_", x, ".csv"), quote = FALSE, sep = ";", row.names = TRUE, col.names = TRUE))
-# l_ply(taxons, .fun = function(x) write.table(transformed_list[[x]], file = paste0(outdir, "/transformed_", x, ".csv"), quote = FALSE, sep = ";", row.names = TRUE, col.names = TRUE))
-# saveRDS(filtered_list, file = paste0(outdir, "/filtered_list.RData"))
-# saveRDS(transformed_list, file = paste0(outdir, "/transformed_list.RData"))
-
-
-# #### ALPHA-DIVERSITY ####
-# ##### Compute Alpha-diversity index (Shannon) #####
-# cli_h1("Computing alpha-diversity for each compartment")
-# alpha_list <- GetAlphaList(metadata, filtered_list, taxons, index = "shannon")
-# cli_alert_success("Successfully calculated Shannon alpha-diversity index")
-# cli_alert_info("Writing alpha diversity tables.")
-# l_ply(taxons, .fun = function(x) write.table(alpha_list[[x]], file = paste0(outdir, "/alpha-diversity_", x, ".csv"), quote = FALSE, sep = ";", row.names = TRUE, col.names = TRUE))
-
-# ##### Plot Alpha-diversity (Boxplots) #####
-# cli_h1("Making alpha-diversity boxplots")
-# alpha_plots <- AlphaPlotList(alpha_list, taxons, myColors, index = "shannon")
-# multi_page <- marrangeGrob(grobs = alpha_plots, ncol = 2, nrow = 2)
-# ggsave(multi_page, filename = paste0(outdir, "/alpha_diversity.pdf"), width = 20, height = 30)
-# cli_alert_success("Alpha diversity plots saved to {outdir}/alpha_diversity.pdf")
+##### Save to .csv as well as .RData #####
+cli_alert_info("Writing filtered and transformed tables")
+l_ply(taxons, .fun = function(x) write.table(filtered_list[[x]], file = paste0(outdir, "/filtered_", x, ".csv"), quote = FALSE, sep = ";", row.names = TRUE, col.names = TRUE))
+l_ply(taxons, .fun = function(x) write.table(transformed_list[[x]], file = paste0(outdir, "/transformed_", x, ".csv"), quote = FALSE, sep = ";", row.names = TRUE, col.names = TRUE))
+saveRDS(filtered_list, file = paste0(outdir, "/filtered_list.RData"))
+saveRDS(transformed_list, file = paste0(outdir, "/transformed_list.RData"))
 
 
-# #### BETA-DIVERSITY ####
-# ##### Compute Bray-Curtis pairwise distances based on TransformedList #####
-# # cli_h1("Computing pairwise distances between all samples")
-# # dist_list <- getPWDistList(transformed_list, taxons, "bray")
-# # neg_dist_list <- getPWDistList(neg_TL, taxons, "bray")
+#### ALPHA-DIVERSITY ####
+##### Compute Alpha-diversity index (Shannon) #####
+cli_h1("Computing alpha-diversity for each compartment")
+alpha_list <- GetAlphaList(metadata, filtered_list, taxons, index = "shannon")
+cli_alert_success("Successfully calculated Shannon alpha-diversity index")
+cli_alert_info("Writing alpha diversity tables.")
+l_ply(taxons, .fun = function(x) write.table(alpha_list[[x]], file = paste0(outdir, "/alpha-diversity_", x, ".csv"), quote = FALSE, sep = ";", row.names = TRUE, col.names = TRUE))
 
-# ##### Perform ordination #####
-# cli_h1("Performing ordination (unconstrained and constrained)")
-# Multi_Ordination <- OrdinateFunction(transformed_list, taxons, metadata, Metric = "bray")
-# l_ply(taxons, .fun = function(x) {
-#     ggsave(Multi_Ordination[[x]], filename = paste0(outdir, "/", x, "_ordination.pdf"), width = 25, height = 25)
-#     cli_alert_success("Ordination plot for {x} saved to {outdir}/{x}_ordination.pdf")
-# })
+##### Plot Alpha-diversity (Boxplots) #####
+cli_h1("Making alpha-diversity boxplots")
+alpha_plots <- AlphaPlotList(alpha_list, taxons, myColors, index = "shannon")
+multi_page <- marrangeGrob(grobs = alpha_plots, ncol = 2, nrow = 2)
+ggsave(multi_page, filename = paste0(outdir, "/alpha_diversity.pdf"), width = 20, height = 30)
+cli_alert_success("Alpha diversity plots saved to {outdir}/alpha_diversity.pdf")
 
 
-# ##### BC distance and permanovas #####
-# # PermResults <- AdonisWrapper(transformed_list, taxons, metadata, permu_scheme)
-# # saveRDS(PermResults, paste0(outdir, "/PermanovaResults.RData"))
+### BETA-DIVERSITY ####
+#### Compute Bray-Curtis pairwise distances based on TransformedList #####
+cli_h1("Computing pairwise distances between all samples")
+dist_list <- getPWDistList(transformed_list, taxons, "bray")
+#neg_dist_list <- getPWDistList(neg_TL, taxons, "bray")
+
+##### Perform ordination #####
+cli_h1("Performing ordination (unconstrained and constrained)")
+Multi_Ordination <- OrdinateFunction(transformed_list, taxons, metadata, Metric = "bray")
+l_ply(taxons, .fun = function(x) {
+    ggsave(Multi_Ordination[[x]], filename = paste0(outdir, "/", x, "_ordination.pdf"), width = 25, height = 25)
+    cli_alert_success("Ordination plot for {x} saved to {outdir}/{x}_ordination.pdf")
+})
+
+
+##### BC distance and permanovas #####
+## problem: betadisper -> centroidFUN -> apply -> FUN -> tapply
+PermResults <- AdonisWrapper(transformed_list, taxons, metadata, permu_scheme)
+saveRDS(PermResults, paste0(outdir, "/PermanovaResults.RData"))
 
 
 
@@ -169,7 +170,7 @@ if (!identical(sort(colnames(freqtable)[-1]), sort(metadata$Sample_Name))) {
 # # cli_alert_success("DESeq2 heatmaps saved to {outdir}/deseq_heatmap.pdf")
 
 
-# #### RELATIVE ABUNDANCE CHANGES BETWEEN CONDITIONS FOR TAXA OF INTEREST ####
+#### RELATIVE ABUNDANCE CHANGES BETWEEN CONDITIONS FOR TAXA OF INTEREST ####
 # cli_h1("Plotting differences in relative abundance values for taxa of interest")
 # cli_alert_info("Making relative abundance plots between conditions")
 # RelAbundanceBoxPlots(transformed_list, metadata, myColors, TaxaOI = "all")

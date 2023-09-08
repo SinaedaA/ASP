@@ -171,10 +171,10 @@ saveRDS(PermResults, paste0(outdir, "/PermanovaResults.RData"))
 
 
 #### RELATIVE ABUNDANCE CHANGES BETWEEN CONDITIONS FOR TAXA OF INTEREST ####
-# cli_h1("Plotting differences in relative abundance values for taxa of interest")
-# cli_alert_info("Making relative abundance plots between conditions")
-# RelAbundanceBoxPlots(transformed_list, metadata, myColors, TaxaOI = "all")
-# cli_alert_success("Saved relative abundance boxplots in {outdir}/Relative_abundance_differences.pdf")
+cli_h1("Plotting differences in relative abundance values for taxa of interest")
+cli_alert_info("Making relative abundance plots between conditions")
+RelAbundanceBoxPlots(transformed_list, metadata, myColors, TaxaOI = "all")
+cli_alert_success("Saved relative abundance boxplots in {outdir}/Relative_abundance_differences.pdf")
 
 #### ANALYSIS ON THE DATA CONTAINING THE NEGATIVE CONTROL ####
 ##### Extract negative control (Cas soil) #####

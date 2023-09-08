@@ -178,6 +178,8 @@ With the default `truncQ=2` we might discard many many reads because of one bad 
 Now that we have taxonomy count tables for each run, we can add them up for corresponding samples.
 *Reminder*: we kept the runs separate until now, because dada2 estimates run-specific error rates, thus adding everything together in the beginning of the pipeline can bias the results.
 
-
-
 Once we have the sample-metadata and the joint count table in the `data_analysis/` directory, we can proceed:
+
+```bash
+Rscript ../scripts/6_data_analysis.R new_count_table.tsv sample-metadata.tsv --organism Hv
+```

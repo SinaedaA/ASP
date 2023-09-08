@@ -315,24 +315,25 @@ AdonisWrapper <- function(TransformedList, TaxonLevels, Metadata, permu_scheme) 
             print(paste0(level, "<->", comp))
             subMeta <- Metadata[Metadata$Compartment == comp, ]
             subCount <- transformed[rownames(transformed) %in% subMeta$Sample_Name, ]
-            print(rownames(subCount))
-            print(subMeta$Sample_Name)
+            subMeta <- subMeta[subMeta$Sample_Name %in% rownames(subCount), ]
+            # print(rownames(subCount))
+            # print(subMeta$Sample_Name)
             subBC <- vegdist(subCount)
             ## Perform betadisper tests for Genotype, Timepoint, and GenoTime
             bd_G <- betadisper(subBC, group = subMeta$Genotype, type = "centroid")
             bd_T <- betadisper(subBC, group = subMeta$Timepoint, type = "centroid")
-            bd_GT <- betadisper(subBC, group = subMeta$GenoTime, type = "centroid")
+            #bd_GT <- betadisper(subBC, group = subMeta$GenoTime, type = "centroid")
             ## Perform significance test on the dispersion analysis using permutest
             disp_G <- permutest(bd_G, permutations = permu_scheme, pairwise = TRUE)
             disp_T <- permutest(bd_T, permutations = permu_scheme, pairwise = TRUE)
-            disp_GT <- permutest(bd_GT, permutations = permu_scheme, pairwise = TRUE)
+            #disp_GT <- permutest(bd_GT, permutations = permu_scheme, pairwise = TRUE)
             ## Permanova on bc
             ado_G <- adonis2(subBC ~ Genotype, data = subMeta, permutations = permu_scheme, by = NULL)
             ado_T <- adonis2(subBC ~ Timepoint, data = subMeta, permutations = permu_scheme, by = NULL)
-            ado_GT <- adonis2(subBC ~ GenoTime, data = subMeta, permutations = permu_scheme, by = NULL)
+            #ado_GT <- adonis2(subBC ~ GenoTime, data = subMeta, permutations = permu_scheme, by = NULL)
             CompList[[level]][[comp]][["Genotype"]] <- list(bd_G, disp_G, ado_G)
             CompList[[level]][[comp]][["Timepoint"]] <- list(bd_T, disp_T, ado_T)
-            CompList[[level]][[comp]][["GenoTime"]] <- list(bd_GT, disp_GT, ado_GT)
+            #CompList[[level]][[comp]][["GenoTime"]] <- list(bd_GT, disp_GT, ado_GT)
         }
     }
     return(CompList)

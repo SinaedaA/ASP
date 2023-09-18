@@ -1,0 +1,8 @@
+Sample_Name	Short_Sample	Sample_ID	Organism	Genotype	Compartment	Timepoint	Abbrev	Summary
+1	FunITS-BC93-5_S93_L001	Fun_S5	5	H. vulgare	WT	Rhizosphere	14 dpi	Hv	Hv_GP_14dpi_Rhizosphere
+2	FunITS-BC95-7_S95_L001	Fun_S7	7	H. vulgare	WT	Roots	14 dpi	Hv	Hv_GP_14dpi_Roots
+3	FunITS-BC29-188_S29_L001	Fun_S188	188	H. vulgare	BI1	Rhizosphere	28 dpi	Hv	Hv_BI1_28dpi_Rhizosphere
+4	FunITS-BC41-200_S41_L001	Fun_S200	200	H. vulgare	WT	Roots	28 dpi	Hv	Hv_GP_28dpi_Roots
+5	FunITS-BC46-205_S46_L001	Fun_S205	205	H. vulgare	BI1	Roots	28 dpi	Hv	Hv_BI1_28dpi_Roots
+6	FunITS-BC50-209_S50_L001	Fun_S209	209	H. vulgare	BI1	Roots	28 dpi	Hv	Hv_BI1_28dpi_Roots
+7	FunITS-BC56-215_S56_L001	Fun_S215	215	H. vulgare	BI1	Soil	28 dpi	Hv	Hv_BI1_28dpi_Soil

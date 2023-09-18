@@ -113,7 +113,7 @@ Transform <- function(FilteredList, TaxonLevels, Filter = "TotalAbundance") {
         Filtered <- FilteredList[[level]]
         ## 1. Transform absolute abundance into relative abundance
         RelAbundance <- decostand(Filtered, method = "total", zap = TRUE)
-        ## 2. Filter out order which represent < 0.01% of frequencies
+        ## 2. Filter out taxa which represent < 0.01% of frequencies
         if (Filter == "TotalAbundance") {
             TotalAbundance <- sapply(c(1:ncol(RelAbundance)), FUN = function(x) {
                 sum(RelAbundance[, x])
@@ -180,6 +180,8 @@ AlphaPlotList <- function(AlphaList, TaxonLevels, Colors, index) {
             scale_color_manual(values = Colors) +
             facet_grid(Timepoint ~ Compartment) +
             theme_bw() +
+            theme(strip.text = element_text(size = 20), legend.title = element_text(size = 16), legend.text = element_text(size = 14),
+            axis.title = element_text(size = 20), axis.text = element_text(size = 16))+
             guides(x = guide_axis(angle = 45)) +
             labs(x = "Compartment", title = paste0("Alpha diversity plot (", index, " index) at the ", level, " level.")) +
             ylim(0, 5)
@@ -238,6 +240,8 @@ OrdinateFunction <- function(TransformedList, TaxonLevels, Metadata, Metric, sub
             theme_classic() +
             geom_text(hjust = 1.5, vjust = 0) +
             ggtitle("Unconstrained PCoA (all compartments).") +
+            theme(strip.text = element_text(size = 30), legend.title = element_text(size = 26), legend.text = element_text(size = 24),
+            axis.title = element_text(size = 30), axis.text = element_text(size = 26))+
             stat_ellipse(geom = "polygon", alpha = .2, aes(MDS1, MDS2, col = Metadata$Compartment, fill = Metadata$Compartment), inherit.aes = FALSE)
         Plot_c <- ggplot(Sites_c, aes(CAP1, CAP2, col = Metadata$Compartment, shape = Metadata$Genotype, label = Metadata$Sample_ID)) +
             geom_point(size = 1.5) +
@@ -247,6 +251,8 @@ OrdinateFunction <- function(TransformedList, TaxonLevels, Metadata, Metric, sub
             labs(x = paste0("CAP1 (", round(Expl_c$CAP1 * 100, 1), "%)"), y = paste0("CAP2 (", round(Expl_c$CAP2 * 100, 1), "%)")) +
             geom_text(hjust = 1.5, vjust = 0) +
             ggtitle("Constrained dbRDA (all compartments).") +
+            theme(strip.text = element_text(size = 30), legend.title = element_text(size = 26), legend.text = element_text(size = 24),
+            axis.title = element_text(size = 30), axis.text = element_text(size = 26))+
             stat_ellipse(geom = "polygon", alpha = .2, aes(CAP1, CAP2, col = Metadata$Compartment, fill = Metadata$Compartment), inherit.aes = FALSE) +
             geom_segment(aes(x = 0.0, y = 0.0, xend = scores(dbRDA)$biplot[1, 1], yend = scores(dbRDA)$biplot[1, 2]), arrow = arrow(), col = "black") +
             geom_label(data = data.frame(scores(dbRDA)$biplot), aes(CAP1, CAP2, label = rownames(scores(dbRDA)$biplot)), inherit.aes = FALSE, nudge_x = .1, nudge_y = .1) +
@@ -276,6 +282,8 @@ OrdinateFunction <- function(TransformedList, TaxonLevels, Metadata, Metric, sub
                     theme_classic() +
                     labs(x = paste0("MDS1 (", round(Expl_u$MDS1 * 100, 1), "%)"), y = paste0("MDS2 (", round(Expl_u$MDS2 * 100, 1), "%)")) +
                     geom_text(hjust = 1.5, vjust = 0) +
+                    theme(strip.text = element_text(size = 30), legend.title = element_text(size = 26), legend.text = element_text(size = 24),
+                    axis.title = element_text(size = 30), axis.text = element_text(size = 26))+
                     ggtitle(paste0("Unconstrained PCoA (", Compartments[i], ").")) +
                     stat_ellipse(geom = "polygon", alpha = .2, aes(MDS1, MDS2, col = meta$Genotype, fill = meta$Genotype), inherit.aes = FALSE)
                 PlotComp_c <- ggplot(Sites_c, aes(CAP1, CAP2, col = meta$Genotype, shape = meta$Timepoint, label = meta$Sample_ID)) +
@@ -285,6 +293,8 @@ OrdinateFunction <- function(TransformedList, TaxonLevels, Metadata, Metric, sub
                     theme_classic() +
                     labs(x = paste0("CAP1 (", round(Expl_c$CAP1 * 100, 1), "%)"), y = paste0("CAP2 (", round(Expl_c$CAP2 * 100, 1), "%)")) +
                     geom_text(hjust = 1.5, vjust = 0) +
+                    theme(strip.text = element_text(size = 30), legend.title = element_text(size = 26), legend.text = element_text(size = 24),
+                    axis.title = element_text(size = 30), axis.text = element_text(size = 26))+
                     ggtitle(paste0("Constrained dbRDA (", Compartments[i], ").")) +
                     stat_ellipse(geom = "polygon", alpha = .2, aes(CAP1, CAP2, col = meta$Genotype, fill = meta$Genotype), inherit.aes = FALSE) +
                     geom_segment(aes(x = 0.0, y = 0.0, xend = scores(CompdbRDA)$biplot[1, 1], yend = scores(CompdbRDA)$biplot[1, 2]), arrow = arrow(), col = "black") +
@@ -430,13 +440,8 @@ PlotDESeqData <- function(DESeqList, TaxonLevels, Metadata, pval, lfc){
 #     multi_page <- marrangeGrob(grobs = Boxplot_list, ncol = 2, nrow = 3)
 #     ggsave(multi_page, filename = paste0(outdir, "/Relative_abundance_differences_ALL.pdf"), height = 25, width = 25)
 # }
-RelAbundanceBoxPlots <- function(TransformedList, Metadata, Colors, TaxaOI = "all") {
-    transformed <- TransformedList$order
-    if (TaxaOI != "all") {
-        transformed <- transformed %>%
-            dplyr::select(any_of(TaxaOI))
-    }
-    taxa <- colnames(transformed)
+RelAbundanceBoxPlots <- function(TransformedList, Metadata, Colors, TaxaOI = "all", TaxLevel) {
+    transformed <- TransformedList[[TaxLevel]]
     taxa_transf <- transformed %>%
         tibble::rownames_to_column("Sample_Name") %>%
         dplyr::left_join(Metadata[c("Sample_Name", "Compartment", "Genotype", "Timepoint")], by = "Sample_Name") %>%
@@ -448,28 +453,124 @@ RelAbundanceBoxPlots <- function(TransformedList, Metadata, Colors, TaxaOI = "al
         bind_rows()
     taxa_transf <- taxa_transf %>%
         dplyr::left_join(kw_test, by = c("Compartment", "Timepoint", "Taxon"))
-    Boxplot_list <- llply(taxa, .fun = function(x) {
-        data <- dplyr::filter(taxa_transf, Taxon == x)
-        p <- data %>%
-            ggplot(aes(x = factor(Genotype, levels = c("WT", "BI1")), y = Abundance, color = Compartment)) +
-            geom_boxplot(outlier.shape = 9, outlier.size = 3, outlier.colour = "black", width = .5) +
-            geom_point(aes(shape = Genotype), alpha = .7, size = 3) +
-            facet_grid(Timepoint ~ Compartment) +
-            scale_color_manual(values = Colors) +
-            theme_bw() +
-            guides(x = guide_axis(angle = 45)) +
-            labs(x = "Genotype", y = "Relative abundance") +
-            ggtitle(x) +
-            scale_x_discrete(labels = c("Rhizosphere" = "Rhizosphere", "Rhizoplane" = "Rhizoplane", "soil" = "Soil", "roots" = "Roots"))
-        ymax <- ggplot_build(p)$layout$panel_scales_y[[1]]$range$range[2]
-        text_df <- data %>%
-            dplyr::select("Compartment", "Timepoint", "p_value") %>%
-            unique()
-        p <- p + annotate("segment", x = .7, xend = 2.3, y = ymax + ymax / 4, yend = ymax + ymax / 4) +
-            geom_text(data = text_df, mapping = aes(x = 1.5, y = ymax + ymax / 3, label = round(p_value, 3)), color = "black")
-        return(p)
-    })
-    names(Boxplot_list) <- taxa
-    multi_page <- marrangeGrob(grobs = Boxplot_list, ncol = 2, nrow = 3)
-    ggsave(multi_page, filename = paste0(outdir, "/Relative_abundance_differences_ALL.pdf"), height = 25, width = 25)
+    Compartments <- unique(taxa_transf$Compartment)
+    for (i in 1:length(Compartments)){
+        Comp <- Compartments[i]
+        data <- dplyr::filter(taxa_transf, Compartment == Comp)
+        ## select taxa based on whether or not they have at least one significant value in the table (taxa_transf)
+        if (TaxaOI != "all") {
+            transformed <- transformed %>%
+                dplyr::select(any_of(TaxaOI))
+        }
+        else {
+            cli_alert_info("Filtering out taxa for which no differences in relative abundances were found...")
+            taxa <- data %>%
+                dplyr::filter(p_value < 0.05) %>%
+                dplyr::select(Taxon) %>%
+                unique()
+            # if I would literally want ALL taxa 
+            # taxa <- colnames(transformed)
+        }
+        if (nrow(taxa) == 0) {
+            cli_alert_danger("No taxa with significant differences in relative abundances were found at the {TaxLevel} level in {Comp}. Skipping.")
+            next
+        }
+        Boxplot_list <- llply(taxa$Taxon, .fun = function(x) {
+            data <- dplyr::filter(data, Taxon == x)
+            p <- data %>%
+                ggplot(aes(x = factor(Genotype, levels = c("WT", "BI1")), y = Abundance, color = Compartment)) +
+                geom_boxplot(outlier.shape = 9, outlier.size = 3, outlier.colour = "black", width = .5) +
+                geom_point(aes(shape = Genotype), alpha = .7, size = 3) +
+                facet_grid(Timepoint ~ Compartment) +
+                scale_color_manual(values = Colors) +
+                theme_bw() +
+                theme(
+                    strip.text = element_text(size = 20), legend.title = element_text(size = 16), legend.text = element_text(size = 14),
+                    axis.title = element_text(size = 20), axis.text = element_text(size = 16)
+                ) +
+                guides(x = guide_axis(angle = 45)) +
+                labs(x = "Genotype", y = "Relative abundance") +
+                ggtitle(x) +
+                scale_x_discrete(labels = c("Rhizosphere" = "Rhizosphere", "Rhizoplane" = "Rhizoplane", "soil" = "Soil", "roots" = "Roots"))
+            ymax <- ggplot_build(p)$layout$panel_scales_y[[1]]$range$range[2]
+            text_df <- data %>%
+                dplyr::select("Compartment", "Timepoint", "p_value") %>%
+                unique()
+            p <- p + annotate("segment", x = .7, xend = 2.3, y = ymax + ymax / 4, yend = ymax + ymax / 4) +
+                geom_text(data = text_df, mapping = aes(x = 1.5, y = ymax + ymax / 3, label = round(p_value, 3)), color = "black")
+            return(p)
+        })
+        names(Boxplot_list) <- taxa
+        multi_page <- marrangeGrob(grobs = Boxplot_list, ncol = 3, nrow = 3)
+        ggsave(multi_page, filename = paste0(outdir, "/Relative_abundance_differences_", TaxLevel, "_", Comp, ".pdf"), height = 25, width = 25)
+    }
+    # separate based on the compartment, and for each compartment show only significant taxa
+    # Boxplot_list <- llply(taxa$Taxon, .fun = function(x) {
+    #     data <- dplyr::filter(taxa_transf, Taxon == x)
+    #     p <- data %>%
+    #         ggplot(aes(x = factor(Genotype, levels = c("WT", "BI1")), y = Abundance, color = Compartment)) +
+    #         geom_boxplot(outlier.shape = 9, outlier.size = 3, outlier.colour = "black", width = .5) +
+    #         geom_point(aes(shape = Genotype), alpha = .7, size = 3) +
+    #         facet_grid(Timepoint ~ Compartment) +
+    #         scale_color_manual(values = Colors) +
+    #         theme_bw() +
+    #         guides(x = guide_axis(angle = 45)) +
+    #         labs(x = "Genotype", y = "Relative abundance") +
+    #         ggtitle(x) +
+    #         scale_x_discrete(labels = c("Rhizosphere" = "Rhizosphere", "Rhizoplane" = "Rhizoplane", "soil" = "Soil", "roots" = "Roots"))
+    #     ymax <- ggplot_build(p)$layout$panel_scales_y[[1]]$range$range[2]
+    #     text_df <- data %>%
+    #         dplyr::select("Compartment", "Timepoint", "p_value") %>%
+    #         unique()
+    #     p <- p + annotate("segment", x = .7, xend = 2.3, y = ymax + ymax / 4, yend = ymax + ymax / 4) +
+    #         geom_text(data = text_df, mapping = aes(x = 1.5, y = ymax + ymax / 3, label = round(p_value, 3)), color = "black")
+    #     return(p)
+    # })
+    # names(Boxplot_list) <- taxa
+    # multi_page <- marrangeGrob(grobs = Boxplot_list, ncol = 2, nrow = 3)
+    # ggsave(multi_page, filename = paste0(outdir, "/Relative_abundance_differences_", TaxLevel, "_", Comp ".pdf"), height = 25, width = 25)
+}
+
+AlluvialPlot <- function(TransformedList, Metadata) {
+    transformed <- TransformedList$phylum
+    #transformed <- transformed_list$family
+    taxa_transf <- transformed %>%
+        tibble::rownames_to_column("Sample_Name") %>%
+        dplyr::left_join(metadata[c("Sample_Name", "Sample_ID", "Compartment", "Genotype", "Timepoint")], by = "Sample_Name") %>%
+        tidyr::pivot_longer(-c("Sample_Name", "Sample_ID", "Compartment", "Genotype", "Timepoint"), names_to = "Taxon", values_to = "Abundance") %>%
+        dplyr::mutate(Compartment = factor(Compartment, levels = c("Roots", "Rhizoplane", "Rhizosphere", "Soil"))) %>%
+        dplyr::mutate(Taxon = as.factor(Taxon))
+    taxa_alluvial <- dplyr::select(taxa_transf, -c(Sample_Name, Sample_ID)) %>%
+        group_by(Compartment, Genotype, Timepoint, Taxon) %>%
+        mutate(Abundance = mean(Abundance)) %>%
+        unique() %>%
+        ungroup() %>%
+        group_by(Compartment, Genotype, Timepoint) %>%
+        mutate(Sum = sum(Abundance)) %>%
+        ungroup() %>%
+        group_by(Taxon) %>%
+        mutate(
+            id = cur_group_id(),
+            taxon_mean = mean(Abundance),
+            group = paste0(Compartment, "_", Genotype, "_", str_remove(Timepoint, " dpi"))
+        ) %>%
+        mutate(group = factor(group, levels = c(
+            "Roots_WT_14", "Roots_WT_28", "Roots_BI1_14", "Roots_BI1_28", "Rhizosphere_WT_14", "Rhizosphere_WT_28",
+            "Rhizosphere_BI1_14", "Rhizosphere_BI1_28", "Soil_WT_14", "Soil_WT_28", "Soil_BI1_14", "Soil_BI1_28"
+        ), labels = c("WT_14", "WT_28", "BI1_14", "BI1_28", "WT_14", "WT_28", "BI1_14", "BI1_28", "WT_14", "WT_28", "BI1_14", "BI1_28"))) %>%
+        ungroup() %>%
+        ## replace taxa with mean abundance < 0,02 (2%) together into "Other"
+        mutate(Taxon = ifelse(taxon_mean < 0.02, "Other", as.character(Taxon)))
+
+    alluv_plot <- ggplot(taxa_alluvial, aes(x = group, y = Abundance, stratum = Taxon, fill = Taxon, alluvium = id)) +
+        facet_wrap(~Compartment, scales = "free_x") +
+        geom_stratum(linetype = "blank", decreasing = FALSE) +
+        geom_alluvium(decreasing = FALSE) +
+        geom_flow(decreasing = FALSE) +
+        theme_bw() +
+        guides(x = guide_axis(angle = 45)) +
+        theme(strip.text = element_text(size = 30), legend.title = element_text(size = 26), legend.text = element_text(size = 24),
+        axis.title = element_text(size = 30), axis.text = element_text(size = 26))+
+        scale_fill_viridis_d()
+    return(alluv_plot)
 }

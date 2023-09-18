@@ -1,265 +1,250 @@
-#Sample_Name	Sample_ID	Organism	Genotype	Compartment	Timepoint	Abbrev	Summary
-FunITS-BC89-1_S89_L001	1	H. vulgare	BI1	Soil	14 dpi	Hv	Hv_BI1_14dpi_Soil
-FunITS-BC90-2_S90_L001	2	H. vulgare	GP	Soil	14 dpi	Hv	Hv_GP_14dpi_Soil
-FunITS-BC91-3_S91_L001	3	H. vulgare	BI1	Rhizosphere	14 dpi	Hv	Hv_BI1_14dpi_Rhizosphere
-FunITS-BC92-4_S92_L001	4	H. vulgare	GP	Rhizosphere	14 dpi	Hv	Hv_GP_14dpi_Rhizosphere
-FunITS-BC93-5_S93_L001	5	H. vulgare	GP	Rhizosphere	14 dpi	Hv	Hv_GP_14dpi_Rhizosphere
-FunITS-BC94-6_S94_L001	6	H. vulgare	BI1	Roots	14 dpi	Hv	Hv_BI1_14dpi_Roots
-FunITS-BC95-7_S95_L001	7	H. vulgare	GP	Roots	14 dpi	Hv	Hv_GP_14dpi_Roots
-FunITS-BC151-8_S151_L001	8	A. thaliana	Col-0	Roots	14 dpi	At	At_Col-0_14dpi_Roots
-FunITS-BC152-9_S152_L001	9	A. thaliana	Col-0	Rhizoplane	14 dpi	At	At_Col-0_14dpi_Rhizoplane
-FunITS-BC96-10_S96_L001	10	A. thaliana	Col-0	Rhizoplane	14 dpi	At	At_Col-0_14dpi_Rhizoplane
-FunITS-BC97-11_S97_L001	11	A. thaliana	BI1	Rhizoplane	14 dpi	At	At_BI1_14dpi_Rhizoplane
-FunITS-BC98-12_S98_L001	12	H. vulgare	GP	Roots	14 dpi	Hv	Hv_GP_14dpi_Roots
-FunITS-BC350-13_S350_L001	13	A. thaliana	BI1	Rhizoplane	14 dpi	At	At_BI1_14dpi_Rhizoplane
-FunITS-BC337-14_S337_L001	14	A. thaliana	BI1	Roots	14 dpi	At	At_BI1_14dpi_Roots
-FunITS-BC99-15_S99_L001	15	H. vulgare	GP	Roots	14 dpi	Hv	Hv_GP_14dpi_Roots
-FunITS-BC351-16_S351_L001	16	A. thaliana	Col-0	Rhizoplane	14 dpi	At	At_Col-0_14dpi_Rhizoplane
-FunITS-BC161-17_S161_L001	17	A. thaliana	Col-0	Roots	14 dpi	At	At_Col-0_14dpi_Roots
-FunITS-BC100-18_S100_L001	18	H. vulgare	GP	Roots	14 dpi	Hv	Hv_GP_14dpi_Roots
-FunITS-BC338-19_S338_L001	19	A. thaliana	Col-0	Roots	14 dpi	At	At_Col-0_14dpi_Roots
-FunITS-BC352-20_S352_L001	20	A. thaliana	BI1	Rhizoplane	14 dpi	At	At_BI1_14dpi_Rhizoplane
-FunITS-BC162-21_S162_L001	21	A. thaliana	BI1	Rhizosphere	14 dpi	At	At_BI1_14dpi_Rhizosphere
-FunITS-BC163-22_S163_L001	22	A. thaliana	BI1	Rhizosphere	14 dpi	At	At_BI1_14dpi_Rhizosphere
-FunITS-BC101-23_S101_L001	23	H. vulgare	BI1	Roots	14 dpi	Hv	Hv_BI1_14dpi_Roots
-FunITS-BC102-24_S102_L001	24	H. vulgare	GP	Roots	14 dpi	Hv	Hv_GP_14dpi_Roots
-FunITS-BC103-25_S103_L001	25	A. thaliana	Col-0	Soil	14 dpi	At	At_Col-0_14dpi_Soil
-FunITS-BC104-26_S104_L001	26	A. thaliana	BI1	Rhizosphere	14 dpi	At	At_BI1_14dpi_Rhizosphere
-FunITS-BC353-27_S353_L001	27	A. thaliana	BI1	Rhizoplane	14 dpi	At	At_BI1_14dpi_Rhizoplane
-FunITS-BC105-28_S105_L001	28	A. thaliana	Col-0	Rhizosphere	14 dpi	At	At_Col-0_14dpi_Rhizosphere
-FunITS-BC106-29_S106_L001	29	H. vulgare	GP	Soil	14 dpi	Hv	Hv_GP_14dpi_Soil
-FunITS-BC107-30_S107_L001	30	H. vulgare	GP	Soil	14 dpi	Hv	Hv_GP_14dpi_Soil
-FunITS-BC108-31_S108_L001	31	H. vulgare	BI1	Soil	14 dpi	Hv	Hv_BI1_14dpi_Soil
-FunITS-BC339-32_S339_L001	32	A. thaliana	Col-0	Roots	14 dpi	At	At_Col-0_14dpi_Roots
-FunITS-BC109-33_S109_L001	33	H. vulgare	BI1	Roots	14 dpi	Hv	Hv_BI1_14dpi_Roots
-FunITS-BC164-34_S164_L001	34	A. thaliana	Col-0	Rhizoplane	14 dpi	At	At_Col-0_14dpi_Rhizoplane
-FunITS-BC354-35_S354_L001	35	A. thaliana	BI1	Rhizoplane	14 dpi	At	At_BI1_14dpi_Rhizoplane
-FunITS-BC110-36_S110_L001	36	A. thaliana	Col-0	Soil	14 dpi	At	At_Col-0_14dpi_Soil
-FunITS-BC111-37_S111_L001	37	H. vulgare	GP	Roots	14 dpi	Hv	Hv_GP_14dpi_Roots
-FunITS-BC112-38_S112_L001	38	H. vulgare	GP	Roots	14 dpi	Hv	Hv_GP_14dpi_Roots
-FunITS-BC355-39_S355_L001	39	A. thaliana	BI1	Rhizoplane	14 dpi	At	At_BI1_14dpi_Rhizoplane
-FunITS-BC113-40_S113_L001	40	H. vulgare	BI1	Roots	14 dpi	Hv	Hv_BI1_14dpi_Roots
-FunITS-BC114-41_S114_L001	41	A. thaliana	Col-0	Soil	14 dpi	At	At_Col-0_14dpi_Soil
-FunITS-BC115-42_S115_L001	42	H. vulgare	GP	Roots	14 dpi	Hv	Hv_GP_14dpi_Roots
-FunITS-BC165-43_S165_L001	43	A. thaliana	BI1	Roots	14 dpi	At	At_BI1_14dpi_Roots
-FunITS-BC116-44_S116_L001	44	H. vulgare	GP	Roots	14 dpi	Hv	Hv_GP_14dpi_Roots
-FunITS-BC166-45_S166_L001	45	A. thaliana	BI1	Rhizosphere	14 dpi	At	At_BI1_14dpi_Rhizosphere
-FunITS-BC117-46_S117_L001	46	A. thaliana	BI1	Soil	14 dpi	At	At_BI1_14dpi_Soil
-FunITS-BC118-47_S118_L001	47	H. vulgare	BI1	Roots	14 dpi	Hv	Hv_BI1_14dpi_Roots
-FunITS-BC119-48_S119_L001	48	A. thaliana	Col-0	Soil	14 dpi	At	At_Col-0_14dpi_Soil
-FunITS-BC340-49_S340_L001	49	A. thaliana	BI1	Roots	14 dpi	At	At_BI1_14dpi_Roots
-FunITS-BC167-50_S167_L001	50	A. thaliana	Col-0	Rhizosphere	14 dpi	At	At_Col-0_14dpi_Rhizosphere
-FunITS-BC341-51_S341_L001	51	A. thaliana	Col-0	Roots	14 dpi	At	At_Col-0_14dpi_Roots
-FunITS-BC168-52_S168_L001	52	A. thaliana	BI1	Roots	14 dpi	At	At_BI1_14dpi_Roots
-FunITS-BC356-53_S356_L001	53	A. thaliana	Col-0	Rhizoplane	14 dpi	At	At_Col-0_14dpi_Rhizoplane
-FunITS-BC357-54_S357_L001	54	A. thaliana	Col-0	Rhizoplane	14 dpi	At	At_Col-0_14dpi_Rhizoplane
-FunITS-BC120-55_S120_L001	55	A. thaliana	BI1	Soil	14 dpi	At	At_BI1_14dpi_Soil
-FunITS-BC121-56_S121_L001	56	A. thaliana	BI1	Soil	14 dpi	At	At_BI1_14dpi_Soil
-FunITS-BC122-57_S122_L001	57	H. vulgare	BI1	Roots	14 dpi	Hv	Hv_BI1_14dpi_Roots
-FunITS-BC123-58_S123_L001	58	H. vulgare	BI1	Roots	14 dpi	Hv	Hv_BI1_14dpi_Roots
-FunITS-BC124-59_S124_L001	59	H. vulgare	GP	Roots	14 dpi	Hv	Hv_GP_14dpi_Roots
-FunITS-BC169-60_S169_L001	60	A. thaliana	Col-0	Rhizosphere	14 dpi	At	At_Col-0_14dpi_Rhizosphere
-FunITS-BC125-61_S125_L001	61	H. vulgare	BI1	Rhizosphere	14 dpi	Hv	Hv_BI1_14dpi_Rhizosphere
-FunITS-BC126-62_S126_L001	62	H. vulgare	BI1	Rhizosphere	14 dpi	Hv	Hv_BI1_14dpi_Rhizosphere
-FunITS-BC127-63_S127_L001	63	H. vulgare	BI1	Rhizosphere	14 dpi	Hv	Hv_BI1_14dpi_Rhizosphere
-FunITS-BC128-64_S128_L001	64	A. thaliana	BI1	Soil	14 dpi	At	At_BI1_14dpi_Soil
-FunITS-BC129-65_S129_L001	65	A. thaliana	Col-0	Soil	14 dpi	At	At_Col-0_14dpi_Soil
-FunITS-BC130-66_S130_L001	66	A. thaliana	Col-0	Soil	14 dpi	At	At_Col-0_14dpi_Soil
-FunITS-BC131-67_S131_L001	67	H. vulgare	BI1	Roots	14 dpi	Hv	Hv_BI1_14dpi_Roots
-FunITS-BC132-68_S132_L001	68	H. vulgare	BI1	Roots	14 dpi	Hv	Hv_BI1_14dpi_Roots
-FunITS-BC133-69_S133_L001	69	A. thaliana	Col-0	Soil	14 dpi	At	At_Col-0_14dpi_Soil
-FunITS-BC134-70_S134_L001	70	H. vulgare	BI1	Roots	14 dpi	Hv	Hv_BI1_14dpi_Roots
-FunITS-BC358-71_S358_L001	71	A. thaliana	BI1	Rhizoplane	14 dpi	At	At_BI1_14dpi_Rhizoplane
-FunITS-BC359-72_S359_L001	72	A. thaliana	Col-0	Rhizoplane	14 dpi	At	At_Col-0_14dpi_Rhizoplane
-FunITS-BC135-73_S135_L001	73	H. vulgare	GP	Roots	14 dpi	Hv	Hv_GP_14dpi_Roots
-FunITS-BC136-74_S136_L001	74	H. vulgare	BI1	Roots	14 dpi	Hv	Hv_BI1_14dpi_Roots
-FunITS-BC360-75_S360_L001	75	A. thaliana	Col-0	Rhizoplane	14 dpi	At	At_Col-0_14dpi_Rhizoplane
-FunITS-BC170-76_S170_L001	76	A. thaliana	BI1	Rhizoplane	14 dpi	At	At_BI1_14dpi_Rhizoplane
-FunITS-BC171-77_S171_L001	77	A. thaliana	Col-0	Rhizosphere	14 dpi	At	At_Col-0_14dpi_Rhizosphere
-FunITS-BC137-78_S137_L001	78	H. vulgare	GP	Rhizosphere	14 dpi	Hv	Hv_GP_14dpi_Rhizosphere
-FunITS-BC138-79_S138_L001	79	H. vulgare	BI1	Rhizosphere	14 dpi	Hv	Hv_BI1_14dpi_Rhizosphere
-FunITS-BC139-80_S139_L001	80	H. vulgare	BI1	Soil	14 dpi	Hv	Hv_BI1_14dpi_Soil
-FunITS-BC140-81_S140_L001	81	H. vulgare	GP	Roots	14 dpi	Hv	Hv_GP_14dpi_Roots
-FunITS-BC141-82_S141_L001	82	H. vulgare	GP	Rhizosphere	14 dpi	Hv	Hv_GP_14dpi_Rhizosphere
-FunITS-BC142-83_S142_L001	83	H. vulgare	GP	Rhizosphere	14 dpi	Hv	Hv_GP_14dpi_Rhizosphere
-FunITS-BC143-84_S143_L001	84	H. vulgare	GP	Rhizosphere	14 dpi	Hv	Hv_GP_14dpi_Rhizosphere
-FunITS-BC144-85_S144_L001	85	H. vulgare	GP	Rhizosphere	14 dpi	Hv	Hv_GP_14dpi_Rhizosphere
-FunITS-BC153-86_S153_L001	86	H. vulgare	GP	Rhizosphere	14 dpi	Hv	Hv_GP_14dpi_Rhizosphere
-FunITS-BC154-87_S154_L001	87	H. vulgare	GP	Rhizosphere	14 dpi	Hv	Hv_GP_14dpi_Rhizosphere
-FunITS-BC155-88_S155_L001	88	H. vulgare	GP	Rhizosphere	14 dpi	Hv	Hv_GP_14dpi_Rhizosphere
-FunITS-BC156-89_S156_L001	89	H. vulgare	BI1	Roots	14 dpi	Hv	Hv_BI1_14dpi_Roots
-FunITS-BC157-90_S157_L001	90	H. vulgare	BI1	Rhizosphere	14 dpi	Hv	Hv_BI1_14dpi_Rhizosphere
-FunITS-BC158-91_S158_L001	91	H. vulgare	BI1	Rhizosphere	14 dpi	Hv	Hv_BI1_14dpi_Rhizosphere
-FunITS-BC159-92_S159_L001	92	H. vulgare	BI1	Rhizosphere	14 dpi	Hv	Hv_BI1_14dpi_Rhizosphere
-FunITS-BC160-93_S160_L001	93	H. vulgare	BI1	Rhizosphere	14 dpi	Hv	Hv_BI1_14dpi_Rhizosphere
-FunITS-BC145-94_S145_L001	94	H. vulgare	BI1	Rhizosphere	14 dpi	Hv	Hv_BI1_14dpi_Rhizosphere
-FunITS-BC146-95_S146_L001	95	H. vulgare	BI1	Rhizosphere	14 dpi	Hv	Hv_BI1_14dpi_Rhizosphere
-FunITS-BC147-96_S147_L001	96	H. vulgare	BI1	Rhizosphere	14 dpi	Hv	Hv_BI1_14dpi_Rhizosphere
-FunITS-BC148-97_S148_L001	97	A. thaliana	BI1	Soil	14 dpi	At	At_BI1_14dpi_Soil
-FunITS-BC172-98_S172_L001	98	A. thaliana	BI1	Soil	14 dpi	At	At_BI1_14dpi_Soil
-FunITS-BC361-99_S361_L001	99	A. thaliana	Col-0	Rhizoplane	14 dpi	At	At_Col-0_14dpi_Rhizoplane
-FunITS-BC173-100_S173_L001	100	A. thaliana	Col-0	Rhizosphere	14 dpi	At	At_Col-0_14dpi_Rhizosphere
-FunITS-BC174-101_S174_L001	101	A. thaliana	BI1	Rhizosphere	14 dpi	At	At_BI1_14dpi_Rhizosphere
-FunITS-BC149-102_S149_L001	102	A. thaliana	BI1	Soil	28 dpi	At	At_BI1_28dpi_Soil
-FunITS-BC150-103_S150_L001	103	A. thaliana	Col-0	Soil	14 dpi	At	At_Col-0_14dpi_Soil
-FunITS-BC362-104_S362_L001	104	A. thaliana	BI1	Rhizoplane	28 dpi	At	At_BI1_28dpi_Rhizoplane
-FunITS-BC175-105_S175_L001	105	A. thaliana	Col-0	Rhizosphere	14 dpi	At	At_Col-0_14dpi_Rhizosphere
-FunITS-BC289-106_S289_L001	106	A. thaliana	Col-0	Rhizosphere	14 dpi	At	At_Col-0_14dpi_Rhizosphere
-FunITS-BC290-107_S290_L001	107	A. thaliana	BI1	Rhizosphere	28 dpi	At	At_BI1_28dpi_Rhizosphere
-FunITS-BC291-108_S291_L001	108	A. thaliana	BI1	Soil	14 dpi	At	At_BI1_14dpi_Soil
-FunITS-BC363-109_S363_L001	109	A. thaliana	Col-0	Rhizoplane	28 dpi	At	At_Col-0_28dpi_Rhizoplane
-FunITS-BC292-110_S292_L001	110	A. thaliana	BI1	Rhizosphere	28 dpi	At	At_BI1_28dpi_Rhizosphere
-FunITS-BC293-111_S293_L001	111	H. vulgare	BI1	Rhizosphere	14 dpi	Hv	Hv_BI1_14dpi_Rhizosphere
-FunITS-BC294-112_S294_L001	112	H. vulgare	GP	Rhizosphere	14 dpi	Hv	Hv_GP_14dpi_Rhizosphere
-FunITS-BC364-113_S364_L001	113	A. thaliana	Col-0	Rhizoplane	28 dpi	At	At_Col-0_28dpi_Rhizoplane
-FunITS-BC365-114_S365_L001	114	A. thaliana	BI1	Rhizoplane	28 dpi	At	At_BI1_28dpi_Rhizoplane
-FunITS-BC366-115_S366_L001	115	A. thaliana	Col-0	Rhizoplane	28 dpi	At	At_Col-0_28dpi_Rhizoplane
-FunITS-BC295-116_S295_L001	116	A. thaliana	BI1	Soil	28 dpi	At	At_BI1_28dpi_Soil
-FunITS-BC296-117_S296_L001	117	A. thaliana	BI1	Soil	28 dpi	At	At_BI1_28dpi_Soil
-FunITS-BC297-118_S297_L001	118	A. thaliana	BI1	Rhizosphere	28 dpi	At	At_BI1_28dpi_Rhizosphere
-FunITS-BC1-119_S1_L001	119	A. thaliana	BI1	Soil	28 dpi	At	At_BI1_28dpi_Soil
-FunITS-BC298-120_S298_L001	120	A. thaliana	BI1	Rhizosphere	28 dpi	At	At_BI1_28dpi_Rhizosphere
-FunITS-BC367-121_S367_L001	121	A. thaliana	Col-0	Rhizoplane	28 dpi	At	At_Col-0_28dpi_Rhizoplane
-FunITS-BC368-122_S368_L001	122	A. thaliana	BI1	Rhizoplane	28 dpi	At	At_BI1_28dpi_Rhizoplane
-FunITS-BC369-123_S369_L001	123	A. thaliana	BI1	Rhizoplane	28 dpi	At	At_BI1_28dpi_Rhizoplane
-FunITS-BC299-124_S299_L001	124	A. thaliana	Col-0	Rhizosphere	28 dpi	At	At_Col-0_28dpi_Rhizosphere
-FunITS-BC2-125_S2_L001	125	A. thaliana	BI1	Rhizosphere	28 dpi	At	At_BI1_28dpi_Rhizosphere
-FunITS-BC3-126_S3_L001	126	A. thaliana	Col-0	Soil	28 dpi	At	At_Col-0_28dpi_Soil
-FunITS-BC4-127_S4_L001	127	A. thaliana	Col-0	Soil	28 dpi	At	At_Col-0_28dpi_Soil
-FunITS-BC5-128_S5_L001	128	A. thaliana	Col-0	Soil	28 dpi	At	At_Col-0_28dpi_Soil
-FunITS-BC6-129_S6_L001	129	A. thaliana	Col-0	Soil	28 dpi	At	At_Col-0_28dpi_Soil
-FunITS-BC300-130_S300_L001	130	A. thaliana	Col-0	Rhizosphere	28 dpi	At	At_Col-0_28dpi_Rhizosphere
-FunITS-BC301-131_S301_L001	131	A. thaliana	Col-0	Roots	28 dpi	At	At_Col-0_28dpi_Roots
-FunITS-BC342-132_S342_L001	132	A. thaliana	Col-0	Roots	14 dpi	At	At_Col-0_14dpi_Roots
-FunITS-BC302-133_S302_L001	133	A. thaliana	Col-0	Roots	14 dpi	At	At_Col-0_14dpi_Roots
-FunITS-BC303-134_S303_L001	134	A. thaliana	BI1	Roots	28 dpi	At	At_BI1_28dpi_Roots
-FunITS-BC304-135_S304_L001	135	A. thaliana	BI1	Roots	28 dpi	At	At_BI1_28dpi_Roots
-FunITS-BC343-136_S343_L001	136	A. thaliana	BI1	Roots	14 dpi	At	At_BI1_14dpi_Roots
-FunITS-BC344-137_S344_L001	137	A. thaliana	BI1	Roots	14 dpi	At	At_BI1_14dpi_Roots
-FunITS-BC7-138_S7_L001	138	A. thaliana	BI1	Rhizosphere	28 dpi	At	At_BI1_28dpi_Rhizosphere
-FunITS-BC305-139_S305_L001	139	A. thaliana	Col-0	Roots	28 dpi	At	At_Col-0_28dpi_Roots
-FunITS-BC345-140_S345_L001	140	A. thaliana	Col-0	Roots	14 dpi	At	At_Col-0_14dpi_Roots
-FunITS-BC370-141_S370_L001	141	A. thaliana	Col-0	Rhizoplane	28 dpi	At	At_Col-0_28dpi_Rhizoplane
-FunITS-BC306-142_S306_L001	142	A. thaliana	BI1	Roots	28 dpi	At	At_BI1_28dpi_Roots
-FunITS-BC346-143_S346_L001	143	A. thaliana	BI1	Roots	14 dpi	At	At_BI1_14dpi_Roots
-FunITS-BC307-144_S307_L001	144	A. thaliana	BI1	Roots	28 dpi	At	At_BI1_28dpi_Roots
-FunITS-BC8-145_S8_L001	145	A. thaliana	Col-0	Soil	28 dpi	At	At_Col-0_28dpi_Soil
-FunITS-BC308-146_S308_L001	146	A. thaliana	Col-0	Rhizosphere	28 dpi	At	At_Col-0_28dpi_Rhizosphere
-FunITS-BC9-147_S9_L001	147	A. thaliana	Col-0	Rhizosphere	28 dpi	At	At_Col-0_28dpi_Rhizosphere
-FunITS-BC10-148_S10_L001	148	A. thaliana	Col-0	Soil	28 dpi	At	At_Col-0_28dpi_Soil
-FunITS-BC11-149_S11_L001	149	A. thaliana	BI1	Soil	28 dpi	At	At_BI1_28dpi_Soil
-FunITS-BC371-150_S371_L001	150	A. thaliana	Col-0	Rhizoplane	28 dpi	At	At_Col-0_28dpi_Rhizoplane
-FunITS-BC372-151_S372_L001	151	A. thaliana	Col-0	Rhizoplane	28 dpi	At	At_Col-0_28dpi_Rhizoplane
-FunITS-BC309-152_S309_L001	152	A. thaliana	Col-0	Rhizosphere	28 dpi	At	At_Col-0_28dpi_Rhizosphere
-FunITS-BC12-153_S12_L001	153	A. thaliana	BI1	Soil	28 dpi	At	At_BI1_28dpi_Soil
-FunITS-BC373-154_S373_L001	154	A. thaliana	BI1	Rhizoplane	28 dpi	At	At_BI1_28dpi_Rhizoplane
-FunITS-BC13-155_S13_L001	155	A. thaliana	Col-0	Rhizoplane	28 dpi	At	At_Col-0_28dpi_Rhizoplane
-FunITS-BC14-156_S14_L001	156	A. thaliana	BI1	Soil	28 dpi	At	At_BI1_28dpi_Soil
-FunITS-BC15-157_S15_L001	157	A. thaliana	Col-0	Soil	28 dpi	At	At_Col-0_28dpi_Soil
-FunITS-BC16-158_S16_L001	158	A. thaliana	BI1	Rhizosphere	28 dpi	At	At_BI1_28dpi_Rhizosphere
-FunITS-BC17-159_S17_L001	159	A. thaliana	Col-0	Soil	28 dpi	At	At_Col-0_28dpi_Soil
-FunITS-BC347-160_S347_L001	160	A. thaliana	BI1	Rhizosphere	28 dpi	At	At_BI1_28dpi_Rhizosphere
-FunITS-BC18-161_S18_L001	161	A. thaliana	BI1	Soil	28 dpi	At	At_BI1_28dpi_Soil
-FunITS-BC310-162_S310_L001	162	A. thaliana	Col-0	Rhizosphere	28 dpi	At	At_Col-0_28dpi_Rhizosphere
-FunITS-BC374-163_S374_L001	163	A. thaliana	Col-0	Rhizoplane	28 dpi	At	At_Col-0_28dpi_Rhizoplane
-FunITS-BC311-164_S311_L001	164	A. thaliana	BI1	Roots	28 dpi	At	At_BI1_28dpi_Roots
-FunITS-BC312-165_S312_L001	165	A. thaliana	BI1	Roots	28 dpi	At	At_BI1_28dpi_Roots
-FunITS-BC313-166_S313_L001	166	A. thaliana	Col-0	Roots	28 dpi	At	At_Col-0_28dpi_Roots
-FunITS-BC314-167_S314_L001	167	A. thaliana	Col-0	Roots	28 dpi	At	At_Col-0_28dpi_Roots
-FunITS-BC315-168_S315_L001	168	A. thaliana	Col-0	Roots	28 dpi	At	At_Col-0_28dpi_Roots
-FunITS-BC316-169_S316_L001	169	A. thaliana	BI1	Rhizosphere	28 dpi	At	At_BI1_28dpi_Rhizosphere
-FunITS-BC317-170_S317_L001	170	A. thaliana	Col-0	Rhizosphere	28 dpi	At	At_Col-0_28dpi_Rhizosphere
-FunITS-BC375-171_S375_L001	171	A. thaliana	BI1	Rhizoplane	28 dpi	At	At_BI1_28dpi_Rhizoplane
-FunITS-BC318-172_S318_L001	172	A. thaliana	BI1	Roots	28 dpi	At	At_BI1_28dpi_Roots
-FunITS-BC319-173_S319_L001	173	A. thaliana	BI1	Roots	28 dpi	At	At_BI1_28dpi_Roots
-FunITS-BC320-174_S320_L001	174	A. thaliana	Col-0	Roots	28 dpi	At	At_Col-0_28dpi_Roots
-FunITS-BC321-175_S321_L001	175	A. thaliana	Col-0	Roots	28 dpi	At	At_Col-0_28dpi_Roots
-FunITS-BC322-176_S322_L001	176	A. thaliana	Col-0	Roots	28 dpi	At	At_Col-0_28dpi_Roots
-FunITS-BC376-177_S376_L001	177	A. thaliana	BI1	Rhizoplane	28 dpi	At	At_BI1_28dpi_Rhizoplane
-FunITS-BC19-178_S19_L001	178	H. vulgare	GP	Roots	28 dpi	Hv	Hv_GP_28dpi_Roots
-FunITS-BC20-179_S20_L001	179	H. vulgare	GP	Roots	28 dpi	Hv	Hv_GP_28dpi_Roots
-FunITS-BC21-180_S21_L001	180	H. vulgare	GP	Roots	28 dpi	Hv	Hv_GP_28dpi_Roots
-FunITS-BC22-181_S22_L001	181	H. vulgare	BI1	Roots	28 dpi	Hv	Hv_BI1_28dpi_Roots
-FunITS-BC23-182_S23_L001	182	H. vulgare	BI1	Roots	28 dpi	Hv	Hv_BI1_28dpi_Roots
-FunITS-BC24-183_S24_L001	183	H. vulgare	GP	Roots	28 dpi	Hv	Hv_GP_28dpi_Roots
-FunITS-BC25-184_S25_L001	184	H. vulgare	GP	Roots	28 dpi	Hv	Hv_GP_28dpi_Roots
-FunITS-BC26-185_S26_L001	185	H. vulgare	BI1	Roots	28 dpi	Hv	Hv_BI1_28dpi_Roots
-FunITS-BC27-186_S27_L001	186	H. vulgare	BI1	Soil	28 dpi	Hv	Hv_BI1_28dpi_Soil
-FunITS-BC28-187_S28_L001	187	H. vulgare	GP	Soil	28 dpi	Hv	Hv_GP_28dpi_Soil
-FunITS-BC29-188_S29_L001	188	H. vulgare	BI1	Rhizosphere	28 dpi	Hv	Hv_BI1_28dpi_Rhizosphere
-FunITS-BC30-189_S30_L001	189	H. vulgare	GP	Rhizosphere	28 dpi	Hv	Hv_GP_28dpi_Rhizosphere
-FunITS-BC31-190_S31_L001	190	H. vulgare	BI1	Rhizosphere	28 dpi	Hv	Hv_BI1_28dpi_Rhizosphere
-FunITS-BC32-191_S32_L001	191	H. vulgare	GP	Rhizosphere	28 dpi	Hv	Hv_GP_28dpi_Rhizosphere
-FunITS-BC33-192_S33_L001	192	H. vulgare	GP	Rhizosphere	28 dpi	Hv	Hv_GP_28dpi_Rhizosphere
-FunITS-BC34-193_S34_L001	193	H. vulgare	BI1	Rhizosphere	28 dpi	Hv	Hv_BI1_28dpi_Rhizosphere
-FunITS-BC35-194_S35_L001	194	H. vulgare	GP	Soil	28 dpi	Hv	Hv_GP_28dpi_Soil
-FunITS-BC36-195_S36_L001	195	H. vulgare	GP	Roots	28 dpi	Hv	Hv_GP_28dpi_Roots
-FunITS-BC37-196_S37_L001	196	H. vulgare	BI1	Roots	28 dpi	Hv	Hv_BI1_28dpi_Roots
-FunITS-BC38-197_S38_L001	197	H. vulgare	GP	Roots	28 dpi	Hv	Hv_GP_28dpi_Roots
-FunITS-BC39-198_S39_L001	198	H. vulgare	GP	Roots	28 dpi	Hv	Hv_GP_28dpi_Roots
-FunITS-BC40-199_S40_L001	199	H. vulgare	BI1	Roots	28 dpi	Hv	Hv_BI1_28dpi_Roots
-FunITS-BC41-200_S41_L001	200	H. vulgare	GP	Roots	28 dpi	Hv	Hv_GP_28dpi_Roots
-FunITS-BC42-201_S42_L001	201	H. vulgare	BI1	Roots	28 dpi	Hv	Hv_BI1_28dpi_Roots
-FunITS-BC43-202_S43_L001	202	H. vulgare	GP	Roots	28 dpi	Hv	Hv_GP_28dpi_Roots
-FunITS-BC44-203_S44_L001	203	H. vulgare	BI1	Roots	28 dpi	Hv	Hv_BI1_28dpi_Roots
-FunITS-BC45-204_S45_L001	204	H. vulgare	GP	Rhizosphere	28 dpi	Hv	Hv_GP_28dpi_Rhizosphere
-FunITS-BC46-205_S46_L001	205	H. vulgare	BI1	Roots	28 dpi	Hv	Hv_BI1_28dpi_Roots
-FunITS-BC47-206_S47_L001	206	H. vulgare	BI1	Rhizosphere	28 dpi	Hv	Hv_BI1_28dpi_Rhizosphere
-FunITS-BC48-207_S48_L001	207	H. vulgare	GP	Soil	28 dpi	Hv	Hv_GP_28dpi_Soil
-FunITS-BC49-208_S49_L001	208	H. vulgare	BI1	Rhizosphere	28 dpi	Hv	Hv_BI1_28dpi_Rhizosphere
-FunITS-BC50-209_S50_L001	209	H. vulgare	BI1	Roots	28 dpi	Hv	Hv_BI1_28dpi_Roots
-FunITS-BC51-210_S51_L001	210	H. vulgare	BI1	Roots	28 dpi	Hv	Hv_BI1_28dpi_Roots
-FunITS-BC52-211_S52_L001	211	H. vulgare	GP	Roots	28 dpi	Hv	Hv_GP_28dpi_Roots
-FunITS-BC53-212_S53_L001	212	H. vulgare	GP	Rhizosphere	28 dpi	Hv	Hv_GP_28dpi_Rhizosphere
-FunITS-BC54-213_S54_L001	213	H. vulgare	GP	Rhizosphere	28 dpi	Hv	Hv_GP_28dpi_Rhizosphere
-FunITS-BC55-214_S55_L001	214	H. vulgare	BI1	Rhizosphere	28 dpi	Hv	Hv_BI1_28dpi_Rhizosphere
-FunITS-BC56-215_S56_L001	215	H. vulgare	BI1	Soil	28 dpi	Hv	Hv_BI1_28dpi_Soil
-FunITS-BC57-216_S57_L001	216	H. vulgare	GP	Rhizosphere	28 dpi	Hv	Hv_GP_28dpi_Rhizosphere
-FunITS-BC58-217_S58_L001	217	H. vulgare	BI1	Roots	28 dpi	Hv	Hv_BI1_28dpi_Roots
-FunITS-BC59-218_S59_L001	218	H. vulgare	BI1	Roots	28 dpi	Hv	Hv_BI1_28dpi_Roots
-FunITS-BC60-219_S60_L001	219	H. vulgare	GP	Roots	28 dpi	Hv	Hv_GP_28dpi_Roots
-FunITS-BC61-220_S61_L001	220	H. vulgare	GP	Rhizosphere	28 dpi	Hv	Hv_GP_28dpi_Rhizosphere
-FunITS-BC62-221_S62_L001	221	H. vulgare	BI1	Soil	28 dpi	Hv	Hv_BI1_28dpi_Soil
-FunITS-BC63-222_S63_L001	222	H. vulgare	BI1	Rhizosphere	28 dpi	Hv	Hv_BI1_28dpi_Rhizosphere
-FunITS-BC64-223_S64_L001	223	H. vulgare	BI1	Soil	28 dpi	Hv	Hv_BI1_28dpi_Soil
-FunITS-BC65-224_S65_L001	224	H. vulgare	GP	Soil	28 dpi	Hv	Hv_GP_28dpi_Soil
-FunITS-BC66-225_S66_L001	225	H. vulgare	GP	Rhizosphere	28 dpi	Hv	Hv_GP_28dpi_Rhizosphere
-FunITS-BC67-226_S67_L001	226	H. vulgare	GP	Soil	28 dpi	Hv	Hv_GP_28dpi_Soil
-FunITS-BC68-227_S68_L001	227	H. vulgare	BI1	Soil	28 dpi	Hv	Hv_BI1_28dpi_Soil
-FunITS-BC69-228_S69_L001	228	H. vulgare	BI1	Soil	28 dpi	Hv	Hv_BI1_28dpi_Soil
-FunITS-BC70-229_S70_L001	229	H. vulgare	BI1	Soil	28 dpi	Hv	Hv_BI1_28dpi_Soil
-FunITS-BC71-230_S71_L001	230	H. vulgare	GP	Soil	28 dpi	Hv	Hv_GP_28dpi_Soil
-FunITS-BC72-231_S72_L001	231	H. vulgare	BI1	Rhizosphere	28 dpi	Hv	Hv_BI1_28dpi_Rhizosphere
-FunITS-BC73-232_S73_L001	232	H. vulgare	BI1	Rhizosphere	28 dpi	Hv	Hv_BI1_28dpi_Rhizosphere
-FunITS-BC74-233_S74_L001	233	H. vulgare	BI1	Soil	28 dpi	Hv	Hv_BI1_28dpi_Soil
-FunITS-BC75-234_S75_L001	234	H. vulgare	BI1	Rhizosphere	28 dpi	Hv	Hv_BI1_28dpi_Rhizosphere
-FunITS-BC76-235_S76_L001	235	H. vulgare	BI1	Soil	28 dpi	Hv	Hv_BI1_28dpi_Soil
-FunITS-BC77-236_S77_L001	236	H. vulgare	GP	Soil	28 dpi	Hv	Hv_GP_28dpi_Soil
-FunITS-BC78-237_S78_L001	237	H. vulgare	BI1	Soil	28 dpi	Hv	Hv_BI1_28dpi_Soil
-FunITS-BC79-238_S79_L001	238	H. vulgare	GP	Soil	28 dpi	Hv	Hv_GP_28dpi_Soil
-FunITS-BC80-239_S80_L001	239	H. vulgare	BI1	Soil	28 dpi	Hv	Hv_BI1_28dpi_Soil
-FunITS-BC81-240_S81_L001	240	H. vulgare	GP	Rhizosphere	28 dpi	Hv	Hv_GP_28dpi_Rhizosphere
-FunITS-BC82-241_S82_L001	241	H. vulgare	GP	Rhizosphere	28 dpi	Hv	Hv_GP_28dpi_Rhizosphere
-FunITS-BC83-242_S83_L001	242	H. vulgare	BI1	Rhizosphere	28 dpi	Hv	Hv_BI1_28dpi_Rhizosphere
-FunITS-BC84-243_S84_L001	243	H. vulgare	BI1	Rhizosphere	28 dpi	Hv	Hv_BI1_28dpi_Rhizosphere
-FunITS-BC323-244_S323_L001	244	H. vulgare	GP	Soil	28 dpi	Hv	Hv_GP_28dpi_Soil
-FunITS-BC324-245_S324_L001	245	H. vulgare	BI1	Soil	28 dpi	Hv	Hv_BI1_28dpi_Soil
-FunITS-BC325-246_S325_L001	246	H. vulgare	GP	Soil	28 dpi	Hv	Hv_GP_28dpi_Soil
-FunITS-BC326-247_S326_L001	247	H. vulgare	GP	Soil	28 dpi	Hv	Hv_GP_28dpi_Soil
-FunITS-BC327-248_S327_L001	248	H. vulgare	GP	Rhizosphere	28 dpi	Hv	Hv_GP_28dpi_Rhizosphere
-FunITS-BC328-249_S328_L001	249	H. vulgare	GP	Rhizosphere	28 dpi	Hv	Hv_GP_28dpi_Rhizosphere
-FunITS-BC176-cas_S176_L001	Empty	Empty	Empty	Cas	Empty	Empty	Empty_Empty_Empty_Cas
-FunITS-BC185-cas_S185_L001	Empty	Empty	Empty	Cas	Empty	Empty	Empty_Empty_Empty_Cas
-FunITS-BC329-cas_S329_L001	Empty	Empty	Empty	Cas	Empty	Empty	Empty_Empty_Empty_Cas
-FunITS-BC332-cas_S332_L001	Empty	Empty	Empty	Cas	Empty	Empty	Empty_Empty_Empty_Cas
-FunITS-BC348-cas_S348_L001	Empty	Empty	Empty	Cas	Empty	Empty	Empty_Empty_Empty_Cas
-FunITS-BC85-cas_S85_L001	Empty	Empty	Empty	Cas	Empty	Empty	Empty_Empty_Empty_Cas
-FunITS-BC88-cas_S88_L001	Empty	Empty	Empty	Cas	Empty	Empty	Empty_Empty_Empty_Cas
-FunITS-BC186-neg_S186_L001	Empty	Empty	Empty	Neg	Empty	Empty	Empty_Empty_Empty_Neg
-FunITS-BC331-neg_S331_L001	Empty	Empty	Empty	Neg	Empty	Empty	Empty_Empty_Empty_Neg
-FunITS-BC377-neg_S377_L001	Empty	Empty	Empty	Neg	Empty	Empty	Empty_Empty_Empty_Neg
-FunITS-BC87-neg_S87_L001	Empty	Empty	Empty	Neg	Empty	Empty	Empty_Empty_Empty_Neg
-FunITS-BC187-seba_S187_L001	Empty	Empty	Empty	Seba	Empty	Empty	Empty_Empty_Empty_Seba
-FunITS-BC349-seba_S349_L001	Empty	Empty	Empty	Seba	Empty	Empty	Empty_Empty_Empty_Seba
-FunITS-BC86-seba_S86_L001	Empty	Empty	Empty	Seba	Empty	Empty	Empty_Empty_Empty_Seba
-FunITS-BC330-sv_S330_L001	Empty	Empty	Empty	Sv	Empty	Empty	Empty_Empty_Empty_Sv
+X.Sample_Name	Short_Sample	Sample_ID	Organism	Genotype	Compartment	Timepoint	Abbrev	Summary
+FunITS-BC89-1_S89_L001	Fun_S1	1	H. vulgare	BI1	Soil	14 dpi	Hv	Hv_BI1_14dpi_Soil
+FunITS-BC90-2_S90_L001	Fun_S2	2	H. vulgare	GP	Soil	14 dpi	Hv	Hv_GP_14dpi_Soil
+FunITS-BC91-3_S91_L001	Fun_S3	3	H. vulgare	BI1	Rhizosphere	14 dpi	Hv	Hv_BI1_14dpi_Rhizosphere
+FunITS-BC92-4_S92_L001	Fun_S4	4	H. vulgare	GP	Rhizosphere	14 dpi	Hv	Hv_GP_14dpi_Rhizosphere
+FunITS-BC93-5_S93_L001	Fun_S5	5	H. vulgare	GP	Rhizosphere	14 dpi	Hv	Hv_GP_14dpi_Rhizosphere
+FunITS-BC94-6_S94_L001	Fun_S6	6	H. vulgare	BI1	Roots	14 dpi	Hv	Hv_BI1_14dpi_Roots
+FunITS-BC95-7_S95_L001	Fun_S7	7	H. vulgare	GP	Roots	14 dpi	Hv	Hv_GP_14dpi_Roots
+FunITS-BC151-8_S151_L001	Fun_S8	8	A. thaliana	Col-0	Roots	14 dpi	At	At_Col-0_14dpi_Roots
+FunITS-BC152-9_S152_L001	Fun_S9	9	A. thaliana	Col-0	Rhizoplane	14 dpi	At	At_Col-0_14dpi_Rhizoplane
+FunITS-BC96-10_S96_L001	Fun_S10	10	A. thaliana	Col-0	Rhizoplane	14 dpi	At	At_Col-0_14dpi_Rhizoplane
+FunITS-BC97-11_S97_L001	Fun_S11	11	A. thaliana	BI1	Rhizoplane	14 dpi	At	At_BI1_14dpi_Rhizoplane
+FunITS-BC98-12_S98_L001	Fun_S12	12	H. vulgare	GP	Roots	14 dpi	Hv	Hv_GP_14dpi_Roots
+FunITS-BC350-13_S350_L001	Fun_S13	13	A. thaliana	BI1	Rhizoplane	14 dpi	At	At_BI1_14dpi_Rhizoplane
+FunITS-BC337-14_S337_L001	Fun_S14	14	A. thaliana	BI1	Roots	14 dpi	At	At_BI1_14dpi_Roots
+FunITS-BC99-15_S99_L001	Fun_S15	15	H. vulgare	GP	Roots	14 dpi	Hv	Hv_GP_14dpi_Roots
+FunITS-BC351-16_S351_L001	Fun_S16	16	A. thaliana	Col-0	Rhizoplane	14 dpi	At	At_Col-0_14dpi_Rhizoplane
+FunITS-BC161-17_S161_L001	Fun_S17	17	A. thaliana	Col-0	Roots	14 dpi	At	At_Col-0_14dpi_Roots
+FunITS-BC100-18_S100_L001	Fun_S18	18	H. vulgare	GP	Roots	14 dpi	Hv	Hv_GP_14dpi_Roots
+FunITS-BC338-19_S338_L001	Fun_S19	19	A. thaliana	Col-0	Roots	14 dpi	At	At_Col-0_14dpi_Roots
+FunITS-BC352-20_S352_L001	Fun_S20	20	A. thaliana	BI1	Rhizoplane	14 dpi	At	At_BI1_14dpi_Rhizoplane
+FunITS-BC162-21_S162_L001	Fun_S21	21	A. thaliana	BI1	Rhizosphere	14 dpi	At	At_BI1_14dpi_Rhizosphere
+FunITS-BC163-22_S163_L001	Fun_S22	22	A. thaliana	BI1	Rhizosphere	14 dpi	At	At_BI1_14dpi_Rhizosphere
+FunITS-BC101-23_S101_L001	Fun_S23	23	H. vulgare	BI1	Roots	14 dpi	Hv	Hv_BI1_14dpi_Roots
+FunITS-BC102-24_S102_L001	Fun_S24	24	H. vulgare	GP	Roots	14 dpi	Hv	Hv_GP_14dpi_Roots
+FunITS-BC103-25_S103_L001	Fun_S25	25	A. thaliana	Col-0	Soil	14 dpi	At	At_Col-0_14dpi_Soil
+FunITS-BC104-26_S104_L001	Fun_S26	26	A. thaliana	BI1	Rhizosphere	14 dpi	At	At_BI1_14dpi_Rhizosphere
+FunITS-BC353-27_S353_L001	Fun_S27	27	A. thaliana	BI1	Rhizoplane	14 dpi	At	At_BI1_14dpi_Rhizoplane
+FunITS-BC105-28_S105_L001	Fun_S28	28	A. thaliana	Col-0	Rhizosphere	14 dpi	At	At_Col-0_14dpi_Rhizosphere
+FunITS-BC106-29_S106_L001	Fun_S29	29	H. vulgare	GP	Soil	14 dpi	Hv	Hv_GP_14dpi_Soil
+FunITS-BC107-30_S107_L001	Fun_S30	30	H. vulgare	GP	Soil	14 dpi	Hv	Hv_GP_14dpi_Soil
+FunITS-BC108-31_S108_L001	Fun_S31	31	H. vulgare	BI1	Soil	14 dpi	Hv	Hv_BI1_14dpi_Soil
+FunITS-BC339-32_S339_L001	Fun_S32	32	A. thaliana	Col-0	Roots	14 dpi	At	At_Col-0_14dpi_Roots
+FunITS-BC109-33_S109_L001	Fun_S33	33	H. vulgare	BI1	Roots	14 dpi	Hv	Hv_BI1_14dpi_Roots
+FunITS-BC164-34_S164_L001	Fun_S34	34	A. thaliana	Col-0	Rhizoplane	14 dpi	At	At_Col-0_14dpi_Rhizoplane
+FunITS-BC354-35_S354_L001	Fun_S35	35	A. thaliana	BI1	Rhizoplane	14 dpi	At	At_BI1_14dpi_Rhizoplane
+FunITS-BC110-36_S110_L001	Fun_S36	36	A. thaliana	Col-0	Soil	14 dpi	At	At_Col-0_14dpi_Soil
+FunITS-BC111-37_S111_L001	Fun_S37	37	H. vulgare	GP	Roots	14 dpi	Hv	Hv_GP_14dpi_Roots
+FunITS-BC112-38_S112_L001	Fun_S38	38	H. vulgare	GP	Roots	14 dpi	Hv	Hv_GP_14dpi_Roots
+FunITS-BC355-39_S355_L001	Fun_S39	39	A. thaliana	BI1	Rhizoplane	14 dpi	At	At_BI1_14dpi_Rhizoplane
+FunITS-BC113-40_S113_L001	Fun_S40	40	H. vulgare	BI1	Roots	14 dpi	Hv	Hv_BI1_14dpi_Roots
+FunITS-BC114-41_S114_L001	Fun_S41	41	A. thaliana	Col-0	Soil	14 dpi	At	At_Col-0_14dpi_Soil
+FunITS-BC115-42_S115_L001	Fun_S42	42	H. vulgare	GP	Roots	14 dpi	Hv	Hv_GP_14dpi_Roots
+FunITS-BC165-43_S165_L001	Fun_S43	43	A. thaliana	BI1	Roots	14 dpi	At	At_BI1_14dpi_Roots
+FunITS-BC116-44_S116_L001	Fun_S44	44	H. vulgare	GP	Roots	14 dpi	Hv	Hv_GP_14dpi_Roots
+FunITS-BC166-45_S166_L001	Fun_S45	45	A. thaliana	BI1	Rhizosphere	14 dpi	At	At_BI1_14dpi_Rhizosphere
+FunITS-BC117-46_S117_L001	Fun_S46	46	A. thaliana	BI1	Soil	14 dpi	At	At_BI1_14dpi_Soil
+FunITS-BC118-47_S118_L001	Fun_S47	47	H. vulgare	BI1	Roots	14 dpi	Hv	Hv_BI1_14dpi_Roots
+FunITS-BC119-48_S119_L001	Fun_S48	48	A. thaliana	Col-0	Soil	14 dpi	At	At_Col-0_14dpi_Soil
+FunITS-BC340-49_S340_L001	Fun_S49	49	A. thaliana	BI1	Roots	14 dpi	At	At_BI1_14dpi_Roots
+FunITS-BC167-50_S167_L001	Fun_S50	50	A. thaliana	Col-0	Rhizosphere	14 dpi	At	At_Col-0_14dpi_Rhizosphere
+FunITS-BC341-51_S341_L001	Fun_S51	51	A. thaliana	Col-0	Roots	14 dpi	At	At_Col-0_14dpi_Roots
+FunITS-BC168-52_S168_L001	Fun_S52	52	A. thaliana	BI1	Roots	14 dpi	At	At_BI1_14dpi_Roots
+FunITS-BC356-53_S356_L001	Fun_S53	53	A. thaliana	Col-0	Rhizoplane	14 dpi	At	At_Col-0_14dpi_Rhizoplane
+FunITS-BC357-54_S357_L001	Fun_S54	54	A. thaliana	Col-0	Rhizoplane	14 dpi	At	At_Col-0_14dpi_Rhizoplane
+FunITS-BC120-55_S120_L001	Fun_S55	55	A. thaliana	BI1	Soil	14 dpi	At	At_BI1_14dpi_Soil
+FunITS-BC121-56_S121_L001	Fun_S56	56	A. thaliana	BI1	Soil	14 dpi	At	At_BI1_14dpi_Soil
+FunITS-BC122-57_S122_L001	Fun_S57	57	H. vulgare	BI1	Roots	14 dpi	Hv	Hv_BI1_14dpi_Roots
+FunITS-BC123-58_S123_L001	Fun_S58	58	H. vulgare	BI1	Roots	14 dpi	Hv	Hv_BI1_14dpi_Roots
+FunITS-BC124-59_S124_L001	Fun_S59	59	H. vulgare	GP	Roots	14 dpi	Hv	Hv_GP_14dpi_Roots
+FunITS-BC169-60_S169_L001	Fun_S60	60	A. thaliana	Col-0	Rhizosphere	14 dpi	At	At_Col-0_14dpi_Rhizosphere
+FunITS-BC125-61_S125_L001	Fun_S61	61	H. vulgare	BI1	Rhizosphere	14 dpi	Hv	Hv_BI1_14dpi_Rhizosphere
+FunITS-BC126-62_S126_L001	Fun_S62	62	H. vulgare	BI1	Rhizosphere	14 dpi	Hv	Hv_BI1_14dpi_Rhizosphere
+FunITS-BC127-63_S127_L001	Fun_S63	63	H. vulgare	BI1	Rhizosphere	14 dpi	Hv	Hv_BI1_14dpi_Rhizosphere
+FunITS-BC128-64_S128_L001	Fun_S64	64	A. thaliana	BI1	Soil	14 dpi	At	At_BI1_14dpi_Soil
+FunITS-BC129-65_S129_L001	Fun_S65	65	A. thaliana	Col-0	Soil	14 dpi	At	At_Col-0_14dpi_Soil
+FunITS-BC130-66_S130_L001	Fun_S66	66	A. thaliana	Col-0	Soil	14 dpi	At	At_Col-0_14dpi_Soil
+FunITS-BC131-67_S131_L001	Fun_S67	67	H. vulgare	BI1	Roots	14 dpi	Hv	Hv_BI1_14dpi_Roots
+FunITS-BC132-68_S132_L001	Fun_S68	68	H. vulgare	BI1	Roots	14 dpi	Hv	Hv_BI1_14dpi_Roots
+FunITS-BC133-69_S133_L001	Fun_S69	69	A. thaliana	Col-0	Soil	14 dpi	At	At_Col-0_14dpi_Soil
+FunITS-BC134-70_S134_L001	Fun_S70	70	H. vulgare	BI1	Roots	14 dpi	Hv	Hv_BI1_14dpi_Roots
+FunITS-BC358-71_S358_L001	Fun_S71	71	A. thaliana	BI1	Rhizoplane	14 dpi	At	At_BI1_14dpi_Rhizoplane
+FunITS-BC359-72_S359_L001	Fun_S72	72	A. thaliana	Col-0	Rhizoplane	14 dpi	At	At_Col-0_14dpi_Rhizoplane
+FunITS-BC135-73_S135_L001	Fun_S73	73	H. vulgare	GP	Roots	14 dpi	Hv	Hv_GP_14dpi_Roots
+FunITS-BC136-74_S136_L001	Fun_S74	74	H. vulgare	BI1	Roots	14 dpi	Hv	Hv_BI1_14dpi_Roots
+FunITS-BC360-75_S360_L001	Fun_S75	75	A. thaliana	Col-0	Rhizoplane	14 dpi	At	At_Col-0_14dpi_Rhizoplane
+FunITS-BC170-76_S170_L001	Fun_S76	76	A. thaliana	BI1	Rhizoplane	14 dpi	At	At_BI1_14dpi_Rhizoplane
+FunITS-BC171-77_S171_L001	Fun_S77	77	A. thaliana	Col-0	Rhizosphere	14 dpi	At	At_Col-0_14dpi_Rhizosphere
+FunITS-BC137-78_S137_L001	Fun_S78	78	H. vulgare	GP	Rhizosphere	14 dpi	Hv	Hv_GP_14dpi_Rhizosphere
+FunITS-BC138-79_S138_L001	Fun_S79	79	H. vulgare	BI1	Rhizosphere	14 dpi	Hv	Hv_BI1_14dpi_Rhizosphere
+FunITS-BC139-80_S139_L001	Fun_S80	80	H. vulgare	BI1	Soil	14 dpi	Hv	Hv_BI1_14dpi_Soil
+FunITS-BC140-81_S140_L001	Fun_S81	81	H. vulgare	GP	Roots	14 dpi	Hv	Hv_GP_14dpi_Roots
+FunITS-BC141-82_S141_L001	Fun_S82	82	H. vulgare	GP	Rhizosphere	14 dpi	Hv	Hv_GP_14dpi_Rhizosphere
+FunITS-BC142-83_S142_L001	Fun_S83	83	H. vulgare	GP	Rhizosphere	14 dpi	Hv	Hv_GP_14dpi_Rhizosphere
+FunITS-BC143-84_S143_L001	Fun_S84	84	H. vulgare	GP	Rhizosphere	14 dpi	Hv	Hv_GP_14dpi_Rhizosphere
+FunITS-BC144-85_S144_L001	Fun_S85	85	H. vulgare	GP	Rhizosphere	14 dpi	Hv	Hv_GP_14dpi_Rhizosphere
+FunITS-BC153-86_S153_L001	Fun_S86	86	H. vulgare	GP	Rhizosphere	14 dpi	Hv	Hv_GP_14dpi_Rhizosphere
+FunITS-BC154-87_S154_L001	Fun_S87	87	H. vulgare	GP	Rhizosphere	14 dpi	Hv	Hv_GP_14dpi_Rhizosphere
+FunITS-BC155-88_S155_L001	Fun_S88	88	H. vulgare	GP	Rhizosphere	14 dpi	Hv	Hv_GP_14dpi_Rhizosphere
+FunITS-BC156-89_S156_L001	Fun_S89	89	H. vulgare	BI1	Roots	14 dpi	Hv	Hv_BI1_14dpi_Roots
+FunITS-BC157-90_S157_L001	Fun_S90	90	H. vulgare	BI1	Rhizosphere	14 dpi	Hv	Hv_BI1_14dpi_Rhizosphere
+FunITS-BC158-91_S158_L001	Fun_S91	91	H. vulgare	BI1	Rhizosphere	14 dpi	Hv	Hv_BI1_14dpi_Rhizosphere
+FunITS-BC159-92_S159_L001	Fun_S92	92	H. vulgare	BI1	Rhizosphere	14 dpi	Hv	Hv_BI1_14dpi_Rhizosphere
+FunITS-BC160-93_S160_L001	Fun_S93	93	H. vulgare	BI1	Rhizosphere	14 dpi	Hv	Hv_BI1_14dpi_Rhizosphere
+FunITS-BC145-94_S145_L001	Fun_S94	94	H. vulgare	BI1	Rhizosphere	14 dpi	Hv	Hv_BI1_14dpi_Rhizosphere
+FunITS-BC146-95_S146_L001	Fun_S95	95	H. vulgare	BI1	Rhizosphere	14 dpi	Hv	Hv_BI1_14dpi_Rhizosphere
+FunITS-BC147-96_S147_L001	Fun_S96	96	H. vulgare	BI1	Rhizosphere	14 dpi	Hv	Hv_BI1_14dpi_Rhizosphere
+FunITS-BC148-97_S148_L001	Fun_S97	97	A. thaliana	BI1	Soil	14 dpi	At	At_BI1_14dpi_Soil
+FunITS-BC172-98_S172_L001	Fun_S98	98	A. thaliana	BI1	Soil	14 dpi	At	At_BI1_14dpi_Soil
+FunITS-BC361-99_S361_L001	Fun_S99	99	A. thaliana	Col-0	Rhizoplane	14 dpi	At	At_Col-0_14dpi_Rhizoplane
+FunITS-BC173-100_S173_L001	Fun_S100	100	A. thaliana	Col-0	Rhizosphere	14 dpi	At	At_Col-0_14dpi_Rhizosphere
+FunITS-BC174-101_S174_L001	Fun_S101	101	A. thaliana	BI1	Rhizosphere	14 dpi	At	At_BI1_14dpi_Rhizosphere
+FunITS-BC149-102_S149_L001	Fun_S102	102	A. thaliana	BI1	Soil	28 dpi	At	At_BI1_28dpi_Soil
+FunITS-BC150-103_S150_L001	Fun_S103	103	A. thaliana	Col-0	Soil	14 dpi	At	At_Col-0_14dpi_Soil
+FunITS-BC362-104_S362_L001	Fun_S104	104	A. thaliana	BI1	Rhizoplane	28 dpi	At	At_BI1_28dpi_Rhizoplane
+FunITS-BC175-105_S175_L001	Fun_S105	105	A. thaliana	Col-0	Rhizosphere	14 dpi	At	At_Col-0_14dpi_Rhizosphere
+FunITS-BC289-106_S289_L001	Fun_S106	106	A. thaliana	Col-0	Rhizosphere	14 dpi	At	At_Col-0_14dpi_Rhizosphere
+FunITS-BC290-107_S290_L001	Fun_S107	107	A. thaliana	BI1	Rhizosphere	28 dpi	At	At_BI1_28dpi_Rhizosphere
+FunITS-BC291-108_S291_L001	Fun_S108	108	A. thaliana	BI1	Soil	14 dpi	At	At_BI1_14dpi_Soil
+FunITS-BC363-109_S363_L001	Fun_S109	109	A. thaliana	Col-0	Rhizoplane	28 dpi	At	At_Col-0_28dpi_Rhizoplane
+FunITS-BC292-110_S292_L001	Fun_S110	110	A. thaliana	BI1	Rhizosphere	28 dpi	At	At_BI1_28dpi_Rhizosphere
+FunITS-BC293-111_S293_L001	Fun_S111	111	H. vulgare	BI1	Rhizosphere	14 dpi	Hv	Hv_BI1_14dpi_Rhizosphere
+FunITS-BC294-112_S294_L001	Fun_S112	112	H. vulgare	GP	Rhizosphere	14 dpi	Hv	Hv_GP_14dpi_Rhizosphere
+FunITS-BC364-113_S364_L001	Fun_S113	113	A. thaliana	Col-0	Rhizoplane	28 dpi	At	At_Col-0_28dpi_Rhizoplane
+FunITS-BC365-114_S365_L001	Fun_S114	114	A. thaliana	BI1	Rhizoplane	28 dpi	At	At_BI1_28dpi_Rhizoplane
+FunITS-BC366-115_S366_L001	Fun_S115	115	A. thaliana	Col-0	Rhizoplane	28 dpi	At	At_Col-0_28dpi_Rhizoplane
+FunITS-BC295-116_S295_L001	Fun_S116	116	A. thaliana	BI1	Soil	28 dpi	At	At_BI1_28dpi_Soil
+FunITS-BC296-117_S296_L001	Fun_S117	117	A. thaliana	BI1	Soil	28 dpi	At	At_BI1_28dpi_Soil
+FunITS-BC297-118_S297_L001	Fun_S118	118	A. thaliana	BI1	Rhizosphere	28 dpi	At	At_BI1_28dpi_Rhizosphere
+FunITS-BC1-119_S1_L001	Fun_S119	119	A. thaliana	BI1	Soil	28 dpi	At	At_BI1_28dpi_Soil
+FunITS-BC298-120_S298_L001	Fun_S120	120	A. thaliana	BI1	Rhizosphere	28 dpi	At	At_BI1_28dpi_Rhizosphere
+FunITS-BC367-121_S367_L001	Fun_S121	121	A. thaliana	Col-0	Rhizoplane	28 dpi	At	At_Col-0_28dpi_Rhizoplane
+FunITS-BC368-122_S368_L001	Fun_S122	122	A. thaliana	BI1	Rhizoplane	28 dpi	At	At_BI1_28dpi_Rhizoplane
+FunITS-BC369-123_S369_L001	Fun_S123	123	A. thaliana	BI1	Rhizoplane	28 dpi	At	At_BI1_28dpi_Rhizoplane
+FunITS-BC299-124_S299_L001	Fun_S124	124	A. thaliana	Col-0	Rhizosphere	28 dpi	At	At_Col-0_28dpi_Rhizosphere
+FunITS-BC2-125_S2_L001	Fun_S125	125	A. thaliana	BI1	Rhizosphere	28 dpi	At	At_BI1_28dpi_Rhizosphere
+FunITS-BC3-126_S3_L001	Fun_S126	126	A. thaliana	Col-0	Soil	28 dpi	At	At_Col-0_28dpi_Soil
+FunITS-BC4-127_S4_L001	Fun_S127	127	A. thaliana	Col-0	Soil	28 dpi	At	At_Col-0_28dpi_Soil
+FunITS-BC5-128_S5_L001	Fun_S128	128	A. thaliana	Col-0	Soil	28 dpi	At	At_Col-0_28dpi_Soil
+FunITS-BC6-129_S6_L001	Fun_S129	129	A. thaliana	Col-0	Soil	28 dpi	At	At_Col-0_28dpi_Soil
+FunITS-BC300-130_S300_L001	Fun_S130	130	A. thaliana	Col-0	Rhizosphere	28 dpi	At	At_Col-0_28dpi_Rhizosphere
+FunITS-BC301-131_S301_L001	Fun_S131	131	A. thaliana	Col-0	Roots	28 dpi	At	At_Col-0_28dpi_Roots
+FunITS-BC342-132_S342_L001	Fun_S132	132	A. thaliana	Col-0	Roots	14 dpi	At	At_Col-0_14dpi_Roots
+FunITS-BC302-133_S302_L001	Fun_S133	133	A. thaliana	Col-0	Roots	14 dpi	At	At_Col-0_14dpi_Roots
+FunITS-BC303-134_S303_L001	Fun_S134	134	A. thaliana	BI1	Roots	28 dpi	At	At_BI1_28dpi_Roots
+FunITS-BC304-135_S304_L001	Fun_S135	135	A. thaliana	BI1	Roots	28 dpi	At	At_BI1_28dpi_Roots
+FunITS-BC343-136_S343_L001	Fun_S136	136	A. thaliana	BI1	Roots	14 dpi	At	At_BI1_14dpi_Roots
+FunITS-BC344-137_S344_L001	Fun_S137	137	A. thaliana	BI1	Roots	14 dpi	At	At_BI1_14dpi_Roots
+FunITS-BC7-138_S7_L001	Fun_S138	138	A. thaliana	BI1	Rhizosphere	28 dpi	At	At_BI1_28dpi_Rhizosphere
+FunITS-BC305-139_S305_L001	Fun_S139	139	A. thaliana	Col-0	Roots	28 dpi	At	At_Col-0_28dpi_Roots
+FunITS-BC345-140_S345_L001	Fun_S140	140	A. thaliana	Col-0	Roots	14 dpi	At	At_Col-0_14dpi_Roots
+FunITS-BC370-141_S370_L001	Fun_S141	141	A. thaliana	Col-0	Rhizoplane	28 dpi	At	At_Col-0_28dpi_Rhizoplane
+FunITS-BC306-142_S306_L001	Fun_S142	142	A. thaliana	BI1	Roots	28 dpi	At	At_BI1_28dpi_Roots
+FunITS-BC346-143_S346_L001	Fun_S143	143	A. thaliana	BI1	Roots	14 dpi	At	At_BI1_14dpi_Roots
+FunITS-BC307-144_S307_L001	Fun_S144	144	A. thaliana	BI1	Roots	28 dpi	At	At_BI1_28dpi_Roots
+FunITS-BC8-145_S8_L001	Fun_S145	145	A. thaliana	Col-0	Soil	28 dpi	At	At_Col-0_28dpi_Soil
+FunITS-BC308-146_S308_L001	Fun_S146	146	A. thaliana	Col-0	Rhizosphere	28 dpi	At	At_Col-0_28dpi_Rhizosphere
+FunITS-BC9-147_S9_L001	Fun_S147	147	A. thaliana	Col-0	Rhizosphere	28 dpi	At	At_Col-0_28dpi_Rhizosphere
+FunITS-BC10-148_S10_L001	Fun_S148	148	A. thaliana	Col-0	Soil	28 dpi	At	At_Col-0_28dpi_Soil
+FunITS-BC11-149_S11_L001	Fun_S149	149	A. thaliana	BI1	Soil	28 dpi	At	At_BI1_28dpi_Soil
+FunITS-BC371-150_S371_L001	Fun_S150	150	A. thaliana	Col-0	Rhizoplane	28 dpi	At	At_Col-0_28dpi_Rhizoplane
+FunITS-BC372-151_S372_L001	Fun_S151	151	A. thaliana	Col-0	Rhizoplane	28 dpi	At	At_Col-0_28dpi_Rhizoplane
+FunITS-BC309-152_S309_L001	Fun_S152	152	A. thaliana	Col-0	Rhizosphere	28 dpi	At	At_Col-0_28dpi_Rhizosphere
+FunITS-BC12-153_S12_L001	Fun_S153	153	A. thaliana	BI1	Soil	28 dpi	At	At_BI1_28dpi_Soil
+FunITS-BC373-154_S373_L001	Fun_S154	154	A. thaliana	BI1	Rhizoplane	28 dpi	At	At_BI1_28dpi_Rhizoplane
+FunITS-BC13-155_S13_L001	Fun_S155	155	A. thaliana	Col-0	Rhizoplane	28 dpi	At	At_Col-0_28dpi_Rhizoplane
+FunITS-BC14-156_S14_L001	Fun_S156	156	A. thaliana	BI1	Soil	28 dpi	At	At_BI1_28dpi_Soil
+FunITS-BC15-157_S15_L001	Fun_S157	157	A. thaliana	Col-0	Soil	28 dpi	At	At_Col-0_28dpi_Soil
+FunITS-BC16-158_S16_L001	Fun_S158	158	A. thaliana	BI1	Rhizosphere	28 dpi	At	At_BI1_28dpi_Rhizosphere
+FunITS-BC17-159_S17_L001	Fun_S159	159	A. thaliana	Col-0	Soil	28 dpi	At	At_Col-0_28dpi_Soil
+FunITS-BC347-160_S347_L001	Fun_S160	160	A. thaliana	BI1	Rhizosphere	28 dpi	At	At_BI1_28dpi_Rhizosphere
+FunITS-BC18-161_S18_L001	Fun_S161	161	A. thaliana	BI1	Soil	28 dpi	At	At_BI1_28dpi_Soil
+FunITS-BC310-162_S310_L001	Fun_S162	162	A. thaliana	Col-0	Rhizosphere	28 dpi	At	At_Col-0_28dpi_Rhizosphere
+FunITS-BC374-163_S374_L001	Fun_S163	163	A. thaliana	Col-0	Rhizoplane	28 dpi	At	At_Col-0_28dpi_Rhizoplane
+FunITS-BC311-164_S311_L001	Fun_S164	164	A. thaliana	BI1	Roots	28 dpi	At	At_BI1_28dpi_Roots
+FunITS-BC312-165_S312_L001	Fun_S165	165	A. thaliana	BI1	Roots	28 dpi	At	At_BI1_28dpi_Roots
+FunITS-BC313-166_S313_L001	Fun_S166	166	A. thaliana	Col-0	Roots	28 dpi	At	At_Col-0_28dpi_Roots
+FunITS-BC314-167_S314_L001	Fun_S167	167	A. thaliana	Col-0	Roots	28 dpi	At	At_Col-0_28dpi_Roots
+FunITS-BC315-168_S315_L001	Fun_S168	168	A. thaliana	Col-0	Roots	28 dpi	At	At_Col-0_28dpi_Roots
+FunITS-BC316-169_S316_L001	Fun_S169	169	A. thaliana	BI1	Rhizosphere	28 dpi	At	At_BI1_28dpi_Rhizosphere
+FunITS-BC317-170_S317_L001	Fun_S170	170	A. thaliana	Col-0	Rhizosphere	28 dpi	At	At_Col-0_28dpi_Rhizosphere
+FunITS-BC375-171_S375_L001	Fun_S171	171	A. thaliana	BI1	Rhizoplane	28 dpi	At	At_BI1_28dpi_Rhizoplane
+FunITS-BC318-172_S318_L001	Fun_S172	172	A. thaliana	BI1	Roots	28 dpi	At	At_BI1_28dpi_Roots
+FunITS-BC319-173_S319_L001	Fun_S173	173	A. thaliana	BI1	Roots	28 dpi	At	At_BI1_28dpi_Roots
+FunITS-BC320-174_S320_L001	Fun_S174	174	A. thaliana	Col-0	Roots	28 dpi	At	At_Col-0_28dpi_Roots
+FunITS-BC321-175_S321_L001	Fun_S175	175	A. thaliana	Col-0	Roots	28 dpi	At	At_Col-0_28dpi_Roots
+FunITS-BC322-176_S322_L001	Fun_S176	176	A. thaliana	Col-0	Roots	28 dpi	At	At_Col-0_28dpi_Roots
+FunITS-BC376-177_S376_L001	Fun_S177	177	A. thaliana	BI1	Rhizoplane	28 dpi	At	At_BI1_28dpi_Rhizoplane
+FunITS-BC19-178_S19_L001	Fun_S178	178	H. vulgare	GP	Roots	28 dpi	Hv	Hv_GP_28dpi_Roots
+FunITS-BC20-179_S20_L001	Fun_S179	179	H. vulgare	GP	Roots	28 dpi	Hv	Hv_GP_28dpi_Roots
+FunITS-BC21-180_S21_L001	Fun_S180	180	H. vulgare	GP	Roots	28 dpi	Hv	Hv_GP_28dpi_Roots
+FunITS-BC22-181_S22_L001	Fun_S181	181	H. vulgare	BI1	Roots	28 dpi	Hv	Hv_BI1_28dpi_Roots
+FunITS-BC23-182_S23_L001	Fun_S182	182	H. vulgare	BI1	Roots	28 dpi	Hv	Hv_BI1_28dpi_Roots
+FunITS-BC24-183_S24_L001	Fun_S183	183	H. vulgare	GP	Roots	28 dpi	Hv	Hv_GP_28dpi_Roots
+FunITS-BC25-184_S25_L001	Fun_S184	184	H. vulgare	GP	Roots	28 dpi	Hv	Hv_GP_28dpi_Roots
+FunITS-BC26-185_S26_L001	Fun_S185	185	H. vulgare	BI1	Roots	28 dpi	Hv	Hv_BI1_28dpi_Roots
+FunITS-BC27-186_S27_L001	Fun_S186	186	H. vulgare	BI1	Soil	28 dpi	Hv	Hv_BI1_28dpi_Soil
+FunITS-BC28-187_S28_L001	Fun_S187	187	H. vulgare	GP	Soil	28 dpi	Hv	Hv_GP_28dpi_Soil
+FunITS-BC29-188_S29_L001	Fun_S188	188	H. vulgare	BI1	Rhizosphere	28 dpi	Hv	Hv_BI1_28dpi_Rhizosphere
+FunITS-BC30-189_S30_L001	Fun_S189	189	H. vulgare	GP	Rhizosphere	28 dpi	Hv	Hv_GP_28dpi_Rhizosphere
+FunITS-BC31-190_S31_L001	Fun_S190	190	H. vulgare	BI1	Rhizosphere	28 dpi	Hv	Hv_BI1_28dpi_Rhizosphere
+FunITS-BC32-191_S32_L001	Fun_S191	191	H. vulgare	GP	Rhizosphere	28 dpi	Hv	Hv_GP_28dpi_Rhizosphere
+FunITS-BC33-192_S33_L001	Fun_S192	192	H. vulgare	GP	Rhizosphere	28 dpi	Hv	Hv_GP_28dpi_Rhizosphere
+FunITS-BC34-193_S34_L001	Fun_S193	193	H. vulgare	BI1	Rhizosphere	28 dpi	Hv	Hv_BI1_28dpi_Rhizosphere
+FunITS-BC35-194_S35_L001	Fun_S194	194	H. vulgare	GP	Soil	28 dpi	Hv	Hv_GP_28dpi_Soil
+FunITS-BC36-195_S36_L001	Fun_S195	195	H. vulgare	GP	Roots	28 dpi	Hv	Hv_GP_28dpi_Roots
+FunITS-BC37-196_S37_L001	Fun_S196	196	H. vulgare	BI1	Roots	28 dpi	Hv	Hv_BI1_28dpi_Roots
+FunITS-BC38-197_S38_L001	Fun_S197	197	H. vulgare	GP	Roots	28 dpi	Hv	Hv_GP_28dpi_Roots
+FunITS-BC39-198_S39_L001	Fun_S198	198	H. vulgare	GP	Roots	28 dpi	Hv	Hv_GP_28dpi_Roots
+FunITS-BC40-199_S40_L001	Fun_S199	199	H. vulgare	BI1	Roots	28 dpi	Hv	Hv_BI1_28dpi_Roots
+FunITS-BC41-200_S41_L001	Fun_S200	200	H. vulgare	GP	Roots	28 dpi	Hv	Hv_GP_28dpi_Roots
+FunITS-BC42-201_S42_L001	Fun_S201	201	H. vulgare	BI1	Roots	28 dpi	Hv	Hv_BI1_28dpi_Roots
+FunITS-BC43-202_S43_L001	Fun_S202	202	H. vulgare	GP	Roots	28 dpi	Hv	Hv_GP_28dpi_Roots
+FunITS-BC44-203_S44_L001	Fun_S203	203	H. vulgare	BI1	Roots	28 dpi	Hv	Hv_BI1_28dpi_Roots
+FunITS-BC45-204_S45_L001	Fun_S204	204	H. vulgare	GP	Rhizosphere	28 dpi	Hv	Hv_GP_28dpi_Rhizosphere
+FunITS-BC46-205_S46_L001	Fun_S205	205	H. vulgare	BI1	Roots	28 dpi	Hv	Hv_BI1_28dpi_Roots
+FunITS-BC47-206_S47_L001	Fun_S206	206	H. vulgare	BI1	Rhizosphere	28 dpi	Hv	Hv_BI1_28dpi_Rhizosphere
+FunITS-BC48-207_S48_L001	Fun_S207	207	H. vulgare	GP	Soil	28 dpi	Hv	Hv_GP_28dpi_Soil
+FunITS-BC49-208_S49_L001	Fun_S208	208	H. vulgare	BI1	Rhizosphere	28 dpi	Hv	Hv_BI1_28dpi_Rhizosphere
+FunITS-BC50-209_S50_L001	Fun_S209	209	H. vulgare	BI1	Roots	28 dpi	Hv	Hv_BI1_28dpi_Roots
+FunITS-BC51-210_S51_L001	Fun_S210	210	H. vulgare	BI1	Roots	28 dpi	Hv	Hv_BI1_28dpi_Roots
+FunITS-BC52-211_S52_L001	Fun_S211	211	H. vulgare	GP	Roots	28 dpi	Hv	Hv_GP_28dpi_Roots
+FunITS-BC53-212_S53_L001	Fun_S212	212	H. vulgare	GP	Rhizosphere	28 dpi	Hv	Hv_GP_28dpi_Rhizosphere
+FunITS-BC54-213_S54_L001	Fun_S213	213	H. vulgare	GP	Rhizosphere	28 dpi	Hv	Hv_GP_28dpi_Rhizosphere
+FunITS-BC55-214_S55_L001	Fun_S214	214	H. vulgare	BI1	Rhizosphere	28 dpi	Hv	Hv_BI1_28dpi_Rhizosphere
+FunITS-BC56-215_S56_L001	Fun_S215	215	H. vulgare	BI1	Soil	28 dpi	Hv	Hv_BI1_28dpi_Soil
+FunITS-BC57-216_S57_L001	Fun_S216	216	H. vulgare	GP	Rhizosphere	28 dpi	Hv	Hv_GP_28dpi_Rhizosphere
+FunITS-BC58-217_S58_L001	Fun_S217	217	H. vulgare	BI1	Roots	28 dpi	Hv	Hv_BI1_28dpi_Roots
+FunITS-BC59-218_S59_L001	Fun_S218	218	H. vulgare	BI1	Roots	28 dpi	Hv	Hv_BI1_28dpi_Roots
+FunITS-BC60-219_S60_L001	Fun_S219	219	H. vulgare	GP	Roots	28 dpi	Hv	Hv_GP_28dpi_Roots
+FunITS-BC61-220_S61_L001	Fun_S220	220	H. vulgare	GP	Rhizosphere	28 dpi	Hv	Hv_GP_28dpi_Rhizosphere
+FunITS-BC62-221_S62_L001	Fun_S221	221	H. vulgare	BI1	Soil	28 dpi	Hv	Hv_BI1_28dpi_Soil
+FunITS-BC63-222_S63_L001	Fun_S222	222	H. vulgare	BI1	Rhizosphere	28 dpi	Hv	Hv_BI1_28dpi_Rhizosphere
+FunITS-BC64-223_S64_L001	Fun_S223	223	H. vulgare	BI1	Soil	28 dpi	Hv	Hv_BI1_28dpi_Soil
+FunITS-BC65-224_S65_L001	Fun_S224	224	H. vulgare	GP	Soil	28 dpi	Hv	Hv_GP_28dpi_Soil
+FunITS-BC66-225_S66_L001	Fun_S225	225	H. vulgare	GP	Rhizosphere	28 dpi	Hv	Hv_GP_28dpi_Rhizosphere
+FunITS-BC67-226_S67_L001	Fun_S226	226	H. vulgare	GP	Soil	28 dpi	Hv	Hv_GP_28dpi_Soil
+FunITS-BC68-227_S68_L001	Fun_S227	227	H. vulgare	BI1	Soil	28 dpi	Hv	Hv_BI1_28dpi_Soil
+FunITS-BC69-228_S69_L001	Fun_S228	228	H. vulgare	BI1	Soil	28 dpi	Hv	Hv_BI1_28dpi_Soil
+FunITS-BC70-229_S70_L001	Fun_S229	229	H. vulgare	BI1	Soil	28 dpi	Hv	Hv_BI1_28dpi_Soil
+FunITS-BC71-230_S71_L001	Fun_S230	230	H. vulgare	GP	Soil	28 dpi	Hv	Hv_GP_28dpi_Soil
+FunITS-BC72-231_S72_L001	Fun_S231	231	H. vulgare	BI1	Rhizosphere	28 dpi	Hv	Hv_BI1_28dpi_Rhizosphere
+FunITS-BC73-232_S73_L001	Fun_S232	232	H. vulgare	BI1	Rhizosphere	28 dpi	Hv	Hv_BI1_28dpi_Rhizosphere
+FunITS-BC74-233_S74_L001	Fun_S233	233	H. vulgare	BI1	Soil	28 dpi	Hv	Hv_BI1_28dpi_Soil
+FunITS-BC75-234_S75_L001	Fun_S234	234	H. vulgare	BI1	Rhizosphere	28 dpi	Hv	Hv_BI1_28dpi_Rhizosphere
+FunITS-BC76-235_S76_L001	Fun_S235	235	H. vulgare	BI1	Soil	28 dpi	Hv	Hv_BI1_28dpi_Soil
+FunITS-BC77-236_S77_L001	Fun_S236	236	H. vulgare	GP	Soil	28 dpi	Hv	Hv_GP_28dpi_Soil
+FunITS-BC78-237_S78_L001	Fun_S237	237	H. vulgare	BI1	Soil	28 dpi	Hv	Hv_BI1_28dpi_Soil
+FunITS-BC79-238_S79_L001	Fun_S238	238	H. vulgare	GP	Soil	28 dpi	Hv	Hv_GP_28dpi_Soil
+FunITS-BC80-239_S80_L001	Fun_S239	239	H. vulgare	BI1	Soil	28 dpi	Hv	Hv_BI1_28dpi_Soil
+FunITS-BC81-240_S81_L001	Fun_S240	240	H. vulgare	GP	Rhizosphere	28 dpi	Hv	Hv_GP_28dpi_Rhizosphere
+FunITS-BC82-241_S82_L001	Fun_S241	241	H. vulgare	GP	Rhizosphere	28 dpi	Hv	Hv_GP_28dpi_Rhizosphere
+FunITS-BC83-242_S83_L001	Fun_S242	242	H. vulgare	BI1	Rhizosphere	28 dpi	Hv	Hv_BI1_28dpi_Rhizosphere
+FunITS-BC84-243_S84_L001	Fun_S243	243	H. vulgare	BI1	Rhizosphere	28 dpi	Hv	Hv_BI1_28dpi_Rhizosphere
+FunITS-BC323-244_S323_L001	Fun_S244	244	H. vulgare	GP	Soil	28 dpi	Hv	Hv_GP_28dpi_Soil
+FunITS-BC324-245_S324_L001	Fun_S245	245	H. vulgare	BI1	Soil	28 dpi	Hv	Hv_BI1_28dpi_Soil
+FunITS-BC325-246_S325_L001	Fun_S246	246	H. vulgare	GP	Soil	28 dpi	Hv	Hv_GP_28dpi_Soil
+FunITS-BC326-247_S326_L001	Fun_S247	247	H. vulgare	GP	Soil	28 dpi	Hv	Hv_GP_28dpi_Soil
+FunITS-BC327-248_S327_L001	Fun_S248	248	H. vulgare	GP	Rhizosphere	28 dpi	Hv	Hv_GP_28dpi_Rhizosphere
+FunITS-BC328-249_S328_L001	Fun_S249	249	H. vulgare	GP	Rhizosphere	28 dpi	Hv	Hv_GP_28dpi_Rhizosphere

@@ -27,8 +27,8 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 FWD=`cat $PRIMERS | cut -d" " -f1`
 REV=`cat $PRIMERS | cut -d" " -f2`
 ### Get there reverse-complements
-FWD_RC=`python $SCRIPT_DIR/rev_complement.py $FWD`
-REV_RC=`python $SCRIPT_DIR/rev_complement.py $REV`
+FWD_RC=`python3 $SCRIPT_DIR/rev_complement.py $FWD`
+REV_RC=`python3 $SCRIPT_DIR/rev_complement.py $REV`
 
 if [ ! -d $OUTDIR ]; then
   mkdir -p $OUTDIR;

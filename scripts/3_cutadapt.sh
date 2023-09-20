@@ -3,6 +3,7 @@
 # Created by argbash-init v2.10.0
 # ARG_POSITIONAL_SINGLE([primer_file],[File containing the primers used for the amplification, forward and reverse separated by a space])
 # ARG_POSITIONAL_SINGLE([run_directory],[Directory in which the fastq files from sequencing can be found])
+# ARG_POSITIONAL_SINGLE([path_tg],[Path to trim_galore program, or just name of program to call if installed through bioconda])
 # ARG_POSITIONAL_SINGLE([metadata],[Path to metadata file])
 # ARG_OPTIONAL_SINGLE([length],[l],[Minimum length of reads (default: 50)],[50])
 # ARG_OPTIONAL_SINGLE([outdir],[o],[Directory for the output of cutadapt],[3_analysis/3.1_cutadapt])
@@ -35,6 +36,7 @@ begins_with_short_option()
 _positionals=()
 _arg_primer_file=
 _arg_run_directory=
+_arg_path_tg=
 _arg_metadata=
 # THE DEFAULTS INITIALIZATION - OPTIONALS
 _arg_length="50"
@@ -44,9 +46,10 @@ _arg_outdir="3_analysis/3.1_cutadapt"
 print_help()
 {
 	printf '%s\n' "Script to trim the primers from the sequencing reads."
-	printf 'Usage: %s [-l|--length <arg>] [-o|--outdir <arg>] [-h|--help] <primer_file> <run_directory> <metadata>\n' "$0"
+	printf 'Usage: %s [-l|--length <arg>] [-o|--outdir <arg>] [-h|--help] <primer_file> <run_directory> <path_tg> <metadata>\n' "$0"
 	printf '\t%s\n' "<primer_file>: File containing the primers used for the amplification, forward and reverse separated by a space"
 	printf '\t%s\n' "<run_directory>: Directory in which the fastq files from sequencing can be found"
+	printf '\t%s\n' "<path_tg>: Path to trim_galore program, or just name of program to call if installed through bioconda"
 	printf '\t%s\n' "<metadata>: Path to metadata file"
 	printf '\t%s\n' "-l, --length: Minimum length of reads (default: 50) (default: '50')"
 	printf '\t%s\n' "-o, --outdir: Directory for the output of cutadapt (default: '3_analysis/3.1_cutadapt')"
@@ -104,16 +107,16 @@ parse_commandline()
 
 handle_passed_args_count()
 {
-	local _required_args_string="'primer_file', 'run_directory' and 'metadata'"
-	test "${_positionals_count}" -ge 3 || _PRINT_HELP=yes die "FATAL ERROR: Not enough positional arguments - we require exactly 3 (namely: $_required_args_string), but got only ${_positionals_count}." 1
-	test "${_positionals_count}" -le 3 || _PRINT_HELP=yes die "FATAL ERROR: There were spurious positional arguments --- we expect exactly 3 (namely: $_required_args_string), but got ${_positionals_count} (the last one was: '${_last_positional}')." 1
+	local _required_args_string="'primer_file', 'run_directory', 'path_tg' and 'metadata'"
+	test "${_positionals_count}" -ge 4 || _PRINT_HELP=yes die "FATAL ERROR: Not enough positional arguments - we require exactly 4 (namely: $_required_args_string), but got only ${_positionals_count}." 1
+	test "${_positionals_count}" -le 4 || _PRINT_HELP=yes die "FATAL ERROR: There were spurious positional arguments --- we expect exactly 4 (namely: $_required_args_string), but got ${_positionals_count} (the last one was: '${_last_positional}')." 1
 }
 
 
 assign_positional_args()
 {
 	local _positional_name _shift_for=$1
-	_positional_names="_arg_primer_file _arg_run_directory _arg_metadata "
+	_positional_names="_arg_primer_file _arg_run_directory _arg_path_tg _arg_metadata "
 
 	shift "$_shift_for"
 	for _positional_name in ${_positional_names}
@@ -138,6 +141,7 @@ assign_positional_args 1 "${_positionals[@]}"
 # For example:
 PRIMERS=$_arg_primer_file
 RUNDIR=$_arg_run_directory
+TRIM_GAL=$_arg_path_tg
 LENGTH=$_arg_length
 OUTDIR=$_arg_outdir
 METADATA=$_arg_metadata
@@ -153,8 +157,10 @@ REV_RC=`python3 $SCRIPT_DIR/rev_complement.py $REV`
 if [ ! -d $OUTDIR ]; then
   mkdir -p $OUTDIR;
 fi
+mkdir -p $OUTDIR/trim_galore/fastqc/tmp/
 mkdir -p $OUTDIR/untrimmed/
 mkdir -p $OUTDIR/tooshort/
+mkdir -p $OUTDIR/tmp/
 
 echo "Forward primer: $FWD"
 echo "RC of Forward: $FWD_RC"
@@ -163,14 +169,24 @@ echo "RC of Reverse: $REV_RC"
 
 ## Check program is installed, and if not propose way to install it
 command -v cutadapt >/dev/null 2>&1 || { echo -e >&2 "I require cutadapt but it's not installed in your environment. \nTry installing it with conda: 'conda install -c bioconda cutadapt'.  Aborting."; exit 1; }
+command -v fastqc >/dev/null 2>&1 || { echo -e >&2 "I require fastqc but it's not installed in your environment. \nTry installing it with conda: 'conda install -c bioconda fastqc'.  Aborting."; exit 1; }
+command -v multiqc >/dev/null 2>&1 || { echo -e >&2 "I require fastqc but it's not installed in your environment. \nTry installing it with conda: 'conda install -c bioconda multiqc'.  Aborting."; exit 1; }
+command -v $TRIM_GAL >/dev/null 2>&1 || { echo -e >&2 "I require trim_galore but the path is not correct, or it is not installed in your environment. \nTry installing it with conda: 'conda install trim-galore'.  Aborting."; exit 1; }
 
 IFS=$'\n'
+
+## Run trim_galore first to remove the adapters
+echo "Running trim_galore to remove sequencing ADAPTERS"
+# if I want to run fastqc after each step
+# --fastqc --fastqc_args "--outpath $OUTDIR/trim_galore/fastqc --dir $OUTDIR/trim_galore/tmp/ --extract -t 15"
+$TRIM_GAL --quality 0 --phred64 --nextera --trim-n --fastqc --fastqc_args "--outdir $OUTDIR/trim_galore/fastqc --dir $OUTDIR/trim_galore/fastqc/tmp/ --extract -t 15" --output_dir $OUTDIR/trim_galore/ --paired $RUNDIR/*fastq.gz
+
 ## Run cutadapt in a for loop
-echo "Starting cutadapt on each sample (skipping first line, as the header)"
+echo "Starting cutadapt on each sample to remove PRIMERS (skipping first line, as the header)"
 for line in `sed 1d $METADATA`; do
     SAMPLE=`echo $line | cut -f1`
-    R1=`echo $RUNDIR/${SAMPLE}_R1_001.fastq.gz`
-    R2=`echo $RUNDIR/${SAMPLE}_R2_001.fastq.gz`
+    R1=`echo $OUTDIR/trim_galore/${SAMPLE}_R1_001_val_1.fq.gz`
+    R2=`echo $OUTDIR/trim_galore/${SAMPLE}_R2_001_val_2.fq.gz`
     # cutadapt -g "Fwd_primer=^$FWD;max_error_rate=0.1...Rev_RC=$REV_RC;max_error_rate=0;rightmost" \
     #         -G "Rev_primer=^$REV;max_error_rate=0.1...Fwd_RC=$FWD_RC;max_error_rate=0;rightmost" \
     #         --report minimal #if want only minimal report
@@ -187,7 +203,11 @@ for line in `sed 1d $METADATA`; do
             --info-file logfiles/cutadapt_infofile.tsv \
             $R1 \
             $R2
+    fastqc --outdir $OUTDIR --dir $OUTDIR/tmp/ --extract -t 15 $OUTDIR/$SAMPLE*R1* $OUTDIR/$SAMPLE*R2*
+    echo 'Quality analysis (FASTQC) finished for sample ' $SAMPLE
 done
+
+multiqc $OUTDIR
 
 # ^^^  TERMINATE YOUR CODE BEFORE THE BOTTOM ARGBASH MARKER  ^^^
 

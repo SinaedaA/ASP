@@ -31,12 +31,13 @@ if [ ! -d ./$OUTDIR ]; then
   mkdir -p ./$OUTDIR;
 fi
 mkdir -p $OUTDIR/tmp/
-mkdir -p $OUTDIR/tmp/
 
 ### Loop through samples and make symlinks to RUN1 and RUN2 (to have all fastq files in same directory)
 IFS=$'\n'
-for sample in $(cat $SAMPLE_METADATA | cut -f1); do
-  if [[ $sample == \#* ]]; then continue; fi
+#for sample in $(cat $SAMPLE_METADATA | cut -f1); do
+for line in `sed 1d $SAMPLE_METADATA`; do 
+  sample=`echo $line | cut -f1`
+  #if [[ $sample == \#* ]]; then continue; fi
   fastqc --outdir $OUTDIR --dir $OUTDIR/tmp/ --extract -t 15 $READ_DIR/$sample*R1* $READ_DIR/$sample*R2*
   echo 'Quality analysis (FASTQC) finished for sample ' $sample
 done

@@ -142,10 +142,6 @@ SAMPLE_METADATA=$_arg_metadata
 echo 'Output directory of merged libraries is ' $OUTDIR
 echo 'Working on samples included in the file ' $SAMPLE_METADATA
 
-### Check if fastqc and multiqc are installed
-command -v fastqc >/dev/null 2>&1 || { echo -e >&2 "I require fastqc but it's not installed in your environment. \nTry installing it with conda: 'conda install -c bioconda fastqc' (or activate an environment where it is installed).  Aborting."; exit 1; }
-command -v multiqc >/dev/null 2>&1 || { echo -e >&2 "I require multiqc but it's not installed in your environment. \nTry installing it with conda: 'conda install -c bioconda multiqc' (or activate an environment where it is installed).  Aborting."; exit 1; }
-
 if [ ! -d ./$OUTDIR ]; then
   mkdir -p ./$OUTDIR;
 fi
@@ -154,8 +150,10 @@ mkdir -p $OUTDIR/tmp/
 
 ### Loop through samples and make symlinks to RUN1 and RUN2 (to have all fastq files in same directory)
 IFS=$'\n'
-for sample in $(cat $SAMPLE_METADATA | cut -f1); do
-  if [[ $sample == \#* ]]; then continue; fi
+#for sample in $(cat $SAMPLE_METADATA | cut -f1); do
+for line in `sed 1d $SAMPLE_METADATA`; do
+  sample=`echo $line | cut -f1`
+  #if [[ $sample == \#* ]]; then continue; fi
   fastqc --outdir $OUTDIR --dir $OUTDIR/tmp/ --extract -t 15 $READ_DIR/$sample*R1* $READ_DIR/$sample*R2*
   echo 'Quality analysis (FASTQC) finished for sample ' $sample
 done

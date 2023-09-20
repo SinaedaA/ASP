@@ -38,7 +38,7 @@ fi
 mkdir -p $OUTDIR/trim_galore/fastqc/tmp/
 mkdir -p $OUTDIR/untrimmed/
 mkdir -p $OUTDIR/tooshort/
-mkdir -p $OUTDIR/tmp/
+mkdir -p $OUTDIR/fastqc/tmp/
 
 echo "Forward primer: $FWD"
 echo "RC of Forward: $FWD_RC"
@@ -81,7 +81,7 @@ for line in `sed 1d $METADATA`; do
             --info-file logfiles/cutadapt_infofile.tsv \
             $R1 \ 
             $R2
-    fastqc --outdir $OUTDIR --dir $OUTDIR/tmp/ --extract -t 15 $OUTDIR/$SAMPLE*R1* $OUTDIR/$SAMPLE*R2*
+    fastqc --outdir $OUTDIR/fastqc/ --dir $OUTDIR/fastqc/tmp/ --extract -t 15 $OUTDIR/$SAMPLE*R1* $OUTDIR/$SAMPLE*R2*
     echo 'Quality analysis (FASTQC) finished for sample ' $SAMPLE
 done
 

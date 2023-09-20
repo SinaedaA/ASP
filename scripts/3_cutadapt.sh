@@ -173,6 +173,7 @@ for line in `sed 1d $METADATA`; do
     R2=`echo $RUNDIR/${SAMPLE}_R2_001.fastq.gz`
     # cutadapt -g "Fwd_primer=^$FWD;max_error_rate=0.1...Rev_RC=$REV_RC;max_error_rate=0;rightmost" \
     #         -G "Rev_primer=^$REV;max_error_rate=0.1...Fwd_RC=$FWD_RC;max_error_rate=0;rightmost" \
+    #         --report minimal #if want only minimal report
     cutadapt -g "$FWD;max_error_rate=0.1" -a "$REV_RC;max_error_rate=0" \
             -G "$REV;max_error_rate=0.1" -A "$FWD_RC;max_error_rate=0" \
             --minimum-length $LENGTH \
@@ -184,7 +185,6 @@ for line in `sed 1d $METADATA`; do
             -o $OUTDIR/${SAMPLE}_R1_001.fastq.gz \
             --paired-output $OUTDIR/${SAMPLE}_R2_001.fastq.gz \
             --info-file logfiles/cutadapt_infofile.tsv \
-            #--report minimal \
             $R1 \
             $R2
 done

@@ -1,6 +1,6 @@
 ## variables to load for diversity_script.R 
 taxons <- c("phylum", "class", "order", "family", "genus", "species")
-myColors <- c("Soil" = "#861f1f", "Roots" = "#ffe600", "Rhizoplane" = "#bae450", "Rhizosphere" = "#64ceb9")
+myColors <- c("Soil" = "#861f1f", "Roots" = "darkgoldenrod2", "Rhizoplane" = "#bae450", "Rhizosphere" = "#64ceb9")
 permu_scheme <- how(
     within = Within(type = "free"), nperm = 9999 #, blocks = subMeta$Timepoint # , blocks = data$Compartment
 )

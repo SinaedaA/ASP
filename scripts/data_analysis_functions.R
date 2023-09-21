@@ -454,21 +454,21 @@ RelAbundanceBoxPlots <- function(TransformedList, Metadata, Colors, TaxaOI = "al
     taxa_transf <- taxa_transf %>%
         dplyr::left_join(kw_test, by = c("Compartment", "Timepoint", "Taxon"))
     Compartments <- unique(taxa_transf$Compartment)
-    for (i in 1:length(Compartments)){
+    for (i in 1:length(Compartments)) {
         Comp <- Compartments[i]
         data <- dplyr::filter(taxa_transf, Compartment == Comp)
         ## select taxa based on whether or not they have at least one significant value in the table (taxa_transf)
         if (TaxaOI != "all") {
             transformed <- transformed %>%
                 dplyr::select(any_of(TaxaOI))
-        }
-        else {
+        } else {
             cli_alert_info("Filtering out taxa for which no differences in relative abundances were found...")
-            taxa <- data %>%
-                dplyr::filter(p_value < 0.05) %>%
+            tax_data <- data %>%
+                dplyr::filter(p_value < 0.05) #%>%
+            taxa <- tax_data %>% 
                 dplyr::select(Taxon) %>%
                 unique()
-            # if I would literally want ALL taxa 
+            # if I would literally want ALL taxa
             # taxa <- colnames(transformed)
         }
         if (nrow(taxa) == 0) {
@@ -504,6 +504,7 @@ RelAbundanceBoxPlots <- function(TransformedList, Metadata, Colors, TaxaOI = "al
         multi_page <- marrangeGrob(grobs = Boxplot_list, ncol = 3, nrow = 3)
         ggsave(multi_page, filename = paste0(outdir, "/Relative_abundance_differences_", TaxLevel, "_", Comp, ".pdf"), height = 25, width = 25)
     }
+    return(Boxplot_list)
     # separate based on the compartment, and for each compartment show only significant taxa
     # Boxplot_list <- llply(taxa$Taxon, .fun = function(x) {
     #     data <- dplyr::filter(taxa_transf, Taxon == x)

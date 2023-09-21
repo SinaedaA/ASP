@@ -1,17 +1,8 @@
 Sample_Name	Short_Sample	Sample_ID	Organism	Genotype	Compartment	Timepoint	Abbrev	Summary
-1	BactV5V7-BC6-15_S6_L001	Bact_S15	15	H. vulgare	WT	Roots	14 dpi	Hv	Hv_GP_14dpi_Roots
-2	BactV5V7-BC10-23_S10_L001	Bact_S23	23	H. vulgare	BI1	Roots	14 dpi	Hv	Hv_BI1_14dpi_Roots
-3	BactV5V7-BC11-24_S11_L001	Bact_S24	24	H. vulgare	WT	Roots	14 dpi	Hv	Hv_GP_14dpi_Roots
-4	BactV5V7-BC15-38_S15_L001	Bact_S38	38	H. vulgare	WT	Roots	14 dpi	Hv	Hv_GP_14dpi_Roots
-5	BactV5V7-BC29-70_S29_L001	Bact_S70	70	H. vulgare	BI1	Roots	14 dpi	Hv	Hv_BI1_14dpi_Roots
-6	BactV5V7-BC59-181_S59_L001	Bact_S181	181	H. vulgare	BI1	Roots	28 dpi	Hv	Hv_BI1_28dpi_Roots
-7	BactV5V7-BC60-182_S60_L001	Bact_S182	182	H. vulgare	BI1	Roots	28 dpi	Hv	Hv_BI1_28dpi_Roots
-8	BactV5V7-BC63-185_S63_L001	Bact_S185	185	H. vulgare	BI1	Roots	28 dpi	Hv	Hv_BI1_28dpi_Roots
-9	BactV5V7-BC68-199_S68_L001	Bact_S199	199	H. vulgare	BI1	Roots	28 dpi	Hv	Hv_BI1_28dpi_Roots
-10	BactV5V7-BC69-200_S69_L001	Bact_S200	200	H. vulgare	WT	Roots	28 dpi	Hv	Hv_GP_28dpi_Roots
-11	BactV5V7-BC70-201_S70_L001	Bact_S201	201	H. vulgare	BI1	Roots	28 dpi	Hv	Hv_BI1_28dpi_Roots
-12	BactV5V7-BC72-203_S72_L001	Bact_S203	203	H. vulgare	BI1	Roots	28 dpi	Hv	Hv_BI1_28dpi_Roots
-13	BactV5V7-BC73-205_S73_L001	Bact_S205	205	H. vulgare	BI1	Roots	28 dpi	Hv	Hv_BI1_28dpi_Roots
-14	BactV5V7-BC75-210_S75_L001	Bact_S210	210	H. vulgare	BI1	Roots	28 dpi	Hv	Hv_BI1_28dpi_Roots
-15	BactV5V7-BC347-215_S347_L001	Bact_S215	215	H. vulgare	BI1	Soil	28 dpi	Hv	Hv_BI1_28dpi_Soil
-16	BactV5V7-BC79-219_S79_L001	Bact_S219	219	H. vulgare	WT	Roots	28 dpi	Hv	Hv_GP_28dpi_Roots
+1	FunITS-BC93-5_S93_L001	Fun_S5	5	H. vulgare	WT	Rhizosphere	14 dpi	Hv	Hv_GP_14dpi_Rhizosphere
+2	FunITS-BC95-7_S95_L001	Fun_S7	7	H. vulgare	WT	Roots	14 dpi	Hv	Hv_GP_14dpi_Roots
+3	FunITS-BC29-188_S29_L001	Fun_S188	188	H. vulgare	BI1	Rhizosphere	28 dpi	Hv	Hv_BI1_28dpi_Rhizosphere
+4	FunITS-BC41-200_S41_L001	Fun_S200	200	H. vulgare	WT	Roots	28 dpi	Hv	Hv_GP_28dpi_Roots
+5	FunITS-BC46-205_S46_L001	Fun_S205	205	H. vulgare	BI1	Roots	28 dpi	Hv	Hv_BI1_28dpi_Roots
+6	FunITS-BC50-209_S50_L001	Fun_S209	209	H. vulgare	BI1	Roots	28 dpi	Hv	Hv_BI1_28dpi_Roots
+7	FunITS-BC56-215_S56_L001	Fun_S215	215	H. vulgare	BI1	Soil	28 dpi	Hv	Hv_BI1_28dpi_Soil

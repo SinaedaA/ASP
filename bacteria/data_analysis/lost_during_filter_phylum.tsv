@@ -1,4 +1,2 @@
 Sample_Name	Short_Sample	Sample_ID	Organism	Genotype	Compartment	Timepoint	Abbrev	Summary
-1	BactV5V7-BC11-24_S11_L001	Bact_S24	24	H. vulgare	WT	Roots	14 dpi	Hv	Hv_GP_14dpi_Roots
-2	BactV5V7-BC15-38_S15_L001	Bact_S38	38	H. vulgare	WT	Roots	14 dpi	Hv	Hv_GP_14dpi_Roots
-3	BactV5V7-BC347-215_S347_L001	Bact_S215	215	H. vulgare	BI1	Soil	28 dpi	Hv	Hv_BI1_28dpi_Soil
+1	FunITS-BC56-215_S56_L001	Fun_S215	215	H. vulgare	BI1	Soil	28 dpi	Hv	Hv_BI1_28dpi_Soil

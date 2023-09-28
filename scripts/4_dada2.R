@@ -168,7 +168,7 @@ if (argv$join == 'flash2') {
     track <- as.data.frame(cbind(
         filt_df, sapply(dada, getN),
         rowSums(seqtab_nochim)
-    )) %>% setNames(., nm = c("before_filter", "after_filter", "denoised", "non-chimeric"))
+    )) %>% setNames(., nm = c("before_filter", "after_filter", "denoised", "non_chimeric"))
     
     make_stat_table(track)
     write.table(track, file = paste0(outpath, "/", flash2_outdir, "/flash2_dada2_denoising_stats.csv"), quote = FALSE, row.names = TRUE, col.names = TRUE)
@@ -193,20 +193,22 @@ if (argv$join == 'flash2') {
     cli_h1("Removing chimeras...")
     seqtab <- makeSequenceTable(merged)
     seqtab_nochim <- removeBimeraDenovo(seqtab, method = "consensus", multithread = TRUE, verbose = TRUE)
+    write.table(seqtab, file = paste0(outpath, "/seqtab.tsv"), sep = "\t", quote = FALSE, row.names = TRUE, col.names = TRUE)
+    write.table(seqtab_nochim, file = paste0(outpath, "/seqtab_nochim.tsv"), sep = "\t", quote = FALSE, row.names = TRUE, col.names = TRUE)
     cli_alert_info("Inspecting distribution of length. Data saved to {outpath}/length_distribution.csv")
     length_distribution <- table(nchar(getSequences(seqtab_nochim)))
     write.table(length_distribution, file = paste0(outpath, "/length_distribution.csv"), quote = FALSE, row.names = TRUE, col.names = TRUE)
     # Inspect distribution of length
     print("Inspect distribution of length")
-    print(table(nchar(getSequences(seqtab_nochim))))
+    #print(table(nchar(getSequences(seqtab_nochim))))
     ### Track reads through pipeline
     getN <- function(x) sum(getUniques(x))
     track <- as.data.frame(cbind(
         filt_df, sapply(dada_F, getN), sapply(dada_R, getN), sapply(merged, getN),
         rowSums(seqtab_nochim)
-    )) %>% setNames(., nm = c("before_filter", "after_filter", "denoised_F", "denoised_R", "merged", "non-chimeric"))
+    )) %>% setNames(., nm = c("before_filter", "after_filter", "denoised_F", "denoised_R", "merged", "non_chimeric"))
     print("Read tracking")
-    print(track)
+    #print(track)
     write.table(track, file = paste0(outpath, "/dada2_denoising_stats.csv"), quote = FALSE, row.names = TRUE, col.names = TRUE)
 
     stat_plot <- draw_stat_plot(denoising_stats = track)

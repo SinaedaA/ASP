@@ -96,7 +96,7 @@ cli_alert_success("Making a count table for each taxon level (order, family, gen
 
 ##### Filter data #####
 cli_h1("Filtering data (removing unassigned and unidentified taxa) and transforming into relative abundances")
-filtered_list <- FilterAbs(taxon_data_list, metadata, taxons, Nreads = 2000)
+filtered_list <- FilterAbs(taxon_data_list, metadata, taxons, Nreads = 2000, Outdir = outdir)
 cli_alert_success("Successfully filtered out unidentified and unassigned taxa")
 
 ##### Transform data #####

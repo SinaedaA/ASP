@@ -72,7 +72,7 @@ MakeTaxonDataList <- function(FreqTable, TaxonLevels) {
     }
     return(TaxonDataList)
 }
-FilterAbs <- function(TaxonDataList, Metadata, TaxonLevels, Nreads = 2000) {
+FilterAbs <- function(TaxonDataList, Metadata, TaxonLevels, Nreads = 2000, Outdir) {
     # Remove unidentified and unassigned reads BEFORE filtering the rest
     # Filters out taxons where absolute abundance == 0
     # Filters out samples with less than Nreads reads
@@ -100,7 +100,7 @@ FilterAbs <- function(TaxonDataList, Metadata, TaxonLevels, Nreads = 2000) {
         lost <- Metadata %>%
             dplyr::filter(!Sample_Name %in% rownames(Filtered))
         write.table(lost,
-            file = paste0(outdir, "/lost_during_filter_", level, ".tsv"),
+            file = paste0(Outdir, "/lost_during_filter_", level, ".tsv"),
             append = FALSE, col.names = TRUE, row.names = TRUE, sep = "\t", quote = FALSE
         )
     }

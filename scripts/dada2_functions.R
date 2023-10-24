@@ -101,12 +101,17 @@ draw_stat_plot <- function(denoising_stats){
     return(denoising_plot)
 }
 
-make_stat_table <- function(denoising_stats){
-    
-    denoise_percentages <- denoising_stats %>%
-        dplyr::mutate(perc_passed_filter = (after_filter/before_filter)*100) %>% 
-        dplyr::mutate(perc_merged = (merged/before_filter)*100) %>% 
-        dplyr::mutate(perc_non_chimeric = (non_chimeric/before_filter)*100)
+make_stat_table <- function(denoising_stats, merging = TRUE){
+    if (merging == TRUE){
+        denoise_percentages <- denoising_stats %>%
+            dplyr::mutate(perc_passed_filter = (after_filter/before_filter)*100) %>% 
+            dplyr::mutate(perc_merged = (merged/before_filter)*100) %>% 
+            dplyr::mutate(perc_non_chimeric = (non_chimeric/before_filter)*100)
+    } else {
+        denoise_percentages <- denoising_stats %>%
+            dplyr::mutate(perc_passed_filter = (after_filter/before_filter)*100) %>% 
+            dplyr::mutate(perc_non_chimeric = (non_chimeric/before_filter)*100)
+    }
     print("Denoise percentages...")
     print(denoise_percentages)
     return(denoise_percentages)

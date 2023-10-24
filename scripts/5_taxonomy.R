@@ -9,7 +9,7 @@ writable_path <- check_libPaths(verbose = FALSE)
 suppressPackageStartupMessages(if (!require(pacman)) {
     install.packages("pacman", lib = writable_path)
 })
-needed_packs <- c("BiocManager", "tidyverse", "plyr", "ggplot2", "Biostrings", "cli", "argparser", "tibble", "this.path", "DECIPHER") # , "here"
+needed_packs <- c("BiocManager", "tidyverse", "plyr", "ggplot2", "Biostrings", "cli", "argparser", "tibble", "this.path", "DECIPHER", "phylotools") # , "here"
 github_packs <- c("benjjneb/dada2")
 to_install <- needed_packs[!needed_packs %in% pacman::p_library()]
 message("Installing and/or loading required packages...")
@@ -22,6 +22,17 @@ pacman::p_load_gh(github_packs)
 script_dir <- this.dir()
 working_dir <- getinitwd()
 
+writeFasta<-function(data, filename){
+  fastaLines = c()
+  for (rowNum in 1:nrow(data)){
+    fastaLines = c(fastaLines, as.character(paste(">", data[rowNum,"name"], sep = "")))
+    fastaLines = c(fastaLines,as.character(data[rowNum,"seq"]))
+  }
+  fileConn<-file(filename)
+  writeLines(fastaLines, fileConn)
+  close(fileConn)
+}
+
 ##### Parse arguments with arg_parser #####
 cli_h1("Parsing input")
 parser <- arg_parser("Taxonomy assignment of denoised amplicon sequencing data")
@@ -31,16 +42,32 @@ parser <- add_argument(parser, "taxonomy", help = "Absolute path to the appropri
 argv <- parse_args(parser)
 
 #### Load data ####
+cli_h1("Loading count table")
 count_table <- read.table(argv$sequence_table)
+print(length(colnames(count_table)))
 load(argv$taxonomy)
 
+#### Make output directory ####
+cli_h1("Checking existence of output directory...")
+working_dir <- getinitwd()
+outpath <- paste0(working_dir, "/", argv$output_directory)
+if (!dir.exists(outpath)) {
+    dir.create(outpath, recursive = TRUE)
+    cli_alert_info("Output directory {outpath} doesn't exist, creating it.")
+} else {
+    cli_alert_info("Output directory {outpath} already exists.")
+}
+
 #### Load DNA from count_table colnames ####
+cli_h1("Extracting DNA sequences")
 dna <- DNAStringSet(getSequences(colnames(count_table))) # Create a DNAStringSet from the ASVs
 
 #### Match to taxonomy training set ####
-ids <- IdTaxa(dna, trainingSet, strand="top", processors=NULL, verbose=FALSE) # use all processors
+cli_h1("Matching sequences to training set")
+ids <- IdTaxa(dna, trainingSet, strand="both", processors=NULL, verbose=TRUE) # use all processors
 
 #### Get taxonomy data and reformat to look like output of assignTaxonomy (from dada2) ####
+cli_h1("Formatting output tables.")
 ranks <- c("domain", "phylum", "class", "order", "family", "genus", "species") # ranks of interest
 # Convert the output object of class "Taxa" to a matrix analogous to the output from assignTaxonomy
 taxid <- t(sapply(ids, function(x) {
@@ -64,6 +91,12 @@ asv2seq <- setNames(as.data.frame(cbind(rownames(taxonomy), taxonomy$Seq)), nm =
 count_table <- count_table %>%
   rename_with(~coalesce(asv2seq$ASV[match(., asv2seq$Seq)], .))
 
-write.table(count_table, file = paste0(argv$output_directory, "/count_table.tsv"), sep = "\t", quote = FALSE, row.names = TRUE, col.names = TRUE)
-write.table(asv2seq, file = paste0(argv$output_directory, "/asv2seq.tsv"), sep = "\t", quote = FALSE, row.names = TRUE, col.names = TRUE)
-write.table(taxonomy, file = paste0(argv$output_directory, "/taxonomy.tsv"), sep = "\t", quote = FALSE, row.names = TRUE, col.names = TRUE)
+cli_h1("Writing output tables...")
+write.table(count_table, file = paste0(outpath, "/count_table.tsv"), sep = "\t", quote = FALSE, row.names = TRUE, col.names = TRUE)
+cli_alert_success("Count table written to {outpath}/count_table.tsv : ASV x Sample")
+write.table(asv2seq, file = paste0(outpath, "/asv2seq.tsv"), sep = "\t", quote = FALSE, row.names = FALSE, col.names = TRUE)
+cli_alert_success("ASV to SEQ correspondance written to {outpath}/asv2seq.tsv : ASV x SEQ")
+write.table(taxonomy, file = paste0(outpath, "/taxonomy.tsv"), sep = "\t", quote = FALSE, row.names = TRUE, col.names = TRUE)
+cli_alert_success("Taxonomy table written to {outpath}/taxonomy.tsv : ASV -> domain -> phylum -> class -> order -> family -> genus -> species -> Seq")
+writeFasta(setNames(as_tibble(asv2seq), nm = c("name", "seq")), paste0(outpath, "ASV.fasta"))
+cli_alert_success("ASV fasta file written to {outpath}/ASV.fasta : >ASVxxx \n sequence")

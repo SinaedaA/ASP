@@ -119,18 +119,19 @@ if (argv$join == 'flash2') {
     else {
         cli_alert_success("flash2 is installed, proceeding...")
     }
-    # here(flash2_outdir)
     cli_h1("Running flash2 to merge reads.")
     flash_count <- 0
     for (i in seq_along(filenames_F)) {
-        base_fn <- str_split(basename(filenames_F[i]), pattern = "_", n = 2)[[1]][1]
-        if (!file.exists(paste0(outpath, "/", flash2_outdir, "/", base_fn, ".extendedFrags.fastq.gz"))) {
+        base_fn <- str_split(basename(filenames_F[i]), pattern = "_R", n = 2)[[1]][1]
+        print(basename(filenames_F[i]))
+        print(base_fn)
+        if (!file.exists(paste0(outpath, "/", base_fn, ".extendedFrags.fastq.gz"))) {
             system2(flash2, args = c(
                 "--phred-offset", 33,
                 "--min-overlap", argv$overlap,
                 "--max-overlap", 300,
                 "--compress", filenames_F[i], filenames_R[i],
-                "--output-directory", here(flash2_outdir),
+                "--output-directory", outpath,
                 "--output-prefix", base_fn
             ))
         } else {
@@ -142,26 +143,31 @@ if (argv$join == 'flash2') {
 
     ## Then execute dada2 but single-end, and on the base_fn.extendedFrags.fastq.gz
     cli_h1("Running dada2 to denoise merged reads.")
-    filenames <- sort(list.files(here(flash2_outdir), pattern = "extendedFrags.fastq.gz", full.names = TRUE))
-    if (!file.exists(paste0(outpath, "/", flash2_outdir, "/flash2_dada2_denoising.RDS"))){
+    filenames <- sort(list.files(outpath, pattern = "extendedFrags.fastq.gz", full.names = TRUE))
+    if (!file.exists(paste0(outpath, "/flash2_dada2_denoising.RDS"))){
         dada2_results <- dada2_wrap(inpath, filenames = list(filenames), argv$maxEE, argv$truncQ, argv$truncLen, argv$trimLeft, argv$trimRight, argv$minLen)
-        saveRDS(dada2_results, file = paste0(outpath, "/", flash2_outdir, "/flash2_dada2_denoising.RDS"))
+        saveRDS(dada2_results, file = paste0(outpath, "/flash2_dada2_denoising.RDS"))
     } else {
         cli_alert_warning("flash2_dada2_denoising.RDS already exists in your directory, using this data.")
         cli_alert_info("If you want to re-do the analysis and store results in another directory, change the --flashout option.")
-        dada2_results <- readRDS(paste0(outpath, "/", flash2_outdir, "/flash2_dada2_denoising.RDS"))
+        dada2_results <- readRDS(paste0(outpath, "/flash2_dada2_denoising.RDS"))
     }
     list2env(setNames(dada2_results, nm = c("filt_df", "filtered", "filtered_files", "dada")), envir=.GlobalEnv)
     cli_alert_success("Success, dada2 was performed on all flash2 samples")
-    cli_alert_info("RDS file saved in {flash2_outdir}/flash2_dada2_denoising.RDS")
+    cli_alert_info("RDS file saved in {outpath}/flash2_dada2_denoising.RDS")
     
     ## Make sequence table and remove chimeras
     cli_h1("Removing chimeras...")
     seqtab <- makeSequenceTable(dada)
     seqtab_nochim <- removeBimeraDenovo(seqtab, method = "consensus", multithread = TRUE, verbose = TRUE)
-    cli_alert_info("Inspecting distribution of length. Data saved to {flash2_outdir}/length_distribution.csv")
+    ## Write sequence table 
+    cli_h1("Writing sequence count tables (seqtab.tsv and seqtab_nochim.tsv)...")
+    write.table(seqtab, file = paste0(outpath, "/seqtab.tsv"), sep = "\t", quote = FALSE, row.names = TRUE, col.names = TRUE)
+    write.table(seqtab_nochim, file = paste0(outpath, "/seqtab_nochim.tsv"), sep = "\t", quote = FALSE, row.names = TRUE, col.names = TRUE)
+
+    cli_alert_info("Inspecting distribution of length. Data saved to {outpath}/length_distribution.csv")
     length_distribution <- table(nchar(getSequences(seqtab_nochim)))
-    write.table(length_distribution, file = paste0(outpath, "/", flash2_outdir, "/length_distribution.csv"), quote = FALSE, row.names = TRUE, col.names = TRUE)
+    write.table(length_distribution, file = paste0(outpath, "/length_distribution.csv"), quote = FALSE, row.names = TRUE, col.names = TRUE)
 
     ### Track reads through pipeline
     cli_alert_info("Tracking the reads through the pipeline... See 'flash2_dada2_denoising_stats.csv'")
@@ -170,8 +176,12 @@ if (argv$join == 'flash2') {
         rowSums(seqtab_nochim)
     )) %>% setNames(., nm = c("before_filter", "after_filter", "denoised", "non_chimeric"))
     
-    make_stat_table(track)
-    write.table(track, file = paste0(outpath, "/", flash2_outdir, "/flash2_dada2_denoising_stats.csv"), quote = FALSE, row.names = TRUE, col.names = TRUE)
+    stat_plot <- draw_stat_plot(denoising_stats = track)
+    stat_table <- make_stat_table(track, merging = FALSE)
+    ggsave(stat_plot, file = paste0(outpath, "/dada2_flash2_denoising_stats.pdf"))
+    write.table(stat_table, file = paste0(outpath, "/dada2_flash2_denoising_percentages.csv"), quote = FALSE, row.names = TRUE, col.names = TRUE)
+    write.table(track, file = paste0(outpath, "/flash2_dada2_denoising_stats.csv"), quote = FALSE, row.names = TRUE, col.names = TRUE)
+
 } else if (argv$join == "dada2") {
     ##### Perform dada2 denoising first, then dada2 merging #####
     cli_h1("Performing dada2 denoising on paired-end reads...")

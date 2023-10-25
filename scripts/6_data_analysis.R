@@ -110,7 +110,6 @@ l_ply(taxons, .fun = function(x) write.table(transformed_list[[x]], file = paste
 saveRDS(filtered_list, file = paste0(outdir, "/filtered_list.RData"))
 saveRDS(transformed_list, file = paste0(outdir, "/transformed_list.RData"))
 
-
 #### ALPHA-DIVERSITY ####
 ##### Compute Alpha-diversity index (Shannon) #####
 cli_h1("Computing alpha-diversity for each compartment")

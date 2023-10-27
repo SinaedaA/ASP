@@ -7,7 +7,7 @@ Steps in the analysis:
 0. Make the directory branching (so the output is uniform, and the scripts follow eachother efficiently)
 1. Quality control (`fastqc`, `multifastqc`) + manual inspection
 2. Optional: make a manifest.tsv (sort of a central reference for all the read files we have)
-3. Cut adapters from the reads, and remove primers (`cutadapat`)
+3. Cut adapters from the reads, and remove adapters (`trim_galore`) and primers (`cutadapat`)
 4. Denoising the reads (`dada2`)
 5. Taxonomic assignment and count table generation
 6. Data analysis:
@@ -84,7 +84,6 @@ TIMESTAMP=$(date '+%Y%m%d-%H%M%S')
 ../../scripts/1_fastqc.sh ../sample-metadata.tsv 0_raw_reads/ --outpath 1_fastqc/ 2>&1 | tee logfiles/1_fastqc_${TIMESTAMP}.log
 ```
 
-
 Then, manually inspect the FastQC output and/or the multiQC output in your browser.
 
 ## 2. Optional: Make a manifest
@@ -94,18 +93,40 @@ TIMESTAMP=$(date '+%Y%m%d-%H%M%S')
 ../../scripts/2_make_manifest.sh ../sample-metadata.tsv 0_raw_reads/ 2>&1 | tee logfiles/2_make_manifest_${TIMESTAMP}.log
 ```
 
-## 3. Remove primers from the sequencing reads
-This uses `cutadapt`, and trims the primers from each read. Because the ITS can be of variable length, it is technically possible that during amplification, the fwd amplicon overlaps with the reverse primers, and so we get the reverse complement of the REV primer on the 3' end. So, as a safety measure, we'll remove the FWD-primer **and** the REV-RC-primer (rev-complement of REV-primer) from the forward read, and the opposite from the reverse read.
+## 3. Remove adapters and primers from the sequencing reads
+This uses `cutadapt` as well as `trim_galore`, and trims the primers and sequencing adapters (resp.) from each read. Please check both of these programs are installed (althought the script will fail and return possible options for download if it can't find these software). 
+
+- Cutadapt can be installed with conda or micromamba from the bioconda channel (conda install -c bioconda cutadapt). The most recent version as of this writing is 4.4
+-  Trim_Galore requires Cutadapt (as it is a Perl wrapper script) and can be downloaded from https://github.com/FelixKrueger/TrimGalore 
+
+```bash
+cutadapt --version
+~/bin/TrimGalore-0.6.10/trim_galore --version ## this is my path to the executable
+```
+
+Because the ITS can be of variable length, it is technically possible that during amplification, the fwd amplicon overlaps with the reverse primers, and so we get the reverse complement of the REV primer on the 3' end. So, as a safety measure, we'll remove the FWD-primer **and** the REV-RC-primer (rev-complement of REV-primer) from the forward read, and the opposite from the reverse read.
 
 It needs 2 positional arguments:
 1. *primer file*: can be found in the bacteria, fungi or oomycete directory, and has the format "forward_primer reverse_primer" on a single line, both primers separated by a space.
 2. *run directory*: raw_reads directory.
+3. *path/to/trim_galore*: path to the Trim_Galore executable file
+4. *sample-metadata.tsv*: path to the metadata
 
 And accepts 2 optional arguments:
 1. `--length` : minimum length of the reads to be retained in the output (the default is 50 bases)
 2. `--outdir` : output directory containing the trimmed reads.
 
-It will also created subdirectories inside the outdir, called 'untrimmed' and 'tooshort'. In 'tooshort', you will find the reads which, after trimming, were shorter than the specified minimum length, and in 'untrimmed' you will find read pairs in which the FWD or the REV reads were not found. *Note*: the reverse-complement of the reads are not a 'mandatory' find, meaning that, if cutadapt doesn't find REV-RC inside the forward reads, but does find FWD at the beginning, the read is considered trimmed anyway. 
+**WHAT DOES IT DO?**
+First, it will create subdirectories inside the output directory: `trim_galore` (containing adapter-trimmed sequences), `tooshort` (containing for each sample, reads that were shorter than defined threshold after trimming), `untrimmed` (containing read pairs in which the FWD or the REV reads were not found). *Note*: the reverse-complement of the reads are not a 'mandatory' find, meaning that, if cutadapt doesn't find REV-RC inside the forward reads, but does find FWD at the beginning, the read is considered trimmed anyway. 
+
+Then, it will quickly check if it can find the softwares that are used, and return an error if this is not the case.
+
+Finally, it will remove the sequencing adapters using Trim_Galore (a perl wrapper for cutadapt which already contains commonly used adapters). Right now, the script is made to remove **Nextera** adapters. This can be changed in the script, trim_galore can also accept to detect which adapters are present. Trim_Galore also re-executes FastQC and stores the results in `trim_galore/fastqc`. You can execute `multiqc` on that directory to get a summary report.
+
+On these files, stored in `trim_galore` subdirectory, it will apply cutadapt on these files and remove the primer sequences. 
+
+------ Need to change this in the future -------
+**NB:** I added the Trim_Galore step after extensive testing with all cutadapt options to find the optimal ones for our data. In the future, I will check whether all of the options I use are available in Trim_Galore as well, in order to bypass having two *cutting* steps (trim_galore followed by cutadapt). But I'm not sure all options are maintained, which is why it is done in 2 steps. 
 
 ```bash
 TIMESTAMP=$(date '+%Y%m%d-%H%M%S')
@@ -117,6 +138,7 @@ TIMESTAMP=$(date '+%Y%m%d-%H%M%S')
 grep "Pairs discarded as untrimmed:" logfiles/3_cutadapt_${TIMESTAMP}.log
 grep "Pairs written (passing filters):" logfiles/3_cutadapt_${TIMESTAMP}.log
 ```
+------Write about trim_galore output (fastqc to check adapter removal)-------
 
 Re-run fastqc on the output:
 
@@ -128,7 +150,6 @@ TIMESTAMP=$(date '+%Y%m%d-%H%M%S')
 ```
 
 And examine the quality of the reads after removing the primers.
-
 
 ## 4. Denoise and join
 ### 4.1. Denoising
@@ -172,7 +193,28 @@ Some information on the default parameters in 4_dada2.R (more detailed explanati
 
 With the default `truncQ=2` we might discard many many reads because of one bad quality base. Therefore, it's usually better to check the quality of the reads after the `cutadapt` step, to be able to specify `trimLeft` and `trimRight`, and/or `truncLen`, based on your actual data.
 
+------Write about output-------
+
 ## 5. Taxonomic assignment
+For taxonomic assignment, I decided to use IDTAXA (https://microbiomejournal.biomedcentral.com/articles/10.1186/s40168-018-0521-5). This is available in an R package, and the dada2 tutorial described a way to integrate the output from dada2 into IDTAXA.
+
+The R package to be installed in `DECIPHER`, and is described here: http://www2.decipher.codes/Classification.html 
+
+Under Downloads on this website, several pre-modified databases for classification are available, two of which we will need: 	`SILVA SSU r138 (modified)` and 	`UNITE 2021 (unmodified)`. These are RData objects, which I personally stored in my home directory (`~/lib/IDTAXA`). Remember where you store these files, as this will be one of the input parameters to the 5_taxonomy.R script.
+
+Remember to change the `PATHO_TO_SEQTAB` to either dada2, or flash2_dada2 (depending on your choice of joining software in step4).
+
+```bash
+TIMESTAMP=$(date '+%Y%m%d-%H%M%S')
+## Usage:
+Rscript path/to/scripts/5_taxonomy.R --help
+## Bacteria:
+Rscript ../scripts/5_taxonomy.R 3_analysis/3.2_trimming/PATH_TO_SEQTAB/seqtab_nochim.tsv 3_analysis/3.3_taxonomy/ $HOME/lib/IDTAXA/SILVA_SSU_r138_2019.rdata 2>&1 | tee logfiles/5_taxonomy_${TIMESTAMP}.log
+## Fungi
+Rscript ../scripts/5_taxonomy.R 3_analysis/3.2_trimming/PATH_TO_SEQTAB/seqtab_nochim.tsv 3_analysis/3.3_taxonomy/ $HOME/lib/IDTAXA/UNITE_v2021_May2021.rdata 2>&1 | tee logfiles/5_taxonomy_${TIMESTAMP}.log
+```
+
+------Write about output-------
 
 ## 6. Data analysis
 Now that we have taxonomy count tables for each run, we can add them up for corresponding samples.

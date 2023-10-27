@@ -81,6 +81,10 @@ cli_alert_info("Looking for fastq files")
 filenames_F <- sort(list.files(inpath, pattern = "_R1_001.fastq.gz", full.names = TRUE))
 filenames_R <- sort(list.files(inpath, pattern = "_R2_001.fastq.gz", full.names = TRUE))
 
+# i wanted to try it on the trim_galore output just to check if I actually found the primers, but I don't
+# filenames_F <- sort(list.files(inpath, pattern = "_R1_001_val_1.fq.gz", full.names = TRUE))
+# filenames_R <- sort(list.files(inpath, pattern = "_R2_001_val_2.fq.gz", full.names = TRUE))
+
 ##### Read primer file and extract primer sequences (plus RCs) #####
 cli_h1("Checking if primers are present in reads.")
 FOR_orients <- allOrients(primers$FOR)

@@ -185,8 +185,8 @@ $TRIM_GAL --quality 0 --phred64 --nextera --trim-n --fastqc --fastqc_args "--out
 echo "Starting cutadapt on each sample to remove PRIMERS (skipping first line, as the header)"
 for line in `sed 1d $METADATA`; do
     SAMPLE=`echo $line | cut -f1`
-    R1=`echo $OUTDIR/trim_galore/${SAMPLE}_R1_001_val_1.fq.gz`
-    R2=`echo $OUTDIR/trim_galore/${SAMPLE}_R2_001_val_2.fq.gz`
+    R1=`echo $OUTDIR/trim_galore/${SAMPLE}_*_R1_001_val_1.fq.gz`
+    R2=`echo $OUTDIR/trim_galore/${SAMPLE}_*_R2_001_val_2.fq.gz`
     # cutadapt -g "Fwd_primer=^$FWD;max_error_rate=0.1...Rev_RC=$REV_RC;max_error_rate=0;rightmost" \
     #         -G "Rev_primer=^$REV;max_error_rate=0.1...Fwd_RC=$FWD_RC;max_error_rate=0;rightmost" \
     #         --report minimal #if want only minimal report
@@ -207,7 +207,7 @@ for line in `sed 1d $METADATA`; do
     echo 'Quality analysis (FASTQC) finished for sample ' $SAMPLE
 done
 
-multiqc $OUTDIR
+multiqc $OUTDIR/fastqc/ --filename 3_cutadapt_MultiQC.html --outdir $OUTDIR
 
 # ^^^  TERMINATE YOUR CODE BEFORE THE BOTTOM ARGBASH MARKER  ^^^
 

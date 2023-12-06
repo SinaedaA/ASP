@@ -349,7 +349,7 @@ core90 <- dplyr::filter(occurence, Occurence > 0.9) %>%
 core95 <- dplyr::filter(occurence, Occurence > 0.95)%>% 
     left_join(rownames_to_column(taxonomy, "ASV"))
 core100 <- dplyr::filter(occurence, Occurence == 1) %>% 
-    left_join(rownames_to_column(taxonomy, "ASV"))
+    left_join(rownames_to_column(taxonomy, "ASV")) 
 
 transf_counts <- decostand(asv_counts, method = "total", zap = TRUE)
 test <- core100 %>% dplyr::left_join(rownames_to_column(transf_counts, "ASV")) %>% 
@@ -429,3 +429,16 @@ intersect(hid_families, both_families)
 #     group_by(Sample_Name) %>% 
 #     dplyr::filter(Sample_Name == "BactV5V7-BC44-Hid4_12_S143_L001") %>% 
 #     mutate(TotalRelative = sum(relative))   %>%  print(n = 36)
+
+ReplaceUnassigned <- function (FreqTable) 
+{
+    FreqTable <- FreqTable %>% dplyr::mutate(phylum = ifelse(phylum == 
+        "unassigned", paste0("D_", domain), paste0("P_", phylum))) %>% 
+        dplyr::mutate(class = ifelse(class == "unassigned", phylum, 
+            paste0("C_", class))) %>% dplyr::mutate(order = ifelse(order == 
+        "unassigned", class, paste0("O_", order))) %>% dplyr::mutate(family = ifelse(family == 
+        "unassigned", order, paste0("F_", family))) %>% dplyr::mutate(genus = ifelse(genus == 
+        "unassigned", family, paste0("G_", genus))) #%>% 
+        #dplyr::mutate(species = ifelse(species == "unassigned", genus, paste0("S_", species)))
+    return(FreqTable)
+}

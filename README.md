@@ -6,15 +6,14 @@ For the sequencing, we ended up asking for two runs (in order to get a correct n
 Steps in the analysis:
 0. Make the directory branching (so the output is uniform, and the scripts follow eachother efficiently)
 1. Quality control (`fastqc`, `multifastqc`) + manual inspection
-2. Optional: make a manifest.tsv (sort of a central reference for all the read files we have)
-3. Cut adapters from the reads, and remove adapters (`trim_galore`) and primers (`cutadapat`)
-4. Denoising the reads (`dada2`)
-5. Taxonomic assignment and count table generation
-6. Data analysis:
-   6.1. Filter low-ASV samples and very low-frequency taxa
-   6.2. Alpha-diversity (Shannon and/or Simpson)
-   6.3. Beta-diversity
-   6.4. 
+2. Cut adapters from the reads, and remove adapters (`trim_galore`) and primers (`cutadapat`)
+3. Denoising the reads (`dada2`)
+4. Taxonomic assignment and count table generation
+5. Data analysis:
+   5.1. Filter low-ASV samples and very low-frequency taxa
+   5.2. Alpha-diversity (Shannon and/or Simpson)
+   5.3. Beta-diversity
+   5.4. 
 
 **NOTE**: The 2 runs are not merged at the beginning of the workflow. _Why?_ Because during denoising, the software (`dada2`) creates a model which represents the sequencing error-rate, and this model (like the error-rate) can change from one run to another. Hence, merging the 2 separate runs can influence the error-model, and as we don't know how problematic this can be, we just run the pipeline on the two runs separately, then add the ASV counts at the end.
 
@@ -56,6 +55,7 @@ cd run1
 Now, we can run `0_make_dir_branches.sh`, which is a simple script to create the branching inside run1 (or other base directory of your choice). Of course, replace `path/to/read_dir` with the name of your read directory (for bacteria, the data for run1 is inside AZU03_1-374628257/FASTQ_Generation_2022-12-04_16_22_43Z-636427794).
 
 ```bash
+mkdir logfiles/
 TIMESTAMP=$(date '+%Y%m%d-%H%M%S')
 # To get Usage:
 ../../scripts/0_make_dir_branches.sh --help
@@ -65,7 +65,7 @@ TIMESTAMP=$(date '+%Y%m%d-%H%M%S')
 This will create the following directories: 
 - 0_raw_reads: containing symbolic links for all the read files to their location.
 - 1_fastqc
-- 2_manifest
+- 
 - 3_analysis, with subdirectories : 3.1_cutadapt, 3.2_trimming, and 3.3_taxonomy, and 3.4_data_analysis
 
 Check the symbolic links have been created inside 0_raw_reads, by running:
@@ -140,16 +140,15 @@ grep "Pairs written (passing filters):" logfiles/3_cutadapt_${TIMESTAMP}.log
 ```
 ------Write about trim_galore output (fastqc to check adapter removal)-------
 
-Re-run fastqc on the output:
+Finally, 3_cutadapt re-executes FastQC on all output files, so we should re-examine the quality of the reads after removing the primers.
+We can re-run `multiqc` on this output, for easier interpretation.
 
 ```bash
-TIMESTAMP=$(date '+%Y%m%d-%H%M%S')
-## Usage
-../../scripts/1_fastqc.sh --help
-../../scripts/1_fastqc.sh ../sample-metadata.tsv 3_analysis/3.1_cutadapt/ --outpath 3_analysis/3.1_cutadapt/fastqc 2>&1 | tee logfiles/cutadapt_fastqc_${TIMESTAMP}.log
+## Check how many reads were discarded in each file, and how many passed filter
+grep "Pairs discarded as untrimmed:" logfiles/3_cutadapt_${TIMESTAMP}.log
+grep "Pairs written (passing filters):" logfiles/3_cutadapt_${TIMESTAMP}.log
+multiqc 3_analysis/3.1_cutadapt/fastqc/ --filename 3_cutadapt_MultiQC.html --outdir 3_analysis/3.1_cutadapt/
 ```
-
-And examine the quality of the reads after removing the primers.
 
 ## 4. Denoise and join
 ### 4.1. Denoising

@@ -55,6 +55,19 @@
 #     # Add a square around the legend
 #     # legend.box.background = element_rect(colour = "black")
 # )
+
+ReplaceUnassigned <- function(FreqTable){
+    FreqTable <- FreqTable %>% 
+        dplyr::mutate(phylum = ifelse(phylum == "unassigned", paste0("D_", domain), paste0("P_", phylum))) %>% 
+        dplyr::mutate(class = ifelse(class == "unassigned", phylum, paste0("C_", class))) %>% 
+        dplyr::mutate(order = ifelse(order == "unassigned", class, paste0("O_", order))) %>% 
+        dplyr::mutate(family = ifelse(family == "unassigned", order, paste0("F_", family))) %>% 
+        dplyr::mutate(genus = ifelse(genus == "unassigned", family, paste0("G_", genus))) %>% 
+        dplyr::mutate(species = ifelse(species == "unassigned", genus, paste0("S_", species)))
+
+    return(FreqTable)
+}
+
 #### Functions used in diversity analysis for Amplicon Sequencing data ####
 MakeTaxonDataList <- function(FreqTable, TaxonLevels) {
     TaxonDataList <- list()

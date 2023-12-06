@@ -9,7 +9,7 @@ writable_path <- check_libPaths(verbose = FALSE)
 suppressPackageStartupMessages(if (!require(pacman)) {
     install.packages("pacman", lib = writable_path)
 })
-needed_packs <- c(  "tidyverse", "plyr", "cli", "argparser", "this.path", "patchwork", "rio") 
+needed_packs <- c(  "tidyverse", "plyr", "cli", "argparser", "this.path", "patchwork", "rio", "vegan") 
 to_install <- needed_packs[!needed_packs %in% pacman::p_library()]
 message("Installing and/or loading required packages...")
 if (length(to_install) != 0) {
@@ -24,7 +24,7 @@ script_dir <- this.dir() # gets dir where the script is stored
 print(script_dir)
 working_dir <- getinitwd() # gets dir from where the script is launched
 source(paste0(script_dir, "/data_analysis_functions.R"))
-# source(paste0(script_dir, "/data_analysis_options.RData"))
+#source(paste0(script_dir, "/data_analysis_options.RData"))
 
 ##### Parse arguments with arg_parser #####
 cli_h1("Parsing input")
@@ -50,6 +50,7 @@ if (!dir.exists(outdir)) {
     cli_alert_info("Output directory {outdir} already exists.")
 }
 ##### Load data #####
+taxons <- c("phylum", "class", "order", "family", "genus", "species")
 count_table <- rio::import(argv$counttable) %>% column_to_rownames("V1")
 taxonomy <- rio::import(argv$taxonomy) %>% column_to_rownames("V1")
 metadata <- rio::import(argv$metadata) %>% column_to_rownames("V1")
